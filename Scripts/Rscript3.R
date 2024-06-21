@@ -1,7 +1,13 @@
+################################
+# An R script to predict molecular rates using multiple PGLMMs
+# Author: Tianlong Cai
+# Email: caitianlong@westlake.edu.cn
+
+#####################
 rm(list=ls())
 gc()
 #define work direction
-workdir <- "/Users/tianlong/Desktop/VertMolRate"
+workdir <- "/Users/tianlong/VertMolRate"
 setwd(workdir)
 
 library(ggplot2)
@@ -15,7 +21,7 @@ library(patchwork)
 library(corrplot)
 
 
-source(paste0(workdir, "/SourceFunctions/source_functions.r"))
+source(paste0(workdir, "/Scripts/source_functions.r"))
 
 ######
 subrate <- read.csv(paste0(workdir, "/DataFiles/MolEvolRate/VertMolRate.csv"))%>%
@@ -83,7 +89,6 @@ dev.off()
 
 ######################
 #Model selection
-
 #PLMM with tips data
 scale_subrate <- subrate %>%
   mutate(dS=scale(log(dS)), dN=scale(log(dN)),AnnualTemp=scale(AnnualTemp),
@@ -241,7 +246,7 @@ f1 <- ggplot(df1, aes(model, R2c, group=Mol.Rate, colour = Mol.Rate))+
   geom_point(size=1.2)+
   geom_errorbar(aes(ymin = R2c-R2c.sd, ymax = R2c+R2c.sd), width=.3, size=0.4)+
   scale_color_manual(values=c("#93c47d", "#fdb96b"))+
-  labs(x="", y=expression(R[c] ^  "2" ), title = "Model selection")+
+  labs(x="", y=expression(R[c] ^  "2" ), title = "Model selection", tag="a")+
   guides(y=guide_axis(cap='upper'), x=guide_axis(cap='upper'))+
   scale_y_continuous(limits = c(0,1))+
   theme_classic()+
@@ -264,7 +269,7 @@ f2<-df2%>%
   ggplot(aes(x=group, y=Mean, fill=R2)) +
   geom_bar(stat="identity", position=position_dodge())+
   geom_errorbar(aes(ymin = Mean-SD, ymax = Mean+SD), width=.3, position=position_dodge(0.9), size=0.2)+
-  labs(x="", y=expression("R" ^ 2), title = "Best model")+
+  labs(x="", y=expression("R" ^ 2), title = "Best model", tag="b")+
   scale_fill_manual(labels=expression("R"["phy"]^2,"R"["fixed"]^2), values=c("#7570b3", "#e7298a"))+
   guides(y=guide_axis(cap='upper'))+
   scale_y_continuous(limits = c(0,1))+
@@ -408,7 +413,7 @@ f3 <- pglmm_out%>%
   geom_errorbar(aes(ymin=`l-95% CI`, ymax=`u-95% CI`), width=0, size=0.5)+
   geom_hline(yintercept = 0, linetype=2, colour="grey")+
   scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dS", title = "Ectotherms")+
+  labs(y="Effect Size", x="dS", title = "Ectotherms", tag="c")+
   scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
   scale_y_continuous(limits = c(-0.45,0.21), breaks = seq(-0.4,0.2,0.2))+
   theme_classic()+
@@ -433,14 +438,13 @@ f4 <- pglmm_out%>%
   geom_errorbar(aes(ymin=`l-95% CI`, ymax=`u-95% CI`), width=0, size=0.5)+
   geom_hline(yintercept = 0, linetype=2, colour="grey")+
   scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Endotherms")+
+  labs(y="Effect Size", x="dS", title = "Endotherms", tag="d")+
   scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
   scale_y_continuous(limits = c(-0.45,0.21), breaks = seq(-0.4,0.2,0.2))+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
-        axis.text.x = element_text(size=8),
-        axis.text.y = element_blank(),
+        axis.text = element_text(size=8),
         strip.text = element_text(size=8),
         plot.title = element_text(hjust = 0.5, size=9),
         legend.position = "none",
@@ -460,7 +464,7 @@ f5 <- pglmm_out%>%
   geom_errorbar(aes(ymin=`l-95% CI`, ymax=`u-95% CI`), width=0, size=0.5)+
   geom_hline(yintercept = 0, linetype=2, colour="grey")+
   scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dN", title = "Ectotherms")+
+  labs(y="Effect Size", x="dN", title = "Ectotherms", tag="e")+
   scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
   scale_y_continuous(limits = c(-0.21,0.4), breaks = seq(-0.2,0.4,0.2))+
   theme_classic()+
@@ -485,14 +489,13 @@ f6 <- pglmm_out%>%
   geom_errorbar(aes(ymin=`l-95% CI`, ymax=`u-95% CI`), width=0, size=0.5)+
   geom_hline(yintercept = 0, linetype=2, colour="grey")+
   scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Endotherms")+
+  labs(y="Effect Size", x="dN", title = "Endotherms", tag="f")+
   scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
   scale_y_continuous(limits = c(-0.21,0.4), breaks = seq(-0.2,0.4,0.2))+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
-        axis.text.x = element_text(size=8),
-        axis.text.y = element_blank(),
+        axis.text = element_text(size=8),
         strip.text = element_text(size=8),
         plot.title = element_text(hjust = 0.5, size=9),
         legend.position = "none",
@@ -506,7 +509,7 @@ f6 <- pglmm_out%>%
 
 
 f1 + f3 + f4+f2+f5+f6
-ggsave(filename="./Outputs/MainFigures/Fig3.pdf", height=4.2, width=6.27)
+ggsave(filename="./Outputs/MainFigures/Fig3a.pdf", height=5, width=8.27)
 
 #
 f7 <- pglmm_out%>%
@@ -761,7 +764,7 @@ f16 <- pglmm_out%>%
 f7+f8+f9+f10+f11+f12+f13+f14+f15+f16+
   plot_layout(ncol = 5, nrow = 2)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig9.pdf", height=4, width=8.27)
+ggsave(filename="./Outputs/MainFigures/Fig3b.pdf", height=4, width=8.27)
 
 
 #################################################
@@ -1267,12 +1270,12 @@ f16 <- pglmm_out%>%
 
 f3+f4+f5+f6+plot_layout(nrow=1)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig10a.pdf", height=2.2, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Extended Fig9a.pdf", height=2.2, width=8.27)
 
 f7+f8+f9+f10+f11+f12+f13+f14+f15+f16+
   plot_layout(ncol = 5, nrow = 2)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig10b.pdf", height=4, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Extended Fig9b.pdf", height=4, width=8.27)
 
 
 
@@ -1490,7 +1493,7 @@ f6 <- pglmm_out%>%
 f3+f4+f5+f6+
   plot_layout(nrow=1)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig11a.pdf", height=2.2, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Extended Fig10a.pdf", height=2.2, width=8.27)
 
 
 #
@@ -1746,7 +1749,7 @@ f16 <- pglmm_out%>%
 f7+f8+f9+f10+f11+f12+f13+f14+f15+f16+
   plot_layout(ncol = 5, nrow = 2)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig11b.pdf", height=4, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Extended Fig10b.pdf", height=4, width=8.27)
 
 
 ##############
@@ -1962,7 +1965,7 @@ f6 <- pglmm_out%>%
 f3+f4+f5+f6+
   plot_layout(nrow=1)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig12a.pdf", height=2.2, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Extended Fig11a.pdf", height=2.2, width=8.27)
 
 
 #
@@ -2218,7 +2221,7 @@ f16 <- pglmm_out%>%
 f7+f8+f9+f10+f11+f12+f13+f14+f15+f16+
   plot_layout(ncol = 5, nrow = 2)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig12b.pdf", height=4, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Extended Fig11b.pdf", height=4, width=8.27)
 ###################
 
 

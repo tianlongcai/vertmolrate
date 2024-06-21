@@ -1,5 +1,5 @@
 ################################
-# R script to analyze variation of molecular rates across species and groups
+# An R script for analyzing the variation in molecular rates across different species and taxonomic groups.
 # Author: Tianlong Cai
 # Email: caitianlong@westlake.edu.cn
 
@@ -7,7 +7,7 @@
 ############################################
 rm(list=ls())
 gc()
-workdir <- "/Users/tianlong/Desktop/VertMolRate"
+workdir <- "/Users/tianlong/VertMolRate"
 setwd(workdir)
 library(tidyverse)
 library(PupillometryR)
@@ -23,7 +23,7 @@ library(plotrix)
 #Fig1. Plot substitution rates in tips and speciation rate along phylogeny
 ####################################################################
 #functions
-source(paste0(workdir, "/SourceFunctions/source_functions.r"))
+source(paste0(workdir, "/Scripts/source_functions.r"))
 plot2.phylo <- diversitree:::plot2.phylo
 
 #Input phylogeny
@@ -43,6 +43,59 @@ sampled_vert_phy<-drop.tip(all_vert_phy, unmatched_species[-which(unmatched_spec
 subrate<-subrate[sampled_vert_phy$tip.label[-which(sampled_vert_phy$tip.label=="Outgroup")],]%>%
   mutate(MajorGroup=toupper(MajorGroup))
 
+#Basic statistics for raw data
+group1 <- subrate%>%
+  group_by(ThermoMode)%>%
+  summarize(
+    n = length(Species),
+    dN_mean = mean(dN),
+    dN_median = median(dN),
+    dN_min = min(dN),
+    dN_max = max(dN),
+    dN_sd = sd(dN),
+    dN_se = dN_sd / sqrt(n),
+    dN_Q0.025 = quantile(dN, 0.025),
+    dN_Q0.975 = quantile(dN, 0.975),
+    dN_95CI_Lower = unlist(t.test(dN)[4])[1],
+    dN_95CI_Upper = unlist(t.test(dN)[4])[2],
+    dS_mean = mean(dS),
+    dS_median = median(dS),
+    dS_min = min(dS),
+    dS_max = max(dS),
+    dS_sd = sd(dS),
+    dS_se = dS_sd / sqrt(n),
+    dS_Q0.025 = quantile(dS, 0.025),
+    dS_Q0.975 = quantile(dS, 0.975),
+    dS_95CI_Lower = unlist(t.test(dS)[4])[1],
+    dS_95CI_Upper = unlist(t.test(dS)[4])[2])%>%
+  rename(Group=ThermoMode)
+
+group2 <- subrate%>%
+  group_by(Group)%>%
+  summarize(
+    n = length(Species),
+    dN_mean = mean(dN),
+    dN_median = median(dN),
+    dN_min = min(dN),
+    dN_max = max(dN),
+    dN_sd = sd(dN),
+    dN_se = dN_sd / sqrt(n),
+    dN_Q0.025 = quantile(dN, 0.025),
+    dN_Q0.975 = quantile(dN, 0.975),
+    dN_95CI_Lower = unlist(t.test(dN)[4])[1],
+    dN_95CI_Upper = unlist(t.test(dN)[4])[2],
+    dS_mean = mean(dS),
+    dS_median = median(dS),
+    dS_min = min(dS),
+    dS_max = max(dS),
+    dS_sd = sd(dS),
+    dS_se = dS_sd / sqrt(n),
+    dS_Q0.025 = quantile(dS, 0.025),
+    dS_Q0.975 = quantile(dS, 0.975),
+    dS_95CI_Lower = unlist(t.test(dS)[4])[1],
+    dS_95CI_Upper = unlist(t.test(dS)[4])[2])
+
+bas_stat <- rbind(group2, group1)
 #################################################
 #Extract node for each clade
 clades <- unique(subrate$Clade.Label)
@@ -137,8 +190,8 @@ dev.off()
 
 
 #################################################################
-#Extended Fig1. Raincloud plot to show molecular rates of five classes of vertebrates
-#Kruskal Wallis test and multiple comparison of groups.
+#Extended Fig.1: Raincloud plot showing the variation in molecular rates across the five classes of vertebrates.
+
 #input data
 subrate <- read.csv(paste0(workdir, "/DataFiles/MolEvolRate/VertMolRate.csv"))%>%
   mutate(Group=factor(Group, levels = c("Fishes","Amphibians", "Reptiles","Mammals","Birds")))%>%
@@ -147,9 +200,11 @@ subrate <- read.csv(paste0(workdir, "/DataFiles/MolEvolRate/VertMolRate.csv"))%>
 range(subrate$dS)
 range(subrate$dN)
 
+#Kruskal Wallis test and multiple comparison of groups
 comp.ds <- agricolae::kruskal(subrate$dS, subrate$Group, p.adj = "bonferroni")
 comp.dn <- agricolae::kruskal(subrate$dN, subrate$Group, p.adj = "bonferroni")
 
+#Data for plots
 group <- c("Fishes","Amphibians", "Reptiles","Mammals","Birds")
 y1 <- subrate%>%group_by(Group)%>%summarise(y=max(dS))%>%pull(y)+0.1
 y2 <- subrate%>%group_by(Group)%>%summarise(y=max(dN))%>%pull(y)+0.2
@@ -214,9 +269,11 @@ ggsave("./Outputs/Supplementary/Extended Fig1.pdf", width = 8.3, height = 4)
 #Extended Fig.4 Phylogenetic signal test of dS and dN for each class of vertebrates
 #input phylogeny
 phy <- read.tree(paste0(workdir, "/DataFiles/trees/phy_all_sampled_vertebrates.tre"))
+
 #force ultrametric phylogeny
 phy <- force.ultrametric(phy, method="nnls")#nnls or extend
 
+#
 groups <- unique(subrate$Group)
 
 phylo.signal <- matrix(NA, 5, 4)
@@ -316,59 +373,8 @@ plot_grid(f3, f4, ncol = 2, align = "hv")
 ggsave("./Outputs/Supplementary/Extended Fig4.pdf", width = 8.3, height = 4)
 
 
-group1 <- subrate%>%
-  group_by(ThermoMode)%>%
-  summarize(
-    n = length(Species),
-    dN_mean = mean(dN),
-    dN_median = median(dN),
-    dN_min = min(dN),
-    dN_max = max(dN),
-    dN_sd = sd(dN),
-    dN_se = dN_sd / sqrt(n),
-    dN_Q0.025 = quantile(dN, 0.025),
-    dN_Q0.975 = quantile(dN, 0.975),
-    dN_95CI_Lower = unlist(t.test(dN)[4])[1],
-    dN_95CI_Upper = unlist(t.test(dN)[4])[2],
-    dS_mean = mean(dS),
-    dS_median = median(dS),
-    dS_min = min(dS),
-    dS_max = max(dS),
-    dS_sd = sd(dS),
-    dS_se = dS_sd / sqrt(n),
-    dS_Q0.025 = quantile(dS, 0.025),
-    dS_Q0.975 = quantile(dS, 0.975),
-    dS_95CI_Lower = unlist(t.test(dS)[4])[1],
-    dS_95CI_Upper = unlist(t.test(dS)[4])[2])%>%
-  rename(Group=ThermoMode)
 
-group2 <- subrate%>%
-  group_by(Group)%>%
-  summarize(
-    n = length(Species),
-    dN_mean = mean(dN),
-    dN_median = median(dN),
-    dN_min = min(dN),
-    dN_max = max(dN),
-    dN_sd = sd(dN),
-    dN_se = dN_sd / sqrt(n),
-    dN_Q0.025 = quantile(dN, 0.025),
-    dN_Q0.975 = quantile(dN, 0.975),
-    dN_95CI_Lower = unlist(t.test(dN)[4])[1],
-    dN_95CI_Upper = unlist(t.test(dN)[4])[2],
-    dS_mean = mean(dS),
-    dS_median = median(dS),
-    dS_min = min(dS),
-    dS_max = max(dS),
-    dS_sd = sd(dS),
-    dS_se = dS_sd / sqrt(n),
-    dS_Q0.025 = quantile(dS, 0.025),
-    dS_Q0.975 = quantile(dS, 0.975),
-    dS_95CI_Lower = unlist(t.test(dS)[4])[1],
-    dS_95CI_Upper = unlist(t.test(dS)[4])[2])
 
-bas_stat <- rbind(group2, group1)
-write.csv(bas_stat, "bas_stat.csv")
 
 
 

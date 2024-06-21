@@ -1,5 +1,5 @@
 ################################
-# R script to analyze latitudinal gradient in molecular rates at species and assemblage levels
+# An R script for analyzing latitudinal gradient in molecular rates at species and assemblage levels
 # Author: Tianlong Cai
 # Email: caitianlong@westlake.edu.cn
 
@@ -7,7 +7,7 @@
 rm(list=ls())
 gc()
 #define work direction
-workdir <- "/Users/Tianlong/Desktop/VertMolRate"
+workdir <- "/Users/Tianlong/VertMolRate"
 setwd(workdir)
 
 ### Load packages
@@ -17,8 +17,10 @@ library(phytools)
 library(MCMCglmm)
 library(geiger)
 library(RColorBrewer)
+library(agricolae)
+library(nlme)
 # Load source functions
-source(paste0(workdir, "/SourceFunctions/source_functions.r"))
+source(paste0(workdir, "/Scripts/source_functions.r"))
 
 ###########################################################
 # Load input data for molecular evolution rates
@@ -125,14 +127,14 @@ write.csv(summary_dn,"summary_dn.csv", row.names = F)
 
 # Extract parameter values from PGLMMs
 pglmm_out <- NULL
-for(i in 1:length(groups[-9])){
+for(i in 1:length(groups)){
   group <- groups[i]
   fit.out <- rbind(summary(pglmm_list[[paste(group, "dS", sep = ".")]])$solutions[2,], 
                    summary(pglmm_list[[paste(group, "dN", sep = ".")]])$solutions[2,])
   fit.out <- as.data.frame(fit.out) %>%
     mutate(Subrate = c("dS", "dN"),
            Group = group,
-           ThermoMode = ifelse(Group %in% c("Birds", "Mammals", "Endotherms","Non-long migrants"), "Endotherms", "Ectotherms"))
+           ThermoMode = ifelse(Group %in% c("Birds", "Mammals", "Endotherms","Non-long migrants", "Non migrants"), "Endotherms", "Ectotherms"))
   pglmm_out <- rbind(pglmm_out, fit.out)
 }
 
@@ -140,9 +142,10 @@ for(i in 1:length(groups[-9])){
 
 
 #Plot effect size
-f2a <-pglmm_out%>%
+f2a1 <-pglmm_out%>%
+  mutate(Group=ifelse(Group=="Non migrants", "Residents", Group))%>%
   mutate(sig=ifelse(pMCMC<0.05, "1", "0"),
-         Group=factor(Group, levels=c("Endotherms","Ectotherms","Non-long migrants", "Birds","Mammals","Reptiles", "Amphibians","Fishes")))%>%
+         Group=factor(Group, levels=c("Endotherms","Ectotherms","Residents","Non-long migrants", "Birds","Mammals","Reptiles", "Amphibians","Fishes")))%>%
   filter(Subrate=="dS")%>%
   ggplot(aes(x=Group, y=post.mean, ymin=`l-95% CI`, ymax=`u-95% CI`, color=ThermoMode, shape=sig))+
   geom_pointrange(size=0.4)+
@@ -164,21 +167,23 @@ f2a <-pglmm_out%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-f2b <-pglmm_out%>%
+f2a2 <-pglmm_out%>%
+  mutate(Group=ifelse(Group=="Non migrants", "Residents", Group))%>%
   mutate(sig=ifelse(pMCMC<0.05, "1", "0"),
-         Group=factor(Group, levels=c("Endotherms","Ectotherms","Non-long migrants", "Birds","Mammals","Reptiles", "Amphibians","Fishes")))%>%
+         Group=factor(Group, levels=c("Endotherms","Ectotherms","Residents","Non-long migrants", "Birds","Mammals","Reptiles", "Amphibians","Fishes")))%>%
   filter(Subrate=="dN")%>%
   ggplot(aes(x=Group, y=post.mean, ymin=`l-95% CI`, ymax=`u-95% CI`, color=ThermoMode, shape=sig))+
   geom_pointrange(size=0.4)+
   scale_shape_manual(labels=c("0", "1"), values = c(1,19))+
   scale_color_manual(values = c("#2a6aaf", "#d3292f"))+
   geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  labs(y="Effects of latitude", x="", title = "dN", tag="b")+
+  labs(y="Effects of latitude", x="", title = "dN")+
   theme_classic()+
   coord_flip()+
   guides(y=guide_axis(cap='upper'), x=guide_axis(cap='upper'))+
   scale_y_continuous(limits = c(-0.3, 0.15),breaks = c(-0.3,-0.15,0,0.15), labels=c(-0.3,-0.15,0,0.15))+
-  theme(axis.text = element_text(size=8),
+  theme(axis.text.x = element_text(size=8),
+        axis.text.y = element_blank(),
         axis.title = element_text(size=8),
         plot.title = element_text(hjust = 0.5, size=8),
         legend.position = 'none',
@@ -187,10 +192,129 @@ f2b <-pglmm_out%>%
         axis.ticks.length = unit(0.2, "cm"),
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
-cowplot::plot_grid(f2a,f2b, nrow = 2, align="hv")
+cowplot::plot_grid(f2a1,f2a2, nrow = 1, align="hv")
 
 
-ggsave(filename="./Outputs/MainFigures/Fig2a.pdf", height=3.6, width=2.1)
+#########################
+#compare dS of migrants and residents
+migrant <- subrate%>%
+  filter(Group=="Birds")%>%
+  mutate(Migration2=ifelse(Migration=="Resident", "Non-migrants", "Migrants"))
+
+migrant%>%
+  ggplot(aes(x=Migration, y=log10(dS)))+
+  geom_boxplot()+
+  ggpubr::stat_compare_means(method = "kruskal.test")+
+  scale_y_continuous(limits = c(-8.6, -7.2),breaks = seq(-8.6, -7.2, 0.2))+
+  theme_classic()+
+  labs(x="", y=expression(log[10](dS)))+
+  guides(y=guide_axis(cap='upper'))+
+  theme(plot.title = element_text(hjust = 0.5, size=9),
+        axis.title = element_text(size=9),
+        axis.text = element_text(size=8),
+        strip.text = element_text(size=9),
+        axis.ticks.length = unit(0.2, "cm"),
+        axis.ticks = element_line(color = "black", linewidth = 0.2),
+        axis.line = element_line(color = "black", linewidth = 0.2))
+
+
+#dS corrected for body mass
+pgls <- gls(log(dS)~log(BodyMass), migrant, correlation = corMartins(value=0.017, phy=drop.tip(phylo,setdiff(phylo$tip.label,migrant$Species)), form=~Species))
+summary(pgls)
+
+#data for plot
+ds.corrected.mass <- data.frame(dS.Residual=residuals(pgls), Migration=migrant$Migration, Migration2=migrant$Migration2)
+kruskal(ds.corrected.mass$dS.Residual, ds.corrected.mass$Migration, p.adj = "bonferroni")$groups
+
+my_comparisons1 <- list( c("Long Migratory", "Short Migratory"), c("Short Migratory", "Resident"), c("Long Migratory", "Resident"))
+
+f2b <- ds.corrected.mass%>%
+  mutate(Migration=factor(Migration, levels = c("Long Migratory", "Short Migratory", "Resident")))%>%
+  ggplot(aes(x=Migration, y=dS.Residual, colour=Migration))+
+  geom_boxplot()+
+  theme_classic()+
+  labs(x="", y=expression(dS[Residuals]), tag="b")+
+  guides(y=guide_axis(cap='upper'))+
+  scale_y_continuous(limits = c(-1.3,2.0), breaks = seq(-1.0,2.0,0.5))+
+  scale_x_discrete(labels = c("Long-dist.\n migrants", "Short-dist.\n migrants", "Resident\n birds"))+
+  ggpubr::stat_compare_means(comparisons = my_comparisons1, label = "p.signif", method="wilcox.test", size=2.5, label.x = c(1.5,2.5,2), label.y = c(1.5,1.5,1.7))+ 
+  theme(plot.title = element_text(hjust = 0.5, size=8),
+        axis.title = element_text(size=8),
+        axis.text.x = element_text(size=8),
+        axis.text.y = element_text(size=8),
+        strip.text = element_text(size=8),
+        legend.position = "none",
+        plot.tag = element_text(size=10, face = "bold"),
+        plot.tag.position = c(0.05, 1),
+        axis.ticks.length = unit(0.2, "cm"),
+        axis.ticks = element_line(color = "black", linewidth = 0.2),
+        axis.line = element_line(color = "black", linewidth = 0.2))
+
+
+my_comparisons2 <- list( c("Migrants", "Non-migrants"))
+
+f2 <- ds.corrected.mass%>%
+  ggplot(aes(x=Migration2, y=dS.Residual, colour=Migration2))+
+  geom_boxplot()+
+  theme_classic()+
+  labs(x="", y=expression(dS[Residuals]))+
+  guides(y=guide_axis(cap='upper'))+
+  scale_y_continuous(limits = c(-1.3,2.0), breaks = seq(-1.5,2.0,0.5))+
+  ggpubr::stat_compare_means(comparisons = my_comparisons2, method="wilcox.test", size=2.5)+ 
+  theme(plot.title = element_text(hjust = 0.5, size=9),
+        axis.title = element_text(size=9),
+        axis.text = element_text(size=9),
+        strip.text = element_text(size=9),
+        legend.position = "none",
+        axis.ticks.length = unit(0.2, "cm"),
+        axis.ticks = element_line(color = "black", linewidth = 0.2),
+        axis.line = element_line(color = "black", linewidth = 0.2))
+
+#############################################################
+k=8.62*10^-5
+#Datasets of birds from Fristoe et al. (PNAS, 2015) (https://doi.org/10.1073/pnas.1521662112)
+BMR.phy <- read.tree(paste0(workdir, "/DataFiles/BMR/BMR_phy.tre"))
+
+BMR <- read.csv(paste0(workdir, "/DataFiles/BMR/BMR_birds.csv"))%>%
+  filter(Species.Map %in% BMR.phy$tip.label)%>%
+  mutate(B=BMR/Mass, ln.mass=log(Mass), ln.B=log(B), ln.BMR= log(BMR), Inv.kTb=1/((Tb+273.15)*k))
+
+####################################################################
+#Fitting logarithm of metabolic rate by body mass and body temperature 
+#using Gillooly's model in endotherms
+pgls.mass.b <-gls(ln.B~ln.mass+Migration+Inv.kTb, BMR, correlation=corPagel(1, BMR.phy, form = ~Species.Map))
+summary(pgls.mass.b)
+
+
+
+#Estimating residual of basal metabolic rate
+endo.res <- data.frame(Ta=BMR$MeanTemp, BMR.res=residuals(pgls.mass.b), Migration=BMR$Migration, Class=BMR$Class)
+lm1 <- lm(BMR.res~Ta, endo.res)
+summary(lm1)
+
+f2c <- endo.res%>%
+  ggplot(aes(x=Ta, y=BMR.res,colour=Class))+
+  geom_point(size=1)+
+  scale_shape_manual(values=c(1,4))+
+  geom_smooth(method="lm", size=0.8)+
+  scale_color_manual(values=c("#d3292f"))+
+  labs(x=expression("Ambient temperature (" * degree*"C)"), 
+       y=expression("Mass specific BMR"[residuals]),tag="c")+
+  #scale_y_continuous(limits = c(-1.2, 1.2),breaks = seq(-1, 1, 0.5))+
+  theme_classic()+
+  guides(y=guide_axis(cap='upper'))+
+  theme(plot.title = element_text(hjust = 0.5, size=8),
+        axis.text = element_text(size=8),
+        axis.title = element_text(size=8),
+        plot.tag = element_text(size=10, face = "bold"),
+        plot.tag.position = c(0.05, 1),
+        legend.position="none",
+        axis.ticks.length = unit(0.2, "cm"),
+        axis.ticks = element_line(color = "black", linewidth = 0.2),
+        axis.line = element_line(color = "black", linewidth = 0.2))
+
+cowplot::plot_grid(f2a1,f2a2, f2b,f2c, nrow=1, align="hv")
+ggsave(filename="./Outputs/MainFigures/Fig2abc.pdf", height=2.5, width=10.27)
 
 
 
@@ -312,7 +436,7 @@ names(pglmm_list) <- paste(rep(groups, each = 2), c("dN", "dS"), sep = ".")
 prior <- list(R=list(V=diag(1),nu=0.002), 
               G=list(G1=list(V=diag(1), nu=1, alpha.mu=0, alpha.V=diag(1)*1000)))
 
-group="Non-migrants"
+
 # Loop over each group
 for (group in groups) {
   # Choose data based on group
@@ -416,26 +540,26 @@ write.csv(summary_ds,"summary_ds.csv", row.names = F)
 write.csv(summary_dn,"summary_dn.csv", row.names = F)
 
 
+
 # Extract parameter values from PGLMMs
 pglmm_out <- NULL
-for(i in 1:length(groups[-9])){
+for(i in 1:length(groups)){
   group <- groups[i]
   fit.out <- rbind(summary(pglmm_list[[paste(group, "dS", sep = ".")]])$solutions[2,], 
                    summary(pglmm_list[[paste(group, "dN", sep = ".")]])$solutions[2,])
   fit.out <- as.data.frame(fit.out) %>%
     mutate(Subrate = c("dS", "dN"),
            Group = group,
-           ThermoMode = ifelse(Group %in% c("Birds", "Mammals", "Endotherms","Non-long migrants"), "Endotherms", "Ectotherms"))
+           ThermoMode = ifelse(Group %in% c("Birds", "Mammals", "Endotherms","Non-long migrants", "Non-migrants"), "Endotherms", "Ectotherms"))
   pglmm_out <- rbind(pglmm_out, fit.out)
 }
 
 
-
-
 #Plot effect size
 f1 <-pglmm_out%>%
+  mutate(Group=ifelse(Group=="Non-migrants", "Residents", Group))%>%
   mutate(sig=ifelse(pMCMC<0.05, "1", "0"),
-         Group=factor(Group, levels=c("Endotherms","Ectotherms","Non-long migrants", "Birds","Mammals","Reptiles", "Amphibians","Fishes")))%>%
+         Group=factor(Group, levels=c("Endotherms","Ectotherms","Residents", "Non-long migrants", "Birds","Mammals","Reptiles", "Amphibians","Fishes")))%>%
   filter(Subrate=="dS")%>%
   ggplot(aes(x=Group, y=post.mean, ymin=`l-95% CI`, ymax=`u-95% CI`, color=ThermoMode, shape=sig))+
   geom_pointrange(size=0.4)+
@@ -456,8 +580,9 @@ f1 <-pglmm_out%>%
         axis.line = element_line(color = "black", size = 0.2))
 
 f2 <-pglmm_out%>%
+  mutate(Group=ifelse(Group=="Non-migrants", "Residents", Group))%>%
   mutate(sig=ifelse(pMCMC<0.05, "1", "0"),
-         Group=factor(Group, levels=c("Endotherms","Ectotherms","Non-long migrants", "Birds","Mammals","Reptiles", "Amphibians","Fishes")))%>%
+         Group=factor(Group, levels=c("Endotherms","Ectotherms","Residents", "Non-long migrants", "Birds","Mammals","Reptiles", "Amphibians","Fishes")))%>%
   filter(Subrate=="dN")%>%
   ggplot(aes(x=Group, y=post.mean, ymin=`l-95% CI`, ymax=`u-95% CI`, color=ThermoMode, shape=sig))+
   geom_pointrange(size=0.4)+
@@ -564,12 +689,72 @@ for(group in groups){
 write.csv(summary_ds,"summary_ds.csv", row.names = F)
 write.csv(summary_dn,"summary_dn.csv", row.names = F)
 
+# Extract parameter values from PGLMMs
+pglmm_out <- NULL
+for(i in 1:length(groups)){
+  group <- groups[i]
+  fit.out <- rbind(summary(pglmm_list[[paste(group, "dS", sep = ".")]])$solutions[2,], 
+                   summary(pglmm_list[[paste(group, "dN", sep = ".")]])$solutions[2,])
+  fit.out <- as.data.frame(fit.out) %>%
+    mutate(Subrate = c("dS", "dN"),
+           Group = group,
+           ThermoMode = ifelse(Group %in% c("Birds", "Mammals", "Endotherms","Non-long migrants", "Non-migrants"), "Endotherms", "Ectotherms"))
+  pglmm_out <- rbind(pglmm_out, fit.out)
+}
 
+
+#Plot effect size
+f3 <-pglmm_out%>%
+  mutate(Group=ifelse(Group=="Non-migrants", "Residents", Group))%>%
+  mutate(sig=ifelse(pMCMC<0.05, "1", "0"),
+         Group=factor(Group, levels=c("Endotherms","Ectotherms","Residents", "Non-long migrants", "Birds","Mammals","Reptiles", "Amphibians","Fishes")))%>%
+  filter(Subrate=="dS")%>%
+  ggplot(aes(x=Group, y=post.mean, ymin=`l-95% CI`, ymax=`u-95% CI`, color=ThermoMode, shape=sig))+
+  geom_pointrange(size=0.4)+
+  scale_shape_manual(labels=c("0", "1"), values = c(1,19))+
+  scale_color_manual(values = c("#2a6aaf", "#d3292f"))+
+  geom_hline(yintercept = 0, linetype=2, colour="grey")+
+  labs(y="Effects of latitude", x="", title = "dS")+
+  theme_classic()+
+  coord_flip()+
+  guides(y=guide_axis(cap='upper'), x=guide_axis(cap='upper'))+
+  scale_y_continuous(limits = c(-0.3, 0.18),breaks = c(-0.3,-0.15,0,0.15), labels=c(-0.3,-0.15,0,0.15))+
+  theme(axis.text = element_text(size=7),
+        axis.title = element_text(size=7),
+        plot.title = element_text(hjust = 0.5, size=7),
+        legend.position = 'none',
+        axis.ticks.length = unit(0.2, "cm"),
+        axis.ticks = element_line(color = "black", size = 0.2),
+        axis.line = element_line(color = "black", size = 0.2))
+
+f4 <-pglmm_out%>%
+  mutate(Group=ifelse(Group=="Non-migrants", "Residents", Group))%>%
+  mutate(sig=ifelse(pMCMC<0.05, "1", "0"),
+         Group=factor(Group, levels=c("Endotherms","Ectotherms","Residents", "Non-long migrants", "Birds","Mammals","Reptiles", "Amphibians","Fishes")))%>%
+  filter(Subrate=="dN")%>%
+  ggplot(aes(x=Group, y=post.mean, ymin=`l-95% CI`, ymax=`u-95% CI`, color=ThermoMode, shape=sig))+
+  geom_pointrange(size=0.4)+
+  scale_shape_manual(labels=c("0", "1"), values = c(1,19))+
+  scale_color_manual(values = c("#2a6aaf", "#d3292f"))+
+  geom_hline(yintercept = 0, linetype=2, colour="grey")+
+  labs(y="Effects of latitude", x="", title = "dN")+
+  theme_classic()+
+  coord_flip()+
+  guides(y=guide_axis(cap='upper'), x=guide_axis(cap='upper'))+
+  scale_y_continuous(limits = c(-0.3, 0.15),breaks = c(-0.3,-0.15,0,0.15), labels=c(-0.3,-0.15,0,0.15))+
+  theme(axis.text = element_text(size=7),
+        axis.title = element_text(size=7),
+        plot.title = element_text(hjust = 0.5, size=7),
+        legend.position = 'none',
+        axis.ticks.length = unit(0.2, "cm"),
+        axis.ticks = element_line(color = "black", size = 0.2),
+        axis.line = element_line(color = "black", size = 0.2))
+cowplot::plot_grid(f3,f4, nrow = 2, align="hv")
 
 #############
 #Fig.S2 Scatterplots show the relationships between molecular rates and 
 #absolute midpoint latitude at the species level
-f1 <- subrate%>%
+f5 <- subrate%>%
   ggplot(aes(x=abs(Lat), y=log10(dS), colour=ThermoMode))+
   geom_point(size=0.5, alpha=0.5)+
   geom_smooth(method="lm", se=TRUE, size=0.5)+
@@ -588,7 +773,7 @@ f1 <- subrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-f2 <- subrate%>%
+f6 <- subrate%>%
   ggplot(aes(x=abs(Lat), y=log10(dN), colour=ThermoMode))+
   geom_point(size=0.5, alpha=0.5)+
   geom_smooth(method="lm", se=TRUE, size=0.5)+
@@ -608,7 +793,7 @@ f2 <- subrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-cowplot::plot_grid(f1,f2, align="hv")
+cowplot::plot_grid(f5,f6, align="hv")
 ggsave(filename = "./Outputs/Supplementary/Extended Fig2.pdf", width=8.27, height = 4.2)
 
 
@@ -799,149 +984,13 @@ cowplot::plot_grid(f1,f2,f3,f4,f5,f6,f7,f8,f9,f10, nrow = 2, align = "hv")
 ggsave(filename = "./Outputs/Supplementary/Extended Fig3.pdf", width=8.27, height = 3.6)
 
 
-#########################
-#compare dS of migrants and residents
-migrant <- subrate%>%
-  filter(Group=="Birds")%>%
-  mutate(Migration2=ifelse(Migration=="Resident", "Non-migrants", "Migrants"))
-
-migrant%>%
-  ggplot(aes(x=Migration, y=log10(dS)))+
-  geom_boxplot()+
-  ggpubr::stat_compare_means(method = "kruskal.test")+
-  scale_y_continuous(limits = c(-8.6, -7.2),breaks = seq(-8.6, -7.2, 0.2))+
-  theme_classic()+
-  labs(x="", y=expression(log[10](dS)))+
-  guides(y=guide_axis(cap='upper'))+
-  theme(plot.title = element_text(hjust = 0.5, size=9),
-        axis.title = element_text(size=9),
-        axis.text = element_text(size=8),
-        strip.text = element_text(size=9),
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", linewidth = 0.2),
-        axis.line = element_line(color = "black", linewidth = 0.2))
-
-
-
-
-pgls <- nlme::gls(log(dS)~log(BodyMass), migrant, correlation = corMartins(value=0.017, phy=drop.tip(phylo,setdiff(phylo$tip.label,migrant$Species)), form=~Species))
-summary(pgls)
-
-dat <- data.frame(dS.Residual=residuals(pgls), Migration=migrant$Migration, Migration2=migrant$Migration2)
-agricolae::kruskal(dat$dS.Residual, dat$Migration, p.adj = "bonferroni")$groups
-
-my_comparisons1 <- list( c("Long Migratory", "Short Migratory"), c("Short Migratory", "Resident"), c("Long Migratory", "Resident"))
-
-f2c <- dat%>%
-  mutate(Migration=factor(Migration, levels = c("Long Migratory", "Short Migratory", "Resident")))%>%
-  ggplot(aes(x=Migration, y=dS.Residual, colour=Migration))+
-  geom_boxplot()+
-  theme_classic()+
-  labs(x="", y=expression(dS[Residuals]), tag="c")+
-  guides(y=guide_axis(cap='upper'))+
-  scale_y_continuous(limits = c(-1.3,2.0), breaks = seq(-1.0,2.0,0.5))+
-  ggpubr::stat_compare_means(comparisons = my_comparisons1, label = "p.signif", method="wilcox.test", size=2.5, label.x = c(1.5,2.5,2), label.y = c(1.5,1.5,1.7))+ 
-  theme(plot.title = element_text(hjust = 0.5, size=8),
-        axis.title = element_text(size=8),
-        axis.text.x = element_text(size=8, angle = 20, vjust = 1, hjust=0.8),
-        axis.text.y = element_text(size=8),
-        strip.text = element_text(size=8),
-        legend.position = "none",
-        plot.tag = element_text(size=10, face = "bold"),
-        plot.tag.position = c(0.05, 1),
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", linewidth = 0.2),
-        axis.line = element_line(color = "black", linewidth = 0.2))
-
-
-my_comparisons <- list( c("Migrants", "Non-migrants"))
-
-f2 <- dat%>%
-  ggplot(aes(x=Migration2, y=dS.Residual, colour=Migration2))+
-  geom_boxplot()+
-  theme_classic()+
-  labs(x="", y=expression(dS[Residuals]))+
-  guides(y=guide_axis(cap='upper'))+
-  scale_y_continuous(limits = c(-1.3,2.0), breaks = seq(-1.5,2.0,0.5))+
-  ggpubr::stat_compare_means(comparisons = my_comparisons, method="wilcox.test", size=2.5)+ 
-  theme(plot.title = element_text(hjust = 0.5, size=9),
-        axis.title = element_text(size=9),
-        axis.text = element_text(size=9),
-        strip.text = element_text(size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", linewidth = 0.2),
-        axis.line = element_line(color = "black", linewidth = 0.2))
-cowplot::plot_grid(f1,f2, nrow=1, align="hv")
-ggsave(filename = "./Outputs/Supplementary/Extended Fig5.pdf", width=8.27, height = 4.5)
-
-#############################################################
-library(nlme)
-k=8.62*10^-5
-
-#Datasets of endotherms from Fristoe et al. (PNAS, 2015) (https://doi.org/10.1073/pnas.1521662112)
-BMR.phy <- read.tree("./DataFiles/BMR/BMR_phy.tre")
-
-BMR <- read.csv(paste0(workdir, "/DataFiles/BMR/TNZ_Map.csv"))%>%
-  filter(Species.Map %in% BMR.phy$tip.label)%>%
-  mutate(B=BMR/Mass, ln.mass=log(Mass), ln.B=log(B), ln.BMR= log(BMR), Inv.kTb=1/((Tb+273.15)*k))
-
-Migration <- read.csv("~/desktop/Dataset HWI 2020-04-10.csv")%>%
-  mutate(Species=gsub(" ","_", Tree.name))%>%
-  select(Species, Migration.1,Migration.2,Migration.3)
-BMR <- BMR%>%
-  filter(Class=="Birds")%>%
-  left_join(subrate%>%select(Migration, Species), by=c("Species.Map"="Species"))%>%
-  inner_join(Migration, by="Species")
-
-BMR <- read.csv("~/desktop/BMR.csv")%>%
-  filter(Species.Map %in% BMR.phy$tip.label)%>%
-  mutate(B=BMR/Mass, ln.mass=log(Mass), ln.B=log(B), ln.BMR= log(BMR), Inv.kTb=1/((Tb+273.15)*k))
-####################################################################
-#Fitting logarithm of metabolic rate by body mass and body temperature 
-#using Gillooly's model in endotherms
-pgls1 <-gls(ln.B~ln.mass+Migration, BMR, correlation=corPagel(1, BMR.phy, form = ~Species.Map))
-summary(pgls1)
-
-
-
-#Estimating residual of basal metabolic rate
-endo.res <- data.frame(Ta=BMR$MeanTemp, BMR.res=residuals(pgls1), Migration=BMR$Migration, Class=BMR$Class)
-lm1 <- lm(BMR.res~Ta, endo.res)
-summary(lm1)
-
-f2d <- endo.res%>%
-  ggplot(aes(x=Ta, y=BMR.res,colour=Class))+
-  geom_point(size=1)+
-  scale_shape_manual(values=c(1,4))+
-  geom_smooth(method="lm", size=0.8)+
-  scale_color_manual(values=c("#d3292f"))+
-  labs(x=expression("Ambient temperature (" * degree*"C)"), 
-       y=expression("Mass specific BMR"[residuals]),tag="d")+
-  #scale_y_continuous(limits = c(-1.2, 1.2),breaks = seq(-1, 1, 0.5))+
-  theme_classic()+
-  guides(y=guide_axis(cap='upper'))+
-  theme(plot.title = element_text(hjust = 0.5, size=8),
-        axis.text = element_text(size=8),
-        axis.title = element_text(size=8),
-        plot.tag = element_text(size=10, face = "bold"),
-        plot.tag.position = c(0.05, 1),
-        legend.position="none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", linewidth = 0.2),
-        axis.line = element_line(color = "black", linewidth = 0.2))
-
-cowplot::plot_grid(f2a,f2b,f2c,f2d, nrow=1, align="hv")
-ggsave(filename="./Outputs/Supplementary/Extended Fig6.pdf", height=4, width=4.27)
-ggsave(filename="./Outputs/MainFigures/Fig2abc.pdf", height=2.5, width=10.27)
-
 
 
 #############################################################
 #2.Latitudinal gradients in molecular rates across space
 rm(list=ls())
 gc()
-workdir <- "/Users/Tianlong/Desktop/VertMolRate"
+workdir <- "/Users/Tianlong/VertMolRate"
 setwd(workdir)
 #Loading packages
 library(raster)
@@ -950,7 +999,7 @@ library(RColorBrewer)
 library(spdep)
 library(sf)
 library(spatialreg)
-source(paste0(workdir, "/SourceFunctions/source_functions.r"))
+source(paste0(workdir, "/Scripts/source_functions.r"))
 
 #input spatial join data and grids
 load("./DataFiles/SpatialJoinFiles/grids.rdata")
@@ -965,9 +1014,9 @@ marine.raster <- raster("./DataFiles/GISLayers/marine.tif")
 terrestrial.raster <- raster("./DataFiles/GISLayers/terrestrial.tif")
 outline.poly <- read_sf("./DataFiles/GISLayers/outline_moll.shp")
 country.poly <- read_sf("./DataFiles/GISLayers/country.poly.merged.shp")
-ecos.poly <- read_sf("./DataFiles/GISLayers/wwf_ecos.shp")
-terrestrial.ecoregions <- read_sf("./DataFiles/GISLayers/wwf_terr_ecos_827.shp")
-marine.ecoregions <- read_sf("./DataFiles/GISLayers/wwf_meow_ecos_232.shp")
+ecos.poly <- read.csv("./DataFiles/GISLayers/ecos.poly.csv")
+terrestrial.ecoregions <- read.csv("./DataFiles/GISLayers/terrestrial.ecoregions.csv")
+marine.ecoregions <- read.csv("./DataFiles/GISLayers/marine.ecoregions.csv")
 
 
 #estimated mean substitution rate in grids
@@ -1074,9 +1123,6 @@ mean.subrate.ecos <- bind_rows(list(Fishes=fishes.ecos,
                                     Endotherms=endotherm.ecos%>%filter(Habitat=="Terrestrial"), 
                                     Ectotherms=ectotherm.ecos), .id="Group")%>%
   mutate(Group=factor(Group, levels = c("Fishes","Amphibians", "Reptiles","Mammals","Birds", "Ectotherms", "Endotherms")))
-
-
-##############
 
 
 #############################################################

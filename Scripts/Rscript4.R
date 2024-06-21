@@ -1,7 +1,13 @@
+################################
+# R script to examine relationships between diversification rates and molecular rates
+# Author: Tianlong Cai
+# Email: caitianlong@westlake.edu.cn
+
+#####################
 rm(list=ls())
 gc()
 #define work direction
-workdir <- "/Users/tianlong/Desktop/VertMolRate"
+workdir <- "/Users/tianlong/VertMolRate"
 setwd(workdir)
 
 library(tidyverse)
@@ -260,88 +266,5 @@ f1+f2+f3+f4+f5+f6+f7+f8+f9+f10+
 ggsave(filename="./Outputs/MainFigures/Fig4.pdf", height=3.8, width=8.27)
 
 
-#################
-rm(list=ls())
-gc()
-library(caper)
-library(phytools)
-workdir <- "/Users/tianlong/Desktop/VertMolRate"
-source(paste0(workdir, "/SourceFunctions/source_functions.r"))
 
-######
-subrate <- read.csv(paste0(workdir, "/DataFiles/MolEvolRate/VertMolRate.csv"))
-phy <- read.tree(paste0(workdir, "/DataFiles/trees/phy_all_sampled_vertebrates.tre"))
-phylo <- force.ultrametric(phy, method="nnls")#nnls or extend
-
-groups <- unique(subrate$Group)
-results <-vector("list", length = length(groups) * 2)
-names(results) <- paste(rep(groups, each = 2), c("dN", "dS"), sep = ".")
-prior <- list(R=list(V=diag(1),nu=0.002), 
-              G=list(G1=list(V=diag(1), nu=1, alpha.mu=0, alpha.V=diag(1)*1000)))
-
-for(group in groups){
-  data1 <- subrate%>%filter(Group == group)%>%
-    dplyr::select(Species, dN, dS, Div.Rate:NTR.DNA)%>%
-    filter(!is.na(NTR))
-  data2 <- subrate%>%filter(Group == group)%>%
-    dplyr::select(Species, dN, dS, Div.Rate:NTR.DNA)%>%
-    filter(!is.na(NTR.DNA))
-  
-  phy <- drop.tip(phylo, setdiff(phylo$tip.label, data1$Species))
-  
-  
-  fit1 <- MCMCglmm(log(ClaDS.Rate)~log(dS), 
-                   random=~Species, prior=prior,
-                   ginverse = list(Species=inverseA(phy)$Ainv),
-                   data=data1,verbose=TRUE, 
-                   nitt=11000, burnin=1000, thin=10, family = c("gaussian"))
-  fit2 <- MCMCglmm(log(ClaDS.Rate.DNA)~log(dS), 
-                   random=~Species, prior=prior,
-                   ginverse = list(Species=inverseA(phy)$Ainv),
-                   data=data2,verbose=TRUE, 
-                   nitt=11000, burnin=1000, thin=10, family = c("gaussian"))
-  fit3 <- MCMCglmm(log(NTR)~log(dS), 
-                   random=~Species, prior=prior,
-                   ginverse = list(Species=inverseA(phy)$Ainv),
-                   data=data1,verbose=TRUE, 
-                   nitt=11000, burnin=1000, thin=10, family = c("gaussian"))
-  fit4 <- MCMCglmm(log(NTR.DNA)~log(dS), 
-                   random=~Species, prior=prior,
-                   ginverse = list(Species=inverseA(phy)$Ainv),
-                   data=data2,verbose=TRUE, 
-                   nitt=11000, burnin=1000, thin=10, family = c("gaussian"))
-  fit5 <- MCMCglmm(log(ClaDS.Rate)~log(dN), 
-                   random=~Species, prior=prior,
-                   ginverse = list(Species=inverseA(phy)$Ainv),
-                   data=data1,verbose=TRUE, 
-                   nitt=11000, burnin=1000, thin=10, family = c("gaussian"))
-  fit6 <- MCMCglmm(log(ClaDS.Rate.DNA)~log(dN), 
-                   random=~Species, prior=prior,
-                   ginverse = list(Species=inverseA(phy)$Ainv),
-                   data=data2,verbose=TRUE, 
-                   nitt=11000, burnin=1000, thin=10, family = c("gaussian"))
-  fit7 <- MCMCglmm(log(NTR)~log(dN), 
-                   random=~Species, prior=prior,
-                   ginverse = list(Species=inverseA(phy)$Ainv),
-                   data=data1,verbose=TRUE, 
-                   nitt=11000, burnin=1000, thin=10, family = c("gaussian"))
-  fit8 <- MCMCglmm(log(NTR.DNA)~log(dN), 
-                   random=~Species, prior=prior,
-                   ginverse = list(Species=inverseA(phy)$Ainv),
-                   data=data2,verbose=TRUE, 
-                   nitt=11000, burnin=1000, thin=10, family = c("gaussian"))
-  
-  
-  results[[paste(group, "dS", sep = ".")]]  <- data.frame(Group=group, ClaDS.Slope=summary(fit1)$solutions[2,1], ClaDS.P=summary(fit1)$solutions[2,5], 
-                                                          ClaDS.DNA.Slope=summary(fit2)$solutions[2,1], ClaDS.DNA.P=summary(fit2)$solutions[2,5], 
-                                                          Nnode.Slope=summary(fit3)$solutions[2,1], Nnode.P=summary(fit3)$solutions[2,5], 
-                                                          Nnode.DNA.Slope=summary(fit4)$solutions[2,1], Nnode.DNA.P=summary(fit4)$solutions[2,5])
-  
-  results[[paste(group, "dN", sep = ".")]]  <- data.frame(Group=group, ClaDS.Slope=summary(fit5)$solutions[2,1], ClaDS.P=summary(fit5)$solutions[2,5], 
-                                                          ClaDS.DNA.Slope=summary(fit6)$solutions[2,1], ClaDS.DNA.P=summary(fit6)$solutions[2,5], 
-                                                          Nnode.Slope=summary(fit7)$solutions[2,1], Nnode.P=summary(fit7)$solutions[2,5], 
-                                                          Nnode.DNA.Slope=summary(fit8)$solutions[2,1], Nnode.DNA.P=summary(fit8)$solutions[2,5])
-  print(group)
-}
-results%>%bind_rows()%>%mutate(MolRate=rep(c("dN", "dS"), 5))
 
