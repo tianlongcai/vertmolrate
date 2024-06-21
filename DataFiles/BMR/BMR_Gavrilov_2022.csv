@@ -1,0 +1,1866 @@
+﻿Class,HighTaxon,Taxon,Species,Mass,BMR,Reference
+Birds,Paleognathae,Apterygi,Apteryx_australis,3137,830,McNab 1996
+Birds,Paleognathae,Apterygi,Apteryx_haastii,2529,951,McNab 1996
+Birds,Paleognathae,Apterygi,Apteryx_owenii,1377,710.5,McNab 1996
+Birds,Paleognathae,Casuari,Casuarius_bennetti,17600,4501,"Benedict, Fox, 1927"
+Birds,Paleognathae,Casuari,Dromaius_novaehollandiae,38900,6302,Maloney & Dawson 1994
+Birds,Paleognathae,Rhea,Rhea_americana,21700,6900,"Grawford, Lasiewski,1968"
+Birds,Paleognathae,Struthio,Struthio_camelus,92400,10483,Withers 1983
+Birds,Paleognathae,Tinami,Crypturellus_soui,220.8,140,"Londono et al., 2015"
+Birds,Paleognathae,Tinami,Nothoprocta_perdicaria,458,317.5,Withers et al. 1987
+Birds,Non‐Passer,Accipitri,Accipiter_cooperii,452,383,Wasser 1986
+Birds,Non‐Passer,Accipitri,Accipiter_nisus,135,171,Kendeigh et al. 1977
+Birds,Non‐Passer,Accipitri,Accipiter_striatus,173.4,94.55,"Londono et al., 2015"
+Birds,Non‐Passer,Accipitri,Accipiter_striatus,83,126,Wasser 1986
+Birds,Non‐Passer,Accipitri,Aquila_chrysaetos,3000,890,"Giaja, Males, 1928"
+Birds,Non‐Passer,Accipitri,Aquila_rapax,2398,813.5,Wasser 1986
+Birds,Non‐Passer,Accipitri,Buteo_buteo,1012,676,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Accipitri,Buteo_jamaicensis,1475,571.5,Wasser 1986
+Birds,Non‐Passer,Accipitri,Buteo_lineatus,658,380,Wasser 1986
+Birds,Non‐Passer,Accipitri,Geranoaetus_melanoleucus,2860,924.5,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Accipitri,Gypaetus_barbatus,5070,1989,"Benedict, Fox, 1927_"
+Birds,Non‐Passer,Accipitri,Ictinia_mississippiensis,232,164.5,Wasser 1986
+Birds,Non‐Passer,Accipitri,Pandion_haliaetus,1495,994,Wasser 1986
+Birds,Non‐Passer,Accipitri,Parabuteo_unicinctus,572,253.5,Wasser 1986
+Birds,Non‐Passer,Accipitri,Pernis_apivorus,652,420.5,Kendeigh et al. 1977
+Birds,Non‐Passer,Anseri,Aix_sponsa,448,404.5,Kendeigh et al. 1977
+Birds,Non‐Passer,Anseri,Anas_acuta,721,785.5,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Anseri,Anas_aucklandica,373.1,337.5,McNab 2003
+Birds,Non‐Passer,Anseri,Anas_castanea,483.3,343,McNab 2003
+Birds,Non‐Passer,Anseri,Anas_chlorotis,528.8,417.5,McNab 2003
+Birds,Non‐Passer,Anseri,Anas_crecca,250,300,Prinzinger & Hanssler1980
+Birds,Non‐Passer,Anseri,Anas_gracilis,393.7,599,McNab 2003
+Birds,Non‐Passer,Anseri,Anas_nesiotis,371.1,297,McNab 2003
+Birds,Non‐Passer,Anseri,Anas_platyrhynchos,1020,732,Kendeigh et al. 1977
+Birds,Non‐Passer,Anseri,Anser_anser,3250,1950.5,Kendeigh et al. 1977
+Birds,Non‐Passer,Anseri,Anser_caerulescens,2930,1395,Boisemena et al. 1992
+Birds,Non‐Passer,Anseri,Anser_canagicus,2609,1612.5,Gavrilov & Dolnik 1985
+Birds,Non‐Passer,Anseri,Aythya_affinis,561.5,516.5,McNab 2003
+Birds,Non‐Passer,Anseri,Aythya_collaris,681.5,592,McNab 2003
+Birds,Non‐Passer,Anseri,Aythya_ferina,816,1047,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Anseri,Aythya_fuligula,574,486.5,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Anseri,Aythya_novaeseelandiae,488.4,420,McNab 2003
+Birds,Non‐Passer,Anseri,Aythya_nyroca,440,589,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Anseri,Branta_bernicla,1253,1091,Daan et al. 1990
+Birds,Non‐Passer,Anseri,Chauna_chavaria,2620,1238.5,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Anseri,Cygnus_buccinator,8800,3646.5,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Anseri,Cygnus_olor,8538,5606,Bech 1980
+Birds,Non‐Passer,Anseri,Hymenolaimus_malacorhynchos,717.1,565.5,McNab 2003
+Birds,Non‐Passer,Anseri,Lophodytes_cucullatus,413.3,351.5,McNab 2003
+Birds,Non‐Passer,Anseri,Mareca_penelope,723,507.5,Kendeigh et al. 1977
+Birds,Non‐Passer,Anseri,Mareca_strepera,791,1116.5,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Anseri,Netta_rufina,1237,1278,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Anseri,Somateria_mollissima,1660,1099.5,Jenssen et al. 1989
+Birds,Non‐Passer,Anseri,Spatula_clypeata,554,698,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Anseri,Spatula_querquedula,289,402,Prinzinger & Hanssler1980
+Birds,Non‐Passer,Anseri,Spatula_rhynchotis,508,473.5,McNab 2003
+Birds,Non‐Passer,Anseri,Tadorna_variegata,1193.6,602,McNab 2003
+Birds,Non‐Passer,Apodi,Adelomyia_melanogenys,3.5,14.55,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Aerodramus_germani,10.8,40.04,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Apodi,Aerodramus_vanikorensis,11.6,21.5,McNab & Bonaccorso 1995
+Birds,Non‐Passer,Apodi,Aglaeactis_castelnaudii,6.9,18.18,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Aglaeactis_cupripennis,7.2,21.82,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Apus_apus,44.9,78.5,Kendeigh et al. 1977
+Birds,Non‐Passer,Apodi,Archilochus_alexandri,3.3,11.5,"Lassiewski, 1963"
+Birds,Non‐Passer,Apodi,Boissonneaua_matthewsii,7.5,36.36,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Calypte_anna,4.8,21,"Lassiewski, 1963"
+Birds,Non‐Passer,Apodi,Calypte_costae,3.2,9.5,"Lassiewski, 1963"
+Birds,Non‐Passer,Apodi,Chaetocercus_mulsant,3.6,12.73,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Chalcostigma_ruficeps,3.6,27.27,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Coeligena_coeligena,7.1,34.55,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Coeligena_violifer,7.8,25.45,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Colibri_coruscans,8.4,27.27,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Colibri_thalassinus,6.2,29.09,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Collocalia_esculenta,6.8,14.5,McNab & Bonaccorso 1995
+Birds,Non‐Passer,Apodi,Doryfera_ludovicae,5.9,29.09,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Eugenes_fulgens,6.6,18.5,"Lassiewski, Lassiewski, 1963"
+Birds,Non‐Passer,Apodi,Eulampis_jugularis,8.4,69.5,"Hainsworth, Wolf, 1970"
+Birds,Non‐Passer,Apodi,Eutoxeres_condamini,10,40,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Glaucis_hirsutus,6.9,32.73,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Haplophaedia_aureliae,4.8,25.45,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Heliangelus_amethysticollis,5.8,27.27,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Heliodoxa_leadbeateri,7.5,34.55,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Lafresnaya_lafresnayi,5.7,25.45,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Lampornis_clemenciae,7.9,18.5,"Lassiewski, Lassiewski, 1963"
+Birds,Non‐Passer,Apodi,Metallura_tyrianthina,3.8,18.18,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Ocreatus_underwoodii,3.3,14.55,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Oreotrochilus_estella,8.4,34.5,Carpenter 1976
+Birds,Non‐Passer,Apodi,Patagona_gigas,19.1,51.5,Lasiewski et al. 1967
+Birds,Non‐Passer,Apodi,Phaethornis_guy,5.9,23.64,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Phaethornis_hispidus,4.9,25.45,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Phaethornis_koepckeae,5.4,23.64,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Phaethornis_superciliosus,5.2,25.45,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Phlogophilus_harterti,2.8,27.27,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Pterophanes_cyanopterus,10.8,20,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Ramphomicron_microrhynchum,3.9,14.55,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Schistes_geoffroyi,4.8,32.73,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Selasphorus_calliope,3,12,"Lasiewski, 1963"
+Birds,Non‐Passer,Apodi,Selasphorus_rufus,3.8,12.5,"Lassiewski, 1963"
+Birds,Non‐Passer,Apodi,Selasphorus_sasin,3.7,12.5,"Lassiewski, 1963"
+Birds,Non‐Passer,Apodi,Sephanoides_sephaniodes,5.7,18.5,Lopez‐Calleja & Bozinovic 1995
+Birds,Non‐Passer,Apodi,Streptoprocne_rutila,16.1,43.64,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Taphrospilus_hypostictus,7.5,23.64,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Thalurania_furcata,3.8,23.64,"Londono et al., 2015"
+Birds,Non‐Passer,Apodi,Threnetes_leucurus,9.4,27.27,"Londono et al., 2015"
+Birds,Non‐Passer,Caprimulgi,Caprimulgus_europaeus,77.4,116,"Gavrilov, Dolnik 1985"
+Birds,Non‐Passer,Caprimulgi,Caprimulgus_macrurus,73.43,73.49,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Caprimulgi,Caprimulgus_macrurus,68.6,56,McNab & Bonaccorso 1995
+Birds,Non‐Passer,Caprimulgi,Chordeiles_minor,72,79.5,Lasiewski & Dawson 1964
+Birds,Non‐Passer,Caprimulgi,Eurostopodus_argus,88,73.5,Dawson & Fisher 1969
+Birds,Non‐Passer,Caprimulgi,Eurostopodus_argus,88,73.5,"Dawson, Fisher, 1969"
+Birds,Non‐Passer,Caprimulgi,Eurostopodus_mystacalis,162,86.5,McNab & Bonaccorso 1995
+Birds,Non‐Passer,Caprimulgi,Lyncornis_macrotis,162.8,147.4,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Caprimulgi,Nyctidromus_albicollis,43,83,"Scholander et al,,1950"
+Birds,Non‐Passer,Caprimulgi,Phalaenoptilus_nuttallii,40,32,Bartholomew et al. 1962
+Birds,Non‐Passer,Caprimulgi,Podargus_ocellatus,145,102,Lasiewski et al. 1970
+Birds,Non‐Passer,Caprimulgi,Podargus_papuensis,314.6,192.5,McNab & Bonaccorso 1995
+Birds,Non‐Passer,Caprimulgi,Podargus_strigoides,380.3,186,Bech & Nichol 1999
+Birds,Non‐Passer,Caprimulgi,Uropsalis_lyra,77.5,94.55,"Londono et al., 2015"
+Birds,Non‐Passer,Caprimulgi,Uropsalis_segmentata,34.7,98.18,"Londono et al., 2015"
+Birds,Non‐Passer,Catharti,Cathartes_aura,1100,515,"Enger, 1957"
+Birds,Non‐Passer,Catharti,Coragyps_atratus_,1700,798,"Enger, 1957"
+Birds,Non‐Passer,Catharti,Coragyps_atratus,2120,1171.5,"Larochelle et al., 1982"
+Birds,Non‐Passer,Charadrii,Alca_torda,589,648,Bryant & Furness 1995
+Birds,Non‐Passer,Charadrii,Alle_alle,152.5,370,Gabrielsen et al. 1991
+Birds,Non‐Passer,Charadrii,Arenaria_interpres,90,166,Kersten & Piersma 1987
+Birds,Non‐Passer,Charadrii,Calidris_canutus,130,158.5,Piersma et al. 1995
+Birds,Non‐Passer,Charadrii,Cepphus_grylle,342.2,546,Gabrielsen et al. 1991
+Birds,Non‐Passer,Charadrii,Charadrius_dubius,36,75,Kendeigh et al. 1977
+Birds,Non‐Passer,Charadrii,Chroicocephalus_ridibundus,306,335,Kendeigh et al. 1977
+Birds,Non‐Passer,Charadrii,Fratercula_arctica,329,462.5,Bryant & Furness 1995
+Birds,Non‐Passer,Charadrii,Haematopus_ostralegus,554,524,Kersten & Piersma 1987
+Birds,Non‐Passer,Charadrii,Jacana_jacana,107,181,Wiersma et al. 2007
+Birds,Non‐Passer,Charadrii,Larus_argentatus,924,891.5,Bryant & Furness 1995
+Birds,Non‐Passer,Charadrii,Larus_canus,431,405,Kendeigh et al. 1977
+Birds,Non‐Passer,Charadrii,Larus_hyperboreus,1600,2664,"Scholander et al,, 1950"
+Birds,Non‐Passer,Charadrii,Larus_pacificus,1210,1107.5,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Charadrii,Limosa_lapponica,240,273.5,Daan et al. 1990
+Birds,Non‐Passer,Charadrii,Pluvialis_apricaria,151,223.5,Daan et al. 1990
+Birds,Non‐Passer,Charadrii,Pluvialis_squatarola,226,320.5,Kersten & Piersma 1987
+Birds,Non‐Passer,Charadrii,Rhodostethia_rosea,155,191.5,Gavrilov 1996
+Birds,Non‐Passer,Charadrii,Rissa_tridactyla,305,494,Bryant & Furness 1995
+Birds,Non‐Passer,Charadrii,Scolopax_minor,156.7,192.5,Vander Haegen et al. 1994
+Birds,Non‐Passer,Charadrii,Scolopax_rusticola,430,389,Kendeigh et al. 1977
+Birds,Non‐Passer,Charadrii,Stercorarius_maccormicki,1130,1547.5,"Ricklefs, Mattew, 1983"
+Birds,Non‐Passer,Charadrii,Stercorarius_parasiticus,351,414.5,Bryant & Furness 1995
+Birds,Non‐Passer,Charadrii,Stercorarius_skua,970,855,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Charadrii,Stercorarius_skua,1159,1121,Bryant & Furness 1995
+Birds,Non‐Passer,Charadrii,Thinocorus_rumicivorus,55.5,56,Ehlers & Morton 1982
+Birds,Non‐Passer,Charadrii,Tringa_ochropus,90,166,"Prinzinger, Hanssler, 1980"
+Birds,Non‐Passer,Charadrii,Turnix_suscitator,66,73.25,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Charadrii,Uria_aalge,771,812.5,Bryant & Furness 1995
+Birds,Non‐Passer,Charadrii,Uria_lomvia,819,912.5,Bryant & Furness 1995
+Birds,Non‐Passer,Ciconii,Jabiru_mycteria,5470,2372.5,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Ciconii,Leptoptilos_javanicus,5710,2678,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Ciconii,Mycteria_americana,2500,1753.5,"Kahl, 1962"
+Birds,Non‐Passer,Colii,Colius_castanotus,69,83,Prinzinger et al. 1981
+Birds,Non‐Passer,Colii,Colius_colius,35.1,32,McKechnie & Lovegrove 2001b
+Birds,Non‐Passer,Colii,Colius_striatus,51,42.5,McKechnie & Lovegrove 2001a
+Birds,Non‐Passer,Colii,Urocolius_indicus,53.5,129,"Hoffmann, Prinzinger, 1984"
+Birds,Non‐Passer,Colii,Urocolius_macrourus,51.3,43,Prinzinger 1988
+Birds,Non‐Passer,Columbi,Caloenas_nicobarica,613,326.5,McNab 2000
+Birds,Non‐Passer,Columbi,Chalcophaps_indica,115.95,132.76,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Columbi,Chalcophaps_indica,124,142.5,Schleucher & Withers 2002
+Birds,Non‐Passer,Columbi,Columba_leucomela,456,438.5,Schleucher & Withers 2002
+Birds,Non‐Passer,Columbi,Columba_livia,368,298.5,Gavrilov & Dol’nik 1985
+Birds,Non‐Passer,Columbi,Columba_palumbus,493,357,"Gavrilov, Dolnik 1985"
+Birds,Non‐Passer,Columbi,Columba_vitiensis,467.9,260,McNab 2000
+Birds,Non‐Passer,Columbi,Columbina_inca,41.5,47,MacMillen & Trost 1967
+Birds,Non‐Passer,Columbi,Columbina_inca,40.5,45.5,"MacMillen, Trost, 1965"
+Birds,Non‐Passer,Columbi,Columbina_talpacoti,45.7,74.5,Wiersma et al. 2007
+Birds,Non‐Passer,Columbi,Drepanoptila_holosericea,198,148.5,Schluecher 2002
+Birds,Non‐Passer,Columbi,Ducula_pacifica,333.4,143,McNab 2000
+Birds,Non‐Passer,Columbi,Ducula_pinon,583.8,320.5,McNab 2000
+Birds,Non‐Passer,Columbi,Ducula_pistrinaria,394.2,193,McNab 2000
+Birds,Non‐Passer,Columbi,Ducula_radiata,333.6,253,McNab 2000
+Birds,Non‐Passer,Columbi,Ducula_rubricera,418.8,245.5,McNab 2000
+Birds,Non‐Passer,Columbi,Ducula_rufigaster,376.7,229,McNab 2000
+Birds,Non‐Passer,Columbi,Ducula_spilorrhoa,453.6,247,McNab 2000
+Birds,Non‐Passer,Columbi,Ducula_zoeae,456.2,306.5,McNab 2000
+Birds,Non‐Passer,Columbi,Geopelia_cuneata,39,48,Schleucher & Withers 2002
+Birds,Non‐Passer,Columbi,Geopelia_placida,52,64,Schleucher & Withers 2002
+Birds,Non‐Passer,Columbi,Geopelia_striata,51.56,70.37,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Columbi,Geophaps_plumifera,81,71.5,"Dawson, Bennett, 1973"
+Birds,Non‐Passer,Columbi,Geophaps_plumifera,81,76,Withers & Williams 1990
+Birds,Non‐Passer,Columbi,Geophaps_smithii,198,157,Schleucher & Withers 2002
+Birds,Non‐Passer,Columbi,Geotrygon_montana,117.9,149.09,"Londono et al., 2015"
+Birds,Non‐Passer,Columbi,Geotrygon_montana,107.3,121.5,Wiersma et al. 2007
+Birds,Non‐Passer,Columbi,Goura_cristata,2313.4,768,McNab 2000
+Birds,Non‐Passer,Columbi,Gymnophaps_albertisii,241.6,170,McNab 2000
+Birds,Non‐Passer,Columbi,Hemiphaga_novaeseelandiae,435.6,339,McNab 2000
+Birds,Non‐Passer,Columbi,Leptotila_rufaxilla,150.6,125.45,"Londono et al., 2015"
+Birds,Non‐Passer,Columbi,Leptotila_verreauxi,131,159.5,Vleck & Vleck 1979
+Birds,Non‐Passer,Columbi,Leucosarcia_melanoleuca,468,301,McNab 2000
+Birds,Non‐Passer,Columbi,Ocyphaps_lophotes,187,195.5,Schleucher & Withers 2002
+Birds,Non‐Passer,Columbi,Oena_capensis,36,44,Schleucher 2001
+Birds,Non‐Passer,Columbi,Pampusana_beccarii,68.8,96,"McNab, 2009"
+Birds,Non‐Passer,Columbi,Patagioenas_leucocephala,251.9,242,McNab 2000
+Birds,Non‐Passer,Columbi,Phaps_chalcoptera,304,275,Schleucher & Withers 2002
+Birds,Non‐Passer,Columbi,Phaps_elegans,190,223,Schleucher & Withers 2002
+Birds,Non‐Passer,Columbi,Phaps_histrionica,257,233.5,Schleucher & Withers 2002
+Birds,Non‐Passer,Columbi,Ptilinopus_melanospilus,98,88,Schleucher & Withers 2002
+Birds,Non‐Passer,Columbi,Ptilinopus_perlatus,196,191,McNab 2000
+Birds,Non‐Passer,Columbi,Ptilinopus_superbus,120.4,136,Schleucher 2002
+Birds,Non‐Passer,Columbi,Spilopelia_chinensis,143.8,166.63,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Columbi,Spilopelia_senegalensis,108,152.5,Kendeigh et al. 1977
+Birds,Non‐Passer,Columbi,Streptopelia_decaocto,170,171,Daan et al. 1990
+Birds,Non‐Passer,Columbi,Streptopelia_roseogrisea,150,159,"Benedict, Riddle, 1928"
+Birds,Non‐Passer,Columbi,Streptopelia_tranquebarica,96.37,125.65,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Columbi,Streptopelia_turtur,154,205,Kendeigh et al. 1977
+Birds,Non‐Passer,Columbi,Zenaida_macroura,91.4,116.5,Hudson & Brush 1964
+Birds,Non‐Passer,Columbi,Zentrygon_frenata,322.4,160,"Londono et al., 2015"
+Birds,Non‐Passer,Coracii,Alcedo_atthis,24.1,46.82,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Coracii,Alcedo_atthis,34.3,68,Kendeigh et al. 1977
+Birds,Non‐Passer,Coracii,Alcedo_meninting,18.28,40.04,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Coracii,Baryphthengus_martii,127.1,100,"Londono et al., 2015"
+Birds,Non‐Passer,Coracii,Ceryle_rudis,70.3,103.21,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Coracii,Ceyx_erithaca,12.89,30.33,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Coracii,Chloroceryle_aenea,11.8,31.5,Wiersma et al. 2007
+Birds,Non‐Passer,Coracii,Dacelo_novaeguineae,336,201,Buttemer et al. 2003
+Birds,Non‐Passer,Coracii,Halcyon_coromanda,66.5,92.17,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Coracii,Halcyon_smyrnensis,71.59,80.59,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Coracii,Lacedo_pulchella,49.28,57,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Coracii,Merops_leschenaulti,23.53,55.34,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Coracii,Merops_viridis,33.8,53.5,Bryant et al. 1984
+Birds,Non‐Passer,Coracii,Momotus_aequatorialis,158.5,105.45,"Londono et al., 2015"
+Birds,Non‐Passer,Coracii,Momotus_momota,123.1,94.55,"Londono et al., 2015"
+Birds,Non‐Passer,Coracii,Momotus_momota,102.4,88.5,Wiersma et al. 2007
+Birds,Non‐Passer,Coracii,Nyctyornis_athertoni,89.32,117.86,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Coracii,Pelargopsis_capensis,161.39,135.42,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Coracii,Phoeniculus_purpureus,74.1,62.5,Boix‐Hinzen & Lovegrove 1998
+Birds,Non‐Passer,Coracii,Rhyticeros_plicatus,1781.6,816.5,McNab 2001
+Birds,Non‐Passer,Coracii,Todus_mexicanus,6.3,20.5,Merola‐Zwartjes & Ligon 2000
+Birds,Non‐Passer,Coracii,Upupa_epops,67,99.5,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Cuculi,Cacomantis_merulinus,24.63,41.73,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Cuculi,Cacomantis_sonneratii,31.3,54.07,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Cuculi,Cacomantis_variolosus,23.8,22,"Hails, 1983"
+Birds,Non‐Passer,Cuculi,Centropus_bengalensis,104.5,101.96,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Cuculi,Centropus_senegalensis,175,271.5,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Cuculi,Centropus_sinensis,240.4,200.22,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Cuculi,Clamator_coromandus,54.8,57.41,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Cuculi,Cuculus_canorus,111.6,151,Kendeigh et al. 1977
+Birds,Non‐Passer,Cuculi,Eudynamys_scolopaceus,188,296,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Cuculi,Geococcyx_californianus,294.6,227.5,Ohmart & Lasiewski 1971
+Birds,Non‐Passer,Cuculi,Opisthocomus_hoazin,598,288,Grajal 1991
+Birds,Non‐Passer,Cuculi,Phaenicophaeus_tristis,111,125.18,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Falconi,Daptrius_ater,362,216,Wasser 1986
+Birds,Non‐Passer,Falconi,Falco_mexicanus,430,349.5,Wasser 1986
+Birds,Non‐Passer,Falconi,Falco_sparverius,116,119,Wasser 1986
+Birds,Non‐Passer,Falconi,Falco_subbuteo,208,233.5,Kendeigh et al. 1977
+Birds,Non‐Passer,Falconi,Falco_tinnunculus,131,139.5,Gavrilov & Dol’nik 1985
+Birds,Non‐Passer,Falconi,Micrastur_gilvicollis,170.5,189.09,"Londono et al., 2015"
+Birds,Non‐Passer,Falconi,Micrastur_ruficollis,304.1,130.91,"Londono et al., 2015"
+Birds,Non‐Passer,Falconi,Microhierax_caerulescens,39.1,74.82,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Gabuli,Micromonacha_lanceolata,21.9,65.45,"Londono et al., 2015"
+Birds,Non‐Passer,Gabuli,Notharchus_macrorhynchos,43.2,57,Wiersma et al. 2007
+Birds,Non‐Passer,Galli,Alectoris_chukar,475,353,Marder & Bernstein 1983
+Birds,Non‐Passer,Galli,Alectoris_graeca,633,456,Kendeigh et al. 1977
+Birds,Non‐Passer,Galli,Arborophila_chloropus,251.9,200.88,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Galli,Bonasa_umbellus,644,429,"Rasmussen, Brander, 1973"
+Birds,Non‐Passer,Galli,Callipepla_californica,137.1,138,Hudson & Brush 1964
+Birds,Non‐Passer,Galli,Callipepla_gambelii,126.1,136,Weathers 1981
+Birds,Non‐Passer,Galli,Colinus_virginianus,194,200.5,"Lasiewski, Dawson, 1967"
+Birds,Non‐Passer,Galli,Coturnix_coturnix,97,160.5,Kendeigh et al. 1977
+Birds,Non‐Passer,Galli,Coturnix_japonica,115,176,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Galli,Coturnix_pectoralis,95.8,114.5,Roberts & Baudinette 1986
+Birds,Non‐Passer,Galli,Crax_alberti,2800,1186.5,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Galli,Dendragapus_obscurus,1131,892.5,Pekins et al. 1992
+Birds,Non‐Passer,Galli,Excalfactoria_chinensis,44.9,66,Roberts & Baudinette 1986
+Birds,Non‐Passer,Galli,Francolinus_pintadeanus,286.8,166.21,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Galli,Gallus_gallus,835.3,566.04,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Galli,Lagopus_lagopus,658,505,Mortensen & Blix 1986
+Birds,Non‐Passer,Galli,Lagopus_leucura,326,425,Johnson 1968
+Birds,Non‐Passer,Galli,Lagopus_muta,465,493,Mortensen & Blix 1986
+Birds,Non‐Passer,Galli,Odontophorus_stellatus,296.5,209.09,"Londono et al., 2015"
+Birds,Non‐Passer,Galli,Penelope_purpurascens,2040,977,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Galli,Perdix_perdix,501,387.5,Kendeigh et al. 1977
+Birds,Non‐Passer,Galli,Tetrao_urogallus,3900,2146,Kendeigh et al. 1977
+Birds,Non‐Passer,Grui,Amaurornis_phoenicurus,195.2,142.85,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Grui,Antigone_canadensis,3890,1465.5,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Grui,Aramides_cajaneus,374.3,277.5,McNab & Ellis 2006
+Birds,Non‐Passer,Grui,Atlantisia_rogersi,39.4,40.5,Ryan et al. 1989
+Birds,Non‐Passer,Grui,Crex_crex,96,141.5,Kendeigh et al. 1977
+Birds,Non‐Passer,Grui,Fulica_atra,412,368,Kendeigh et al. 1977
+Birds,Non‐Passer,Grui,Gallinula_tenebrosa,512.4,421,McNab & Ellis 2006
+Birds,Non‐Passer,Grui,Gallirallus_australis,813.5,329,McNab & Ellis 2006
+Birds,Non‐Passer,Grui,Gallirallus_owstoni,198.8,165,McNab & Ellis 2006
+Birds,Non‐Passer,Grui,Gallirallus_philippensis,171.7,175.5,McNab & Ellis 2006
+Birds,Non‐Passer,Grui,Grus_paradisea,4030,1919,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Grui,Megacrex_inepta,856.6,241.5,McNab & Ellis 2006
+Birds,Non‐Passer,Grui,Porphyrio_hochstetteri,2758.3,1239.5,McNab & Ellis 2006
+Birds,Non‐Passer,Grui,Porphyrio_porphyrio,919.3,665.5,McNab & Ellis 2006
+Birds,Non‐Passer,Grui,Porzana_cinerea,47.9,89,McNab & Ellis 2006
+Birds,Non‐Passer,Grui,Tribonyx_mortierii,954.4,573.5,McNab & Ellis 2006
+Birds,Non‐Passer,Grui,Tribonyx_ventralis,309.2,290.5,McNab & Ellis 2006
+Birds,Non‐Passer,Grui,Turnix_suscitator,58.1,69.5,Prinzinger et al. 1993
+Birds,Non‐Passer,Pelecani,Ardea_herodias,1870,1116.5,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Pelecani,Ardeola_bacchus,202.4,176.63,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pelecani,Botaurus_lentiginosus,600,488.5,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Pelecani,Bubulcus_ibis,299.2,237,Ellis 1980
+Birds,Non‐Passer,Pelecani,Egretta_caerulea,290.3,179.5,Ellis 1980
+Birds,Non‐Passer,Pelecani,Egretta_thula,314,244.5,Ellis 1980
+Birds,Non‐Passer,Pelecani,Egretta_tricolor,309,306,Ellis 1980
+Birds,Non‐Passer,Pelecani,Eudocimus_albus,940,741.5,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Pelecani,Ixobrychus_cinnamomeus,121.6,115.26,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pelecani,Ixobrychus_sinensis,70.1,61.64,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pelecani,Pelecanus_conspicillatus,5090,3262.5,"Benedict, Pox, 1927"
+Birds,Non‐Passer,Pelecani,Pelecanus_occidentalis,3510,2303,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Phoenicop,Phoenicopterus_roseus,3040,1875.5,"Benedict, Fox, 1927"
+Birds,Non‐Passer,Pici,Andigena_hypoglauca,282.9,310.91,"Londono et al., 2015"
+Birds,Non‐Passer,Pici,Aulacorhynchus_prasinus,137,178.18,"Londono et al., 2015"
+Birds,Non‐Passer,Pici,Aulacorhynchus_prasinus,174.7,149.5,McNab 2001
+Birds,Non‐Passer,Pici,Aulacorhynchus_sulcatus,131.7,122,McNab 2001
+Birds,Non‐Passer,Pici,Bucco_macrodactylus,23.7,32.73,"Londono et al., 2015"
+Birds,Non‐Passer,Pici,Celeus_loricatus,83.1,123.5,Wiersma et al. 2007
+Birds,Non‐Passer,Pici,Celeus_spectabilis,113,178.18,"Londono et al., 2015"
+Birds,Non‐Passer,Pici,Chrysocolaptes_lucidus,146.45,185.23,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pici,Colaptes_rivolii,81.5,169.09,"Londono et al., 2015"
+Birds,Non‐Passer,Pici,Dendrocopos_major,98,161,Kendeigh et al. 1977
+Birds,Non‐Passer,Pici,Dinopium_javanense,85.14,123.65,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pici,Dryobates_pubescens,23.3,59.5,Liknes & Swanson 1996
+Birds,Non‐Passer,Pici,Galbula_cyanescens,24,41.82,"Londono et al., 2015"
+Birds,Non‐Passer,Pici,Gecinulus_grantia,72.1,104.16,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pici,Hemicircus_canente,41.05,77.98,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pici,Jynx_torquilla,31.8,64.5,Kendeigh et al. 1977
+Birds,Non‐Passer,Pici,Malacoptila_fulvogularis,49.6,96.36,"Londono et al., 2015"
+Birds,Non‐Passer,Pici,Malacoptila_semicincta,47.1,60,"Londono et al., 2015"
+Birds,Non‐Passer,Pici,Melanerpes_rubricapillus,48.7,96.5,Wiersma et al. 2007
+Birds,Non‐Passer,Pici,Micropternus_brachyurus,79.37,114.3,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pici,Monasa_morphoeus,67.5,81.82,"Londono et al., 2015"
+Birds,Non‐Passer,Pici,Monasa_nigrifrons,86,83.64,"Londono et al., 2015"
+Birds,Non‐Passer,Pici,Picumnus_rufiventris,21.9,47.27,"Londono et al., 2015"
+Birds,Non‐Passer,Pici,Picus_canus,152.13,183.98,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pici,Picus_chlorolophus,62,91.06,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pici,Picus_vittatus,119.75,155.55,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pici,Psilopogon_australis,28.3,61.7,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pici,Psilopogon_faiostrictus,75.3,166.85,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pici,Psilopogon_lineatus,116.7,131.65,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pici,Pteroglossus_aracari,200.7,160,McNab 2001
+Birds,Non‐Passer,Pici,Pteroglossus_bailloni,133,126.5,McNab 2001
+Birds,Non‐Passer,Pici,Ramphastos_dicolorus,328.9,227.5,McNab 2001
+Birds,Non‐Passer,Pici,Ramphastos_toco,582,436,McNab 2001
+Birds,Non‐Passer,Pici,Ramphastos_tucanus,420.3,307.5,McNab 2001
+Birds,Non‐Passer,Pici,Sasia_ochracea,8.35,33.59,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Pici,Selenidera_reinwardtii,173.6,218.18,"Londono et al., 2015"
+Birds,Non‐Passer,Pici,Trachyphonus_darnaudii,36.6,39.5,McNab 2001
+Birds,Non‐Passer,Pici,Veniliornis_nigriceps,43.4,89.09,"Londono et al., 2015"
+Birds,Non‐Passer,Podicipedi,Podiceps_nigricollis,317,385.5,Ellis & Jehl 2003
+Birds,Non‐Passer,Procellarii,Aphrodroma_brevirostris,315,319,Brown & Adams 1984
+Birds,Non‐Passer,Procellarii,Diomedea_exulans,8130,3658.5,Brown & Adams 1984
+Birds,Non‐Passer,Procellarii,Fulmarus_glacialis,728,687.5,Bryant & Furness 1995
+Birds,Non‐Passer,Procellarii,Halobaena_caerulea,191,319,Brown 1988
+Birds,Non‐Passer,Procellarii,Macronectes_giganteus,4780,2404,Brown & Adams 1984
+Birds,Non‐Passer,Procellarii,Oceanodroma_furcata,44.6,79.5,Vleck & Kenagy 1980
+Birds,Non‐Passer,Procellarii,Oceanodroma_leucorhoa,42,110.5,"Iversen, Krog, 1972; Ricklefs et al, 1980"
+Birds,Non‐Passer,Procellarii,Pelecanoides_georgicus,127,177,"Adams, Brown, 1984"
+Birds,Non‐Passer,Procellarii,Phoebastria_immutabilis,2522,1345,"Grant, Whittow, 1983"
+Birds,Non‐Passer,Procellarii,Phoebetria_fusca,2875,1489.5,Adams & Brown 1984
+Birds,Non‐Passer,Procellarii,Procellaria_aequinoctialis,1287,1135.5,Brown & Adams 1984
+Birds,Non‐Passer,Procellarii,Procellaria_cinerea,1014,902,Brown & Adams 1984
+Birds,Non‐Passer,Procellarii,Pterodroma_hypoleuca,169,228,"Grant, Whittow, 1983"
+Birds,Non‐Passer,Procellarii,Pterodroma_macroptera,479,485.5,Brown 1988
+Birds,Non‐Passer,Procellarii,Pterodroma_mollis,274,314.5,Adams & Brown 1984
+Birds,Non‐Passer,Procellarii,Puffinus_puffinus,367,419,Bryant & Furness 1995
+Birds,Non‐Passer,Procellarii,Thalassarche_chrysostoma,3753,1531.5,Adams & Brown 1984
+Birds,Non‐Passer,Psittaci,Agapornis_fischeri,56.7,95,Gavrilov & Dol’nik 1985
+Birds,Non‐Passer,Psittaci,Agapornis_roseicollis,48.1,83.5,Kendeigh et al. 1977
+Birds,Non‐Passer,Psittaci,Barnardius_zonarius,131.8,142.5,Williams et al. 1991
+Birds,Non‐Passer,Psittaci,Bolborhynchus_lineola,54.5,106.5,"Bucher, 1981"
+Birds,Non‐Passer,Psittaci,Bolborhynchus_orbygnesius,46.4,69.09,"Londono et al., 2015"
+Birds,Non‐Passer,Psittaci,Brotogeris_jugularis,63.5,103.5,Wiersma et al. 2007
+Birds,Non‐Passer,Psittaci,Cyanoramphus_auriceps,52.9,88.5,McNab & Salisbury 1995
+Birds,Non‐Passer,Psittaci,Cyanoramphus_novaezelandiae,56.1,112,McNab & Salisbury 1995
+Birds,Non‐Passer,Psittaci,Cyanoramphus_unicolor,129.4,194.5,McNab & Salisbury 1995
+Birds,Non‐Passer,Psittaci,Loriculus_galgulus,27,93,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Psittaci,Loriculus_vernalis,26.7,58.45,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Psittaci,Melopsittacus_undulatus,33.7,66.5,Weathers & Schoenbaechler 1976
+Birds,Non‐Passer,Psittaci,Myiopsitta_monachus,80.4,94.5,Weathers & Caccamise 1978
+Birds,Non‐Passer,Psittaci,Neophema_petrophila,48.4,114,Williams et al. 1991
+Birds,Non‐Passer,Psittaci,Neophema_pulchella,40,104.5,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Psittaci,Neopsephotus_bourkii,40,97,Prinzinger & Hanssler 1980
+Birds,Non‐Passer,Psittaci,Psittacula_alexandri,114.8,151.17,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Psittaci,Trichoglossus_haematodus,137.1,215,Williams et al. 1991
+Birds,Non‐Passer,Pteroclidi,Pterocles_orientalis,386.4,350.5,Hinsley et al. 1993
+Birds,Non‐Passer,Sphenisci,Aptenodytes_forsteri,23370,7709.5,Pinshow et al. 1976
+Birds,Non‐Passer,Sphenisci,Aptenodytes_patagonicus,11080,3933.5,Gavrilov 1977
+Birds,Non‐Passer,Sphenisci,Eudyptes_chrysocome,2330,1050,Gavrilov 1977; Brown 1984
+Birds,Non‐Passer,Sphenisci,Eudyptes_chrysolophus,3870,1556.5,Gavrilov 1977; Brown 1984
+Birds,Non‐Passer,Sphenisci,Eudyptes_pachyrhynchus,2600,1246,Drent & Stonehouse 1971
+Birds,Non‐Passer,Sphenisci,Eudyptula_minor,1100,574.5,Baudinette et al. 1986
+Birds,Non‐Passer,Sphenisci,Eudyptula_minor,1150,1190.5,"Pinshow et al,, 1977"
+Birds,Non‐Passer,Sphenisci,Megadyptes_antipodes,4800,2072.5,Drent & Stonehouse 1971
+Birds,Non‐Passer,Sphenisci,Pygoscelis_adeliae,3970,2202,Kooyman et al. 1976
+Birds,Non‐Passer,Sphenisci,Pygoscelis_papua,5775,5950.5,"Scholander et al,,1940"
+Birds,Non‐Passer,Sphenisci,Spheniscus_humboldti,3870,1707,Drent & Stonehouse 1971
+Birds,Non‐Passer,Strigi,Aegolius_acadicus,118.1,112.5,Ligon 1969
+Birds,Non‐Passer,Strigi,Aegolius_funereus,130,203.5,Hohtola et al. 1994
+Birds,Non‐Passer,Strigi,Asio_flammeus,406,309.5,"Graber, 1962"
+Birds,Non‐Passer,Strigi,Asio_otus,252,171.5,Wijnandts 1984
+Birds,Non‐Passer,Strigi,Athene_cunicularia,146.7,140,Coulombe 1970
+Birds,Non‐Passer,Strigi,Athene_cunicularia,132.4,139.5,"Coulombe, 1970"
+Birds,Non‐Passer,Strigi,Bubo_scandiacus,2026,592,Gessaman 1972
+Birds,Non‐Passer,Strigi,Bubo_virginianus,1000,781,Ganey et al. 1993
+Birds,Non‐Passer,Strigi,Glaucidium_brasilianum,60.6,78.18,"Londono et al., 2015"
+Birds,Non‐Passer,Strigi,Glaucidium_cuculoides,129.9,99.31,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Strigi,Glaucidium_cuculoides,163,156.5,"Johnson,Collins, 1975"
+Birds,Non‐Passer,Strigi,Glaucidium_gnoma,52,83.5,Ligon 1969
+Birds,Non‐Passer,Strigi,Glaucidium_jardinii,60.6,123.64,"Londono et al., 2015"
+Birds,Non‐Passer,Strigi,Megascops_asio,165.5,108,Ligon 1969
+Birds,Non‐Passer,Strigi,Megascops_trichopsis,99.8,75,Ligon 1969
+Birds,Non‐Passer,Strigi,Micrathene_whitneyi,45,45.5,Ligon 1968
+Birds,Non‐Passer,Strigi,Ninox_scutulata,187.45,166.38,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Strigi,Ninox_theomacha,151.4,188.5,"McNab, pers. obs."
+Birds,Non‐Passer,Strigi,Otus_lettia,108.9,102.41,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Strigi,Otus_scops,78.9,85,Gavrilov & Dol’nik 1985
+Birds,Non‐Passer,Strigi,Otus_sunia,76.7,74.48,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Strigi,Strix_aluco,520,375,"Herzog, 1930"
+Birds,Non‐Passer,Strigi,Strix_occidentalis,571,481.5,Ganey et al. 1993
+Birds,Non‐Passer,Strigi,Surnia_ulula,333,306.5,"Johnson, Collins, 1975"
+Birds,Non‐Passer,Strigi,Tyto_alba,533.2,323,Edwards 1987
+Birds,Non‐Passer,Strigi,Tyto_tenebricosa,770,518,"McNab, 2009"
+Birds,Non‐Passer,Strigi,Uroglaux_dimorpha,245.3,263.5,"McNab, 2009."
+Birds,Non‐Passer,Suli,Anhinga_anhinga,1040,574.5,Hennemann 1983
+Birds,Non‐Passer,Suli,Fregata_magnificens,1080,501,"Enger, 1957"
+Birds,Non‐Passer,Suli,Leucocarbo_atriceps,2600,2693.5,"Ricklefs, Mattew, 1983"
+Birds,Non‐Passer,Suli,Morus_bassanus,2574,2248,Bryant & Furness 1995
+Birds,Non‐Passer,Suli,Phalacrocorax_aristotelis,1619,1539.5,Bryant & Furness 1995
+Birds,Non‐Passer,Suli,Phalacrocorax_auritus,1330,988.5,Hennemann 1983
+Birds,Non‐Passer,Trogoni,Harpactes_oreskios,51.37,89.47,Bushuev et al. (unpublished)
+Birds,Non‐Passer,Trogoni,Trogon_personatus,59,150.91,"Londono et al., 2015"
+Birds,Non‐Passer,Trogoni,Trogon_rufus,53,77.5,"Yarbrough, 1971"
+Birds,Passeriformes,Passeri,Abroscopus_superciliaris,6.71,26.68,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Acanthagenys_rufogularis,43.4,114,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Acanthis_flammea,14.7,62.5,Reinertsen & Haftorn 1986
+Birds,Passeriformes,Passeri,Acanthiza_chrysorrhoa,8.3,40.2,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Acanthiza_lineata,7.3,28.8,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Acanthiza_pusilla,6.4,40.2,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Acanthiza_uropygialis,6.6,31.8,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Acanthorhynchus_tenuirostris,11.3,49.8,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Acridotheres_cristatellus,109.4,217.5,"Gohnson, McTaggart, 1975"
+Birds,Passeriformes,Passeri,Acridotheres_tristis,102.3,159,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Acrocephalus_arundinaceus,21.9,46,"Hails, 1983"
+Birds,Passeriformes,Passeri,Acrocephalus_bistrigiceps,7.01,28.67,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Acrocephalus_bistrigiceps,7.9,23,"Hails, 1983"
+Birds,Passeriformes,Passeri,Acrocephalus_palustris,10.8,36.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Acrocephalus_schoenobaenus,11.5,39,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Acrocephalus_orientalis,20.79,46.01,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Aegithalos_caudatus,8.9,36,Gavrilov & Dol’nik 1985
+Birds,Passeriformes,Passeri,Aegithina_lafresnayei,18.22,44.51,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Aegithina_tiphia,12.05,29.09,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Aethomyias_papuensis,10.4,33,"McNab, 2009"
+Birds,Passeriformes,Passeri,Aethomyias_perspicillatus,8.8,39,"McNab, 2009"
+Birds,Passeriformes,Passeri,Aethopyga_christinae,5.2,24,Prinzinger et al. 1989
+Birds,Passeriformes,Passeri,Aethopyga_siparaja,6.16,24.97,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Aethopyga_siparaja,6.8,26.5,Prinzinger et al. 1989
+Birds,Passeriformes,Passeri,Agelaius_phoeniceus,43.1,87,Weathers 1981
+Birds,Passeriformes,Passeri,Akletos_goeldii,42.4,76.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Alaemon_alaudipes,37.7,77,Tieleman et al. 2002
+Birds,Passeriformes,Passeri,Alauda_arvensis,31.7,130,Tieleman et al. 2002
+Birds,Passeriformes,Passeri,Alcippe_grotei,15.4,67.55,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Aleadryas_rufinucha,38.6,75,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Alophoixus_bres,35,64,"Hails, 1983"
+Birds,Passeriformes,Passeri,Alophoixus_ochraceus,34.18,68.44,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Amadina_erythrocephala,21.7,38,McKechnie & Lovegrove 2003
+Birds,Passeriformes,Passeri,Amadina_fasciata,17.2,38.5,Marschall & Prinzinger 1991
+Birds,Passeriformes,Passeri,Amblycercus_holosericeus,50.4,103.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Ammodramus_aurifrons,16.4,47.27,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Ammodramus_savannarum,13.8,32,Yarbrough 1971
+Birds,Passeriformes,Passeri,Amphispiza_bilineata,11.6,35.5,Weathers 1981
+Birds,Passeriformes,Passeri,Anabacerthia_striaticollis,24.2,63.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Anabazenops_dorsalis,39.2,81.82,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Anairetes_parulus,6.6,27.27,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Ancistrops_strigilatus,36,40,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Anisognathus_igniventris,35,80,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Anthreptes_orientalis,11.8,27.5,Prinzinger et al. 1989
+Birds,Passeriformes,Passeri,Anthus_campestris,21.8,69,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Anthus_pratensis,18.9,54,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Anthus_rufulus,20.1,52.5,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Anthus_trivialis,19.7,61,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Arachnothera_flavigaster,36.3,54,"Hails, 1983"
+Birds,Passeriformes,Passeri,Arachnothera_longirostra,11.19,36.72,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Arachnothera_longirostra,13,34,"Hails, 1983"
+Birds,Passeriformes,Passeri,Arremon_castaneiceps,35.7,96.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Arremon_taciturnus,27.7,76.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Arremon_torquatus,42.8,85.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Arremonops_conirostris,39.7,81.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Artamus_maximus,60,99.5,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Arundinax_aedon,19.35,63.26,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Asthenes_helleri,15,34.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Astrapia_stephaniae,148.2,290,McNab 2005
+Birds,Passeriformes,Passeri,Atlapetes_melanolaemus,25.5,61.82,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Attila_spadiceus,32.7,25.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Auriparus_flaviceps,6.8,29.5,"Goldstein, 1974"
+Birds,Passeriformes,Passeri,Automolus_melanopezus,31.6,69.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Automolus_ochrolaemus,36.7,114.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Automolus_rufipileatus,36.2,83.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Automolus_subulatus,30.2,89.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Basileuterus_tristriatus,12.6,45.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Bombycilla_garrulus,72.5,171.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Buthraupis_montana,89.7,185.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Cacicus_chrysonotus,94,154.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Calamospiza_melanocorys,33,79,"Wunder, 1979"
+Birds,Passeriformes,Passeri,Calendulauda_erythrochlamys,27.3,75,Williams 1999
+Birds,Passeriformes,Passeri,Calliope_calliope,18.34,50.42,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Camptostoma_obsoletum,12.5,47.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Cantorchilus_leucotis,18,38,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Cardinalis_cardinalis,41,90.5,Hinds & Calder 1973
+Birds,Passeriformes,Passeri,Cardinalis_sinuatus,32,70.5,Hinds & Calder 1973
+Birds,Passeriformes,Passeri,Carduelis_carduelis,16.5,62.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Carpodacus_erythrinus,21.2,66.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Catamblyrhynchus_diadema,17,45.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Catharus_dryas,35.9,83.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Catharus_fuscescens,28,90.5,"Holmes, Sawyer, 1975"
+Birds,Passeriformes,Passeri,Catharus_guttatus,27.8,85.5,"Holmes, Sawyer, 1975"
+Birds,Passeriformes,Passeri,Catharus_minimus,24.8,82.5,"Holmes, Sawyer, 1975"
+Birds,Passeriformes,Passeri,Catharus_ustulatus,27.9,84,"Holmes, Sawyer, 1975"
+Birds,Passeriformes,Passeri,Ceratopipra_chloromeros,16.2,52.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Ceratopipra_mentalis,12.3,35,Bartholomew et al. 1983
+Birds,Passeriformes,Passeri,Cercomacroides_tyrannina,15.4,34,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Chalcomitra_adelberti,9.5,31.5,Prinzinger et al. 1989
+Birds,Passeriformes,Passeri,Chalcomitra_amethystina,10,31.5,Prinzinger et al. 1989
+Birds,Passeriformes,Passeri,Chalcomitra_rubescens,10,33,Seavy 2006
+Birds,Passeriformes,Passeri,Chalcomitra_senegalensis,13.7,43,Seavy 2006
+Birds,Passeriformes,Passeri,Chalcoparia_singalensis,7.34,26.22,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Chiroxiphia_boliviana,17,54.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Chiroxiphia_lanceolata,18.4,61,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Chloris_chloris,28.2,85.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Chlorochrysa_calliparaea,16.9,45.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Chlorodrepanis_virens,15.3,53,"MacMillen, 1974"
+Birds,Passeriformes,Passeri,Chlorodrepanis_virens,10.7,37.5,"MacMillen, 1981"
+Birds,Passeriformes,Passeri,Chloropsis_aurifrons,27.9,62.6,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Chloropsis_cochinchinensis,21.2,47.58,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Chloropsis_sonnerati,39.7,68,"Hails, 1983"
+Birds,Passeriformes,Passeri,Chlorornis_riefferii,49.8,92.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Chlorospingus_flavigularis,26.5,60,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Chlorospingus_parvirostris,23.1,60,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Cicinnurus_regius,54,105,McNab 2005
+Birds,Passeriformes,Passeri,Cinclus_mexicanus,50.2,83,"Murrish, 1970"
+Birds,Passeriformes,Passeri,Cinnycerthia_fulva,16.3,36.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Cinnyris_bifasciatus,6.2,16.5,Prinzinger et al. 1989
+Birds,Passeriformes,Passeri,Cinnyris_chloropygius,6.8,25,Seavy 2006
+Birds,Passeriformes,Passeri,Cinnyris_cupreus,9,29.5,Seavy 2006
+Birds,Passeriformes,Passeri,Cinnyris_jugularis,5.87,23.71,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Cinnyris_venustus,7.1,25,Prinzinger et al. 1989
+Birds,Passeriformes,Passeri,Cissopis_leverianus,61.4,50.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Cnemophilus_loriae,78.1,119,McNab 2005
+Birds,Passeriformes,Passeri,Cnemophilus_macgregorii,89,134,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Cnipodectes_subbrunneus,20.5,49.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Coccothraustes_coccothraustes,48.3,125.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Coereba_flaveola,11,43.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Coereba_flaveola,10,38.5,Merola‐Zwartjes 1998
+Birds,Passeriformes,Passeri,Coloeus_monedula,188,309.5,Daan et al. 1990
+Birds,Passeriformes,Passeri,Conirostrum_sitticolor,11,32.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Conopophaga_ardesiaca,27.5,70.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Conopophaga_peruviana,24.5,61.82,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Contopus_virens,13.9,46.5,Yarbrough 1971
+Birds,Passeriformes,Passeri,Copsychus_malabaricus,27.24,57.65,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Copsychus_saularis,35.61,64.85,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Copsychus_saularis,33.5,41.5,"Hails, 1983"
+Birds,Passeriformes,Passeri,Corvus_brachyrhynchos,384.8,591.5,"Wunder, Trebella, 1976"
+Birds,Passeriformes,Passeri,Corvus_caurinus,282,638.5,"Irving et al,, 1955"
+Birds,Passeriformes,Passeri,Corvus_corax,1203,990,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Corvus_corone,518,596.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Corvus_fuscicapillus,390,471,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Corvus_ruficollis,660,611.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Corydon_sumatranus,115.33,107.75,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Corythopis_torquatus,18.7,50.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Cracticus_torquatus,93.7,127.8,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Cranioleuca_marcapatae,19,50.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Crypsirina_temia,47.74,82.8,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Cryptopipo_holochlora,16,38.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Cyanerpes_cyaneus,13.5,49,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Cyanistes_caeruleus,9.6,30,Lindstrom & Kvist 1995
+Birds,Passeriformes,Passeri,Cyanocitta_cristata,80.8,150,Misch 1960
+Birds,Passeriformes,Passeri,Cyanocompsa_cyanoides,25,69.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Cyanocompsa_cyanoides,27.9,67.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Cyanolyca_viridicyanus,82.6,194.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Cyanomitra_cyanolaema,15.8,49,Seavy 2006
+Birds,Passeriformes,Passeri,Cyanomitra_obscura,11.2,36,Seavy 2006
+Birds,Passeriformes,Passeri,Cyanomitra_veroxii,8.4,24,Prinzinger et al. 1989
+Birds,Passeriformes,Passeri,Cyanomitra_verticalis,14.1,45,Seavy 2006
+Birds,Passeriformes,Passeri,Cymbirhynchus_macrorhynchos,52.64,86.49,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Cyornis_hainanus,13.32,38.55,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Cyornis_sumatrensis,12.49,38.87,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Cyphorhinus_thoracicus,34.4,76.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Delichon_urbicum,18,23,Prinzinger & Hanssler 1980
+Birds,Passeriformes,Passeri,Dendrocincla_fuliginosa,33.1,67.27,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Dendrocincla_fuliginosa,39,88.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Dendrocincla_merula,52.8,112.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Dendrocincla_tyrannina,58.3,96.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Dendrocolaptes_picumnus,80.2,130.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Devioeca_papuana,12.5,55.5,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Dicaeum_cruentatum,5.08,15.56,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Dicrurus_aeneus,29.84,73.62,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Dicrurus_hottentottus,76.2,128.14,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Dicrurus_leucophaeus,41.72,80.32,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Dicrurus_macrocercus,63.5,94.63,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Dicrurus_paradiseus,71.6,112.15,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Diglossa_brunneiventris,10.6,43.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Diglossa_cyanea,19.1,58.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Diglossa_mystacalis,15.4,50.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Diphyllodes_magnificus,82.3,142,McNab 2005
+Birds,Passeriformes,Passeri,Drepanis_coccinea,16.9,62.5,"MacMi11en, Carpenter, 1977"
+Birds,Passeriformes,Passeri,Drepanorhynchus_reichenowi,6.7,25.5,Seavy 2006
+Birds,Passeriformes,Passeri,Drymophila_caudata,12.2,25.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Elaenia_albiceps,16.8,34.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Elaenia_gigas,30.7,74.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Elaenia_obscura,13.9,25.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Elaenia_pallatangae,15.7,41.82,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Emberiza_citrinella,26.8,78.5,Gavrilov & Dol’nik 1985
+Birds,Passeriformes,Passeri,Emberiza_hortulana,24.3,75,Gavrilov & Dol’nik 1985
+Birds,Passeriformes,Passeri,Emberiza_schoeniclus,17.6,54,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Empidonax_virescens,12.3,32,Yarbrough 1971
+Birds,Passeriformes,Passeri,Entomodestes_leucotis,60.7,47.27,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Eopsaltria_australis,19.2,63,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Epimachus_meyeri,202.7,331.5,McNab 2005
+Birds,Passeriformes,Passeri,Epinecrophylla_leucophthalma,9.4,34.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Eremalauda_dunni,20.6,50,Tieleman et al. 2002
+Birds,Passeriformes,Passeri,Eremophila_alpestris,26,59.5,Trost 1972
+Birds,Passeriformes,Passeri,Erithacus_rubecula,17.6,50.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Erythrura_gouldiae,15.5,39,Marschall & Prinzinger 1991
+Birds,Passeriformes,Passeri,Erythrura_trichroa,15.1,43,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Estrilda_melpoda,7.5,23.5,Marschall & Prinzinger 1991
+Birds,Passeriformes,Passeri,Estrilda_troglodytes,7.5,27,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Eucometis_penicillata,30.7,71,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Eulacestoma_nigropectus,19.9,62,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Euodice_malabarica,10.6,36.5,"Willoughby, 1969"
+Birds,Passeriformes,Passeri,Euphonia_laniirostris,13.5,53,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Euphonia_xanthogaster,12.9,40,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Eurillas_curvirostris,23,53,Seavy & McNab 2007
+Birds,Passeriformes,Passeri,Eurillas_latirostris,26.6,65,Seavy & McNab 2007
+Birds,Passeriformes,Passeri,Eurillas_virens,24.2,59.5,Seavy & McNab 2007
+Birds,Passeriformes,Passeri,Ficedula_albicilla,9.53,42.36,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Ficedula_hypoleuca,11.7,42,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Ficedula_mugimaki,12.2,63.98,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Formicarius_analis,54.9,112.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Formicarius_rufipectus,70.3,132.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Fringilla_coelebs,21,67,Gavrilov & Dol’nik 1985
+Birds,Passeriformes,Passeri,Fringilla_montifringilla,21,69,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Garrulax_leucolophus,106.83,148.91,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Garrulax_monileger,83.5,131.37,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Garrulus_glandarius,153,249.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Gavicalis_virescens,20.7,63.6,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Gavicalis_virescens,25,53.5,"Collins et al,, 1980"
+Birds,Passeriformes,Passeri,Gavicalis_virescens,25,53.5,Collins et al. 1980
+Birds,Passeriformes,Passeri,Geokichla_citrina,56.6,95.1,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Gliciphila_melanops,18.8,52.5,Vitali et al. 1999
+Birds,Passeriformes,Passeri,Glyphorynchus_spirurus,15.5,45.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Glyphorynchus_spirurus,13.5,36,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Grallaria_guatimalensis,87,112.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Grallaria_rufula,33.8,94.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Gymnopithys_bicolor,27.7,60,Wiesma et al. 2007
+Birds,Passeriformes,Passeri,Habia_fuscicauda,40,64,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Habia_rubica,36.7,105.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Haemorhous_cassinii,27.4,61,Weathers 1981
+Birds,Passeriformes,Passeri,Haemorhous_mexicanus,20.4,56,Weathers 1981
+Birds,Passeriformes,Passeri,Haplospiza_rustica,18,25.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Hedydipna_collaris,8.3,30.5,Prinzinger et al. 1989
+Birds,Passeriformes,Passeri,Hemipus_picatus,9.7,23.96,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Hemispingus_atropileus,20.4,69.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Hemispingus_melanotis,17.3,58.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Hemispingus_superciliaris,14.6,58.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Hemispingus_xanthophthalmus,13,34.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Hemitriccus_granadensis,8.2,25.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Henicorhina_leucophrys,15.3,56.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Hesperiphona_vespertina,54.5,135.5,West & Hart 1966
+Birds,Passeriformes,Passeri,Himatione_sanguinea,13.5,54,Weathers et al. 1983
+Birds,Passeriformes,Passeri,Hippolais_icterina,12.5,84.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Hirundo_rustica,13.79,45.07,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Hirundo_rustica,18.4,54,Gavrilov & Dol’nik 1985
+Birds,Passeriformes,Passeri,Hirundo_tahitica,14.1,32,Bryant et al. 1984
+Birds,Passeriformes,Passeri,Hydrornis_elliotii,86.95,98.18,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Hydrornis_soror,96.27,102.59,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Hylocichla_mustelina,48.3,122,"Holmes, Sawyer, 1975"
+Birds,Passeriformes,Passeri,Hylophylax_naevioides,16.1,43,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Hylophylax_naevius,12.8,63.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Hypocnemis_subflava,15.6,43.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Hypothymis_azurea,10.53,38.4,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Hypothymis_azurea,10.8,32,"Hails, 1983"
+Birds,Passeriformes,Passeri,Icterus_bullockii,34,90.5,Rising 1969
+Birds,Passeriformes,Passeri,Icterus_galbula,34,90.5,Rising 1969
+Birds,Passeriformes,Passeri,Ifrita_kowaldi,28.9,56.5,"McNab,2009."
+Birds,Passeriformes,Passeri,Iole_propinqua,20.42,49.38,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Irena_puella,58.12,92.74,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Iridosornis_analis,27.1,85.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Iridosornis_jelskii,20.6,69.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Isleria_hauxwelli,10.8,38.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Junco_hyemalis,18,53,"Lasiewski, Dawson, 1967"
+Birds,Passeriformes,Passeri,Knipolegus_aterrimus,34,56.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Kurochkinegramma_hypogrammicum,10.79,31.32,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Lanio_versicolor,20.4,60,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Lanius_collurio,27,69,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Lanius_cristatus,29.1,74.12,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Lanius_cristatus,26.9,45.5,"Hails, 1983"
+Birds,Passeriformes,Passeri,Lanius_excubitor,72.4,184,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Larvivora_cyane,13.35,38.24,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Larvivora_cyane,13.4,47.5,"Hails, 1983"
+Birds,Passeriformes,Passeri,Lathrotriccus_euleri,9.3,38.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Legatus_leucophaius,26.7,29.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Leistes_militaris,38.2,79.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Lepidocolaptes_lacrymiger,32.6,40,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Lepidothrix_coeruleocapilla,9.6,43.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Lepidothrix_coronata,9.2,27,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Lepidothrix_coronata,10.6,36.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Leptocoma_minima,5.5,21,Seavy 2006
+Birds,Passeriformes,Passeri,Leptocoma_sperata,5.1,24.28,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Leptopogon_amaurocephalus,14.1,40,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Leptopogon_superciliaris,12.9,45.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Lichmera_indistincta,10.1,38,Vitali et al. 1999
+Birds,Passeriformes,Passeri,Linaria_cannabina,16.9,61,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Lipaugus_vociferans,86.6,138.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Lochmias_nematura,30.5,61.82,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Locustella_lanceolata,9.45,32.72,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Lonchura_cucullata,10.6,19.5,Lovegrove & Smith 2003
+Birds,Passeriformes,Passeri,Lonchura_fuscans,9.5,18,Weathers 1977
+Birds,Passeriformes,Passeri,Lonchura_maja,12.8,27.5,"Hails, 1983"
+Birds,Passeriformes,Passeri,Lonchura_malacca,11.8,25.5,"Hails, 1983"
+Birds,Passeriformes,Passeri,Lonchura_oryzivora,25.4,55.5,Marschell & Prinzinger 1991
+Birds,Passeriformes,Passeri,Lonchura_punctulata,12.23,37.6,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Lonchura_striata,9.74,33.2,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Lonchura_striata,10.3,38.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Lophorina_superba,74.6,130,McNab 2005
+Birds,Passeriformes,Passeri,Lophotriccus_pileatus,8.2,34.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Loxia_curvirostra,39.4,108,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Loxia_leucoptera,29.8,83.5,Dawson & Tordoff 1964
+Birds,Passeriformes,Passeri,Loxia_pytyopsittacus,53.7,143.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Loxioides_bailleui,34.8,80.5,Weathers & van Riper 1982
+Birds,Passeriformes,Passeri,Loxioides_bailleui,36,80.5,"Weathers, van Riper, 1982"
+Birds,Passeriformes,Passeri,Lullula_arborea,25.5,103,Tieleman et al. 2002
+Birds,Passeriformes,Passeri,Luscinia_svecica,20.8,64.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Machaerirhynchus_nigripectus,9.7,41.5,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Machaeropterus_pyrocephalus,10,43.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Macronus_gularis,11.27,31.86,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Macronus_kelleyi,9.47,30.48,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Magumma_parva,7.9,25.5,"MacMillen, 1981"
+Birds,Passeriformes,Passeri,Malacocincla_abbotti,25.63,53.55,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Malacopteron_cinereum,14.33,36.87,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Malacopteron_cinereum,15.8,38,"Hails,1983"
+Birds,Passeriformes,Passeri,Malurus_cyaneus,8.7,31.8,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Malurus_lamberti,7.8,33,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Manacus_vitellinus,15.5,42,Bartholomew et al. 1983
+Birds,Passeriformes,Passeri,Manorina_flavigula,41.1,109.8,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Manucodia_chalybatus,177.2,247,McNab 2005
+Birds,Passeriformes,Passeri,Margarornis_squamiger,16.7,49.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Mecocerculus_leucophrys,13.9,27.27,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Mecocerculus_stictopterus,10.9,40,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Melanocharis_versteri,13.6,44,"McNab,2009."
+Birds,Passeriformes,Passeri,Melanorectes_nigrescens,70.5,113.5,"McNab, 2009."
+Birds,Passeriformes,Passeri,Melidectes_rufocrissalis,62.8,140,"McNab, 2009."
+Birds,Passeriformes,Passeri,Meliphaga_lewinii,36.2,96,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Melipotes_fumigatus,57.1,122,"McNab, 2009."
+Birds,Passeriformes,Passeri,Melithreptus_lunatus,14.3,45,Vitali et al. 1999
+Birds,Passeriformes,Passeri,Melospiza_georgiana,14.9,38,Yarbrough 1971
+Birds,Passeriformes,Passeri,Melospiza_melodia,19.1,45,Yarbrough 1971
+Birds,Passeriformes,Passeri,Melozone_aberti,46.6,131,"Dawson, 1954"
+Birds,Passeriformes,Passeri,Melozone_fusca,43.7,119.5,"Dawson, 1954"
+Birds,Passeriformes,Passeri,Microcerculus_marginatus,19.4,60,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Mimus_gilvus,68.9,133,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Mimus_polyglottos,44.2,122,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Mionectes_macconnelli,11.4,29.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Mionectes_oleagineus,11.4,32.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Mionectes_oleagineus,10.3,29.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Mionectes_olivaceus,15.7,50.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Mionectes_striaticollis,14.7,49.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Molothrus_ater,42.5,90.5,"Hinds, Calder, 1973"
+Birds,Passeriformes,Passeri,Monticola_gularis,27,49.2,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Motacilla_alba,18,54,Gavrilov & Dol’nik 1985
+Birds,Passeriformes,Passeri,Motacilla_flava,14.7,46.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Muscicapa_dauurica,9.23,34.96,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Muscicapa_striata,14.4,44.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Muscisaxicola_fluviatilis,13.6,47.27,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myadestes_ralloides,28.8,70.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myiarchus_crinitus,33.9,69,Yarbrough 1971
+Birds,Passeriformes,Passeri,Myiobius_villosus,14.7,54.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myioborus_melanocephalus,11.7,38.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myioborus_miniatus,9.8,36.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myiodynastes_maculatus,41,106,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Myiotheretes_fuscorufus,29.2,94.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myiothlypis_bivittata,15.5,54.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myiothlypis_chrysogaster,14.4,50.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myiothlypis_coronata,17.4,60,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myiothlypis_fulvicauda,12.8,63.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myiothlypis_luteoviridis,14.7,43.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myiothlypis_signata,14.3,40,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myiozetetes_similis,27.1,52.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myrmeciza_longipes,27.4,58.5,Wiesma et al. 2007
+Birds,Passeriformes,Passeri,Myrmelastes_leucostigma,17.8,32.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myrmoborus_leucophrys,19.8,60,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myrmoborus_lophotes,31.6,60,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myrmoborus_myotherinus,21.2,50.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myrmotherula_axillaris,8.9,34.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myrmotherula_axillaris,9.6,39,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Myrmotherula_longipennis,9.6,40,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myrmotherula_menetriesii,9.3,50.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Myrmotherula_schisticolor,8.3,45.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Nectarinia_kilimensis,16.2,47,Seavy 2006
+Birds,Passeriformes,Passeri,Nectarinia_tacazze,13.5,44,Prinzinger et al. 1989
+Birds,Passeriformes,Passeri,Neochmia_temporalis,9.6,31.8,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Neosericornis_citreogularis,16.9,65.4,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Nucifraga_caryocatactes,147,242.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Ochthoeca_rufipectoralis,10.9,36.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Oneillornis_salvini,27.1,58.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Onychorhynchus_coronatus,14,54.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Oreocharis_arfaki,22.3,58,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Oreostruthus_fuliginosus,16,29.5,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Origma_robusta,17.3,45.5,"McNab, 2009"
+Birds,Passeriformes,Passeri,Oriolus_oriolus,64.9,117,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Oriolus_xanthornus,59.9,112.02,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Orthotomus_atrogularis,6.73,27.35,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Oryzoborus_angolensis,12.3,36,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Pachycephala_pectoralis,24,64.8,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Pachycephala_schlegelii,22.6,50,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Pachycephala_soror,23.3,65.5,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Paradisaea_raggiana,215.7,337.5,McNab 2005
+Birds,Passeriformes,Passeri,Paradisaea_rudolphi,156.1,274,McNab 2005
+Birds,Passeriformes,Passeri,Paramythia_montium,40.3,75,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Pardalotus_punctatus,7.8,39.6,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Parkesia_noveboracensis,18.7,50.5,Yarbrough 1971
+Birds,Passeriformes,Passeri,Parotia_lawesii,144.9,206.5,McNab 2005
+Birds,Passeriformes,Passeri,Parotia_wahnesi,164.2,232,McNab 2005
+Birds,Passeriformes,Passeri,Parus_major,16.5,63,Reinertsen & Haftorn 1986
+Birds,Passeriformes,Passeri,Passer_domesticus,23,56.4,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Passer_domesticus,23,66,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Passer_montanus,22.3,73,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Passerculus_sandwichensis,15.9,40,Williams & Hansell 1981
+Birds,Passeriformes,Passeri,Passerella_iliaca,31.7,98.5,"Lasiewski, Dawson, 1967"
+Birds,Passeriformes,Passeri,Pellorneum_ruficeps,21.85,53.32,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Pellorneum_tickelli,15.8,39.29,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Peneothello_cyanus,23.8,63,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Peneothello_sigillata,21.6,56,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Periparus_ater,10.8,42.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Perisoreus_canadensis,71.2,122,"Veghte, 1964"
+Birds,Passeriformes,Passeri,Pheugopedius_fasciatoventris,27.2,56,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Philemon_buceroides,140.5,253,Bonaccorso &
+Birds,Passeriformes,Passeri,Philydor_erythrocercum,38.2,76.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Phlegopsis_nigromaculata,47.1,87.27,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Phoenicurus_ochruros,13.8,43.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Phoenicurus_phoenicurus,13,42,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Phonygammus_keraudrenii,170.7,215.5,McNab 2005
+Birds,Passeriformes,Passeri,Phyllastrephus_hypochloris,18.9,47.5,Seavy & McNab 2007
+Birds,Passeriformes,Passeri,Phylloscopus_collybita,8.2,29.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Phylloscopus_inornatus,7.7,53.92,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Phylloscopus_plumbeitarsus,5.95,21.08,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Phylloscopus_schwarzi,7.8,28.17,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Phylloscopus_sibilatrix,9.2,31.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Phylloscopus_tenellipes,7,28.94,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Phylloscopus_trochilus,10.7,37.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Phytotoma_rara,41.6,103,Rezende et al. 2001
+Birds,Passeriformes,Passeri,Pica_nuttalli,151.9,264,Hayworth & Weathers 1984
+Birds,Passeriformes,Passeri,Pica_pica,158.9,215.5,Hayworth & Weathers 1984
+Birds,Passeriformes,Passeri,Pinicola_enucleator,78.4,195.5,Gavrilov & Dol’nik 1985
+Birds,Passeriformes,Passeri,Pipra_fasciicauda,16.4,47.27,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Pipraeidea_melanonota,20.3,69.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Pipreola_arcuata,93,109.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Pipreola_intermedia,49.6,110.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Pitta_moluccensis,74.38,96.62,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Pitta_versicolor,83.1,102,McNab 2009
+Birds,Passeriformes,Passeri,Platyrinchus_coronatus,10.8,29.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Platyrinchus_platyrhynchos,14,54.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Plectrophenax_nivalis,41.8,99.5,"Scholander et al,,1950"
+Birds,Passeriformes,Passeri,Plesiodryas_albonotata,36.4,81,"McNab, 2009."
+Birds,Passeriformes,Passeri,Ploceus_philippinus,22.06,59.89,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Poecile_atricapillus,10.3,45.5,Rising & Hudson 1974
+Birds,Passeriformes,Passeri,Poecile_montanus,11.6,49.5,Reinertsen & Haftorn 1986
+Birds,Passeriformes,Passeri,Pogonotriccus_ophthalmicus,8.8,43.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Poliocrania_exsul,28.3,52,Wiesma et al. 2007
+Birds,Passeriformes,Passeri,Pomatorhinus_hypoleucos,83.8,148.65,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Pomatorhinus_schisticeps,36,75.16,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Pomatostomus_ruficeps,45.4,79.2,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Pomatostomus_superciliosus,36.1,61.8,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Pooecetes_gramineus,21.5,49,Yarbrough 1971
+Birds,Passeriformes,Passeri,Premnoplex_brunnescens,15.7,58.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Prinia_flaviventris,7.16,26.78,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Prinia_hodgsonii,7.21,33.58,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Prinia_inornata,10.25,41.04,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Progne_chalybea,34.9,84,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Prosthemadera_novaeseelandiae,144.2,199,McNab 2009.
+Birds,Passeriformes,Passeri,Protonotaria_citrea,12.8,36,Yarbrough 1971
+Birds,Passeriformes,Passeri,Prunella_modularis,16.8,58.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Psaltriparus_minimus,5.5,23,Chaplin 1982
+Birds,Passeriformes,Passeri,Pseudocolaptes_boissonneautii,42.9,100,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Psophodes_olivaceus,61,127.2,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Ptiloprora_guisei,20.7,52.5,"McNab, 2009."
+Birds,Passeriformes,Passeri,Ptiloris_magnificus,179.4,270,McNab 2005
+Birds,Passeriformes,Passeri,Pycnonotus_atriceps,21.54,52.37,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Pycnonotus_aurigaster,27,57.02,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Pycnonotus_barbatus,40.3,86,Seavy & McNab 2007
+Birds,Passeriformes,Passeri,Pycnonotus_blanfordi,28.83,55.29,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Pycnonotus_finlaysoni,25.91,54.7,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Pycnonotus_finlaysoni,26.3,40.5,"Hails, 1983"
+Birds,Passeriformes,Passeri,Pycnonotus_goiavier,28.6,44,"Hails, 1983"
+Birds,Passeriformes,Passeri,Pycnonotus_jocosus,32.9,64.2,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Pycnonotus_melanicterus,22.93,52.85,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Pyriglena_leuconota,32.1,100,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Pyrrhocorax_graculus,206.4,308.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Pyrrhomyias_cinnamomeus,10.7,36.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Pyrrhula_pyrrhula,30.4,99.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Quiscalus_mexicanus,137.3,203,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Quiscalus_quiscula,92.2,178,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Ramphocelus_carbo,26.5,52.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Ramphocelus_dimidiatus,26.4,66,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Ramphocelus_flammigerus,32,75,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Ramphotrigon_ruficauda,17.4,50.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Regulus_regulus,5.5,33,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Rhegmatorhina_melanosticta,42.2,74.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Rhipidura_albolimbata,9.7,29.5,"McNab,2009."
+Birds,Passeriformes,Passeri,Rhipidura_atra,11,55.5,"McNab, 2009."
+Birds,Passeriformes,Passeri,Rhipidura_fuliginosa,8.9,29.4,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Rhynchocyclus_fulvipectus,26,70.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Rhynchocyclus_olivaceus,21,54,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Riparia_riparia,13.6,42,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Rupicola_peruvianus,246.5,196.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Saltator_coerulescens,47,70,Bosque et al. 1999
+Birds,Passeriformes,Passeri,Saltator_grossus,49.5,80,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Saltator_maximus,44.8,98.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Saltator_orenocensis,32.7,56.5,Bosque et al. 1999
+Birds,Passeriformes,Passeri,Saltator_striatipectus,42.1,91.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Saxicola_caprata,13.45,36.8,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Saxicola_rubetra,14.3,43.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Saxicola_stejnegeri,11.56,48.59,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Saxicola_torquatus,16.5,46,Klaassen 1995
+Birds,Passeriformes,Passeri,Sayornis_phoebe,21.6,62,Yarbrough 1971
+Birds,Passeriformes,Passeri,Sciaphylax_hemimelaena,18,45.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Sclerurus_caudacutus,36.2,83.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Sclerurus_mexicanus,28.8,80,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Scytalopus_atratus,21.5,69.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Scytalopus_parvirostris,17,65.45,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Seiurus_aurocapilla,19,43.5,Yarbrough 1971
+Birds,Passeriformes,Passeri,Sericornis_frontalis,11,33,Ambrose &
+Birds,Passeriformes,Passeri,Sericornis_frontalis,13.2,57.6,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Sericornis_humilis,14.6,37,"Bradshaw 1988 McNab, 2009"
+Birds,Passeriformes,Passeri,Sericornis_magnirostra,8.7,36.6,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Sericornis_nouhuysi,16.6,50.5,"McNab, 2009."
+Birds,Passeriformes,Passeri,Serinus_canaria,13.3,41,"Gavrilov, Dolnik 1985"
+Birds,Passeriformes,Passeri,Setophaga_americana,7,22,"Yarbrongh, 1971"
+Birds,Passeriformes,Passeri,Setophaga_citrina,12,38.5,"Yarbrough, 1971"
+Birds,Passeriformes,Passeri,Setophaga_coronata,11.5,34,Yarbrough 1971
+Birds,Passeriformes,Passeri,Setophaga_dominica,9.8,29,Yarbrough 1971
+Birds,Passeriformes,Passeri,Setophaga_palmarum,9.8,28,Yarbrough 1971
+Birds,Passeriformes,Passeri,Setophaga_petechia,12.2,25,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Setophaga_pinus,12,32,Yarbrough 1971
+Birds,Passeriformes,Passeri,Sialia_mexicana,27.5,76,Mock 1991
+Birds,Passeriformes,Passeri,Silvicultrix_pulchella,12,30.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Silvicultrix_spodionota,10.7,30.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Sitta_canadensis,11.2,42,"Mugas, Templeton, 1970"
+Birds,Passeriformes,Passeri,Sitta_carolinensis,18.3,52,Liknes & Swanson 1996
+Birds,Passeriformes,Passeri,Sittasomus_griseicapillus,14.4,49.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Smicrornis_brevirostris,5.9,29.4,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Spinus_magellanicus,11.6,36.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Spinus_spinus,14,52.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Spinus_tristis,12.8,54.5,Dawson & Carey 1976
+Birds,Passeriformes,Passeri,Spizella_passerina,11.9,35,Yarbrough 1971
+Birds,Passeriformes,Passeri,Spizelloides_arborea,16.6,59.5,"Losiewski, Dawson, 1967"
+Birds,Passeriformes,Passeri,Sporophila_americana,10.2,35.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Sporophila_castaneiventris,8.5,36.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Sporophila_nigricollis,8.9,36.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Stelgidopteryx_ruficollis,14,40,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Stelgidopteryx_ruficollis,11.9,28.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Strepera_graculina,306.7,339,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Sturnus_vulgaris,57.5,105.6,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Sturnus_vulgaris,75,158,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Sylvia_atricapilla,21.9,75,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Sylvia_borin,24.8,75,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Sylvia_curruca,10.6,36,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Sylvia_nisoria,21.3,69,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Symposiachrus_axillaris,17.5,90.5,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Synallaxis_azarae,13.6,41.82,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Synallaxis_cabanisi,19.3,54.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Syndactyla_ucayalae,51.2,110.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Tachycineta_albilinea,11.7,45,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Tachycineta_bicolor,16.4,51.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Tachyphonus_luctuosus,12.5,58.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Taeniopygia_guttata,11.7,38.4,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Taeniopygia_guttata,11.7,37,Calder 1964
+Birds,Passeriformes,Passeri,Tangara_arthus,22.4,67.27,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Tangara_cyanicollis,16.3,63.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Tangara_larvata,16.2,42.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Tangara_vassorii,18.5,41.82,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Tangara_xanthogastra,15.1,38.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Tarsiger_cyanurus,14.8,42.5,Gavrilov & Dol’nik 1985
+Birds,Passeriformes,Passeri,Telespiza_cantans,31.6,76.5,Weathers & van Riper 1982
+Birds,Passeriformes,Passeri,Telespiza_cantans,32.8,79.5,"Weathers, van Riper, 1982"
+Birds,Passeriformes,Passeri,Tephrodornis_virgatus,35.13,88.38,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Terenotriccus_erythrurus,9.3,43.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Terpsiphone_affinis,17,43.35,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Thamnomanes_ardesiacus,19.3,49.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Thamnomanes_schistogynus,19.7,61.82,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Thamnophilus_atrinucha,20.5,50.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Thamnophilus_doliatus,26.2,51.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Thamnophilus_palliatus,27.8,89.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Thamnophilus_punctatus,21,62,Vleck & Vleck 1979
+Birds,Passeriformes,Passeri,Thlypopsis_ruficeps,11.9,41.82,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Thlypopsis_sordida,14.9,56.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Thraupis_bonariensis,34.8,101.82,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Thraupis_cyanocephala,38.2,83.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Thraupis_episcopus,30.4,72,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Thraupis_palmarum,32.6,71,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Thripadectes_holostictus,42.5,69.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Thripadectes_melanorhynchus,47.5,98.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Thryophilus_rufalbus,22.6,53.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Thryothorus_ludovicianus,14.9,64.5,Eberhardt 1994
+Birds,Passeriformes,Passeri,Tiaris_canorus,7.6,28,"Gavrilov, 1997"
+Birds,Passeriformes,Passeri,Tiaris_obscurus,12.1,29.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Timalia_pileata,20.62,43.5,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Todirostrum_cinereum,7.3,30.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Toxorhamphus_poliopterus,13.2,34.5,"McNab, pers. obs."
+Birds,Passeriformes,Passeri,Trichothraupis_melanops,24.9,81.82,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Troglodytes_aedon,10.2,37.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Troglodytes_aedon,13.3,38,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Troglodytes_solstitialis,13,49.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Troglodytes_troglodytes,8.9,30,Lindstrom & Kvist 1995
+Birds,Passeriformes,Passeri,Turdus_albicollis,51.3,83.64,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Turdus_chiguanco,87,98.18,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Turdus_fuscater,138,174.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Turdus_grayi,77.9,122,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Turdus_hauxwelli,63.3,90.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Turdus_ignobilis,56.6,74.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Turdus_iliacus,58,130,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Turdus_lawrencii,55.3,121.82,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Turdus_leucops,62.2,129.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Turdus_merula,85.1,172.8,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Turdus_merula,82.6,167,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Turdus_migratorius,62.4,137,Wiermsa et al. 2007
+Birds,Passeriformes,Passeri,Turdus_nigriceps,51.1,96.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Turdus_philomelos,62.8,130.5,Gavrilov & Dol’nik 1985
+Birds,Passeriformes,Passeri,Turdus_poliocephalus,66.1,128,"McNab, pers. ob."
+Birds,Passeriformes,Passeri,Turdus_serranus,81.2,176.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Turdus_viscivorus,108.2,198.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Tyrannus_melancholicus,38,65.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Tyrannus_tyrannus,35.7,78.5,Yarbrough 1971
+Birds,Passeriformes,Passeri,Uraeginthus_bengalus,9.2,29.5,Kendeigh et al. 1977
+Birds,Passeriformes,Passeri,Vermivora_cyanoptera,7.8,27,Yarbrough 1971
+Birds,Passeriformes,Passeri,Vidua_paradisaea,10.5,35,"Terroine, Trautman, 1927"
+Birds,Passeriformes,Passeri,Vireo_flavoviridis,15.9,50.5,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Vireo_olivaceus,16.2,43,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Willisornis_poecilinotus,22.3,70.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Xenops_minutus,12.7,32.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Xenops_minutus,9.9,41,Wiersma et al. 2007
+Birds,Passeriformes,Passeri,Xiphorhynchus_elegans,41.4,92.73,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Xiphorhynchus_guttatus,60.1,94.55,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Xiphorhynchus_guttatus,45.2,80.5,Vleck & Vleck 1979
+Birds,Passeriformes,Passeri,Xiphorhynchus_triangularis,44.1,109.09,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Zimmerius_bolivianus,11,50.91,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Zonotrichia_albicollis,20.2,50,Yarbrough 1971
+Birds,Passeriformes,Passeri,Zonotrichia_capensis,22.2,56.36,"Londono et al., 2015"
+Birds,Passeriformes,Passeri,Zonotrichia_leucophrys,26.1,60.5,Yarbrough 1971
+Birds,Passeriformes,Passeri,Zonotrichia_querula,33.3,88.5,Yarbrough 1971
+Birds,Passeriformes,Passeri,Zoothera_dauma,107,143.11,Bushuev et al. (unpublished)
+Birds,Passeriformes,Passeri,Zoothera_lunulata,113.2,184.2,"Bech et al., 2016"
+Birds,Passeriformes,Passeri,Zosterops_lateralis,10.4,37.8,"Bech et al., 2016"
+Mammals,Eutheria,Artio,Antilocapra_americana,37800,10586,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Alcelaphus_buselaphus,98000,30024,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Connochaetes_taurinus,140000,27440,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Gazella_gazella,16300,6275,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Gazella_spekei,12400,5926,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Gazella_subgutturosa,17100,4595.8,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Kobus_ellipsiprymnus,100000,26667,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Madoqua_kirkii,4850,2671,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Madoqua_saltiana,2000,851.5,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Nanger_soemmerringii,35100,9213,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Oreamnos_americanus,32000,8320,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Oryx_gazella,180000,43560,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Oryx_leucoryx,93050,17353,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Ovibos_moschatus,195500,26988,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Ovis_canadensis,78500,16245,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Philantomba_monticola,4267,1834.8,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Raphicerus_campestris,8377,3225.1,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Taurotragus_oryx,383000,86353,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Camelus_dromedarius,280800,28980,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Alces_americanus,350000,56029,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Capreolus_capreolus,21500,8616,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Cervus_elaphus,58000,16420,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Odocoileus_virginianus,51190,11481,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Rangifer_tarandus,94100,23748,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Pecari_tajacu,20200,5858,Genoud et al. (2017)
+Mammals,Eutheria,Artio,Tragulus_javanicus,1613,869.4,Genoud et al. (2017)
+Mammals,Eutheria,Cetac,Orcinus_orca,4037500,387196,Genoud et al. (2017)
+Mammals,Eutheria,Cetac,Tursiops_truncatus,190720,43503,Genoud et al. (2017)
+Mammals,Eutheria,Cetac,Delphinapterus_leucas,625000,114090,Genoud et al. (2017)
+Mammals,Eutheria,Cetac,Phocoena_phocoena,28500,19380,Genoud et al. (2017)
+Mammals,Eutheria,Perisso,Equus_asinus,177500,29400,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Canis_latrans,10000,2688,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Canis_lupus,35500,8305,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Canis_mesomelas,7720,3760,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Lycalopex_culpaeus,5418,2034.5,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Lycaon_pictus,8750,5469,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Cerdocyon_thous,5444,1497.1,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Nyctereutes_procyonoides,7575,3045,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Vulpes_rueppellii,1546,798.9,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Vulpes_cana,1285,631.2,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Vulpes_zerda,1106,396,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Vulpes_lagopus,3970,1709.5,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Vulpes_macrotis,1769,1078.4,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Vulpes_vulpes,3060,1501,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Fossa_fossana,2260,906.3,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Acinonyx_jubatus,37900,8982.3,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Felis_margarita,1925,898.8,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Felis_silvestris,2618,983.8,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Puma_concolor,37200,8841.7,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Leopardus_pardalis,10500,3126.3,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Leopardus_wiedii,3550,937.2,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Leptailurus_serval,10120,3140,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Lynx_rufus,9400,4220.6,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Panthera_leo,98000,16954,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Panthera_onca,69000,12834,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Panthera_tigris,137900,23994.6,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Puma_yagouaroundi,8350,1737,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Galerella_sanguinea,500,380,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Herpestes_javanicus,611,403.3,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Suricata_suricatta,850,310.3,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Hyaena_hyaena,34300,5728.1,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Proteles_cristata,8100,2194,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Mephitis_mephitis,5667,1507.5,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Spilogale_putorius,624,265.8,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Eira_barbara,2950,1221.3,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Enhydra_lutris,18000,12960,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Gulo_gulo,12700,5842,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Lutra_lutra,7967,4362,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Martes_americana,1038,685.1,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Martes_martes,920,736,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Meles_meles,11050,2984,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Mustela_erminea,161.5,337,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Mustela_eversmanii,612,434.5,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Mustela_frenata,225,236,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Mustela_nigripes,920,460,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Mustela_nivalis,89.5,171.6,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Mustela_putorius,1575,1268,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Neovison_vison,704,515.3,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Taxidea_taxus,9000,2700,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Nandinia_binotata,4270,862.5,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Callorhinus_ursinus,32000,21701,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Eumetopias_jubatus,171867,46460,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Zalophus_californianus,94660,36348,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Halichoerus_grypus,190700,33806,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Leptonychotes_weddellii,388500,74592,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Histriophoca_fasciata,54000,17795,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Pagophilus_groenlandicus,149500,34236,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Phoca_vitulina,86800,30120,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Pusa_hispida,46600,13800,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Ailurus_fulgens,5740,878.2,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Bassariscus_astutus,865,371,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Bassariscus_sumichrasti,1282,634.6,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Nasua_narica,3665,1205.8,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Nasua_nasua,3850,1010.6,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Potos_flavus,2400,758,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Procyon_cancrivorus,1160,460.1,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Procyon_lotor,6480,1873,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Melursus_ursinus,66957,8437,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Ursus_americanus,129500,15341,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Ursus_arctos,136000,17400,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Ursus_maritimus,181333,22376,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Arctictis_binturong,14280,1128.1,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Arctogalidia_trivirgata,2010,552.8,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Genetta_genetta,1203.2,596.8,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Genetta_tigrina,1732,762.1,Genoud et al. (2017)
+Mammals,Eutheria,Carniv,Paradoxurus_hermaphroditus,3160,760,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Peropteryx_macrotis,5.1,11.78,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Saccopteryx_bilineata,7.8,14.5,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Saccopteryx_leptura,4.2,9.49,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Taphozous_mauritianus,26.17,31.14,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Aselliscus_tricuspidatus,4.2,7.14,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Hipposideros_diadema,37.2,33,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Hipposideros_cervinus,8.3,8.96,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Hipposideros_galeritus,8.5,9.35,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Hipposideros_maggietaylorae,18.2,21.1,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Hipposideros_armiger,53.1,32.9,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Rhinonicteris_aurantia,8.27,16.2,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Macroderma_gigas,107.2,94.3,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Nycteris_thebaica,11.65,18.76,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Miniopterus_natalensis,9.77,4.89,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Miniopterus_schreibersii,11.1,25.4,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Eumops_perotis,56,39.8,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Molossus_molossus,16.5,20.1,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Mops_condylurus,23.2,32.2,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Sauromys_petrophilus,10.98,6.74,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Tadarida_brasiliensis,11,8.6,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Tadarida_teniotis,32,34.4,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Mormoops_blainvillei,8.91,8.29,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Mormoops_megalophylla,16.5,24.4,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pteronotus_davyi,9.4,15.3,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pteronotus_parnellii,19.2,30.7,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pteronotus_personatus,14,23,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pteronotus_quadridens,4.8,6,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Natalus_tumidirostris,5.4,8.32,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Noctilio_albiventris,38.6,38.22,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Noctilio_leporinus,61,47,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Ametrida_centurio,10.5,21.9,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Anoura_caudifer,11.5,35.1,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Anoura_latidens,13.5,36.6,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Artibeus_cinereus,10.5,21.9,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Artibeus_concolor,19.7,32.9,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Artibeus_fimbriatus,63.9,77.96,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Artibeus_jamaicensis,45.2,56.5,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Artibeus_lituratus,70.1,84.8,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Artibeus_hirsutus,51.5,121.5,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Carollia_perspicillata,14.9,31.4,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Chiroderma_doriae,19.9,31.1,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Choeroniscus_godmani,10.1,19.1,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Chrotopterus_auritus,96.1,101.9,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Desmodus_rotundus,29.4,26.8,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Diaemus_youngi,36.6,34,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Diphylla_ecaudata,27.8,33.9,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Erophylla_bombifrons,16.41,18.1,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Glossophaga_longirostris,13.5,26.5,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Glossophaga_soricina,9.6,21.6,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Leptonycteris_curasoae,24,34.1,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Leptonycteris_yerbabuenae,22,36.5,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Macrotus_californicus,11.7,14.6,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Monophyllus_redmani,8.81,11.3,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Phyllostomus_discolor,33.5,34.5,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Phyllostomus_elongatus,35.6,38.8,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Phyllostomus_hastatus,84.2,70.7,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Platyrrhinus_lineatus,21.9,32.2,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Rhinophylla_pumilio,9.5,16.2,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Sturnira_erythromos,15.9,39.9,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Sturnira_lilium,21.9,39.2,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Sturnira_tildae,20.5,39.9,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Tonatia_bidens,27.4,39.2,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Uroderma_bilobatum,16.2,26.6,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Vampyressa_nymphaea,10.5,21.9,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Vampyressa_pusilla,8.8,18.6,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Cynopterus_brachyotis,37.4,47.5,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Dobsonia_anderseni,241,174,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Dobsonia_minor,73.7,74.4,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Dobsonia_moluccensis,404.3,367.9,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Dobsonia_praedatrix,179.5,142.5,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Eonycteris_spelaea,51.6,48,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Epomophorus_wahlbergi,101.7,105.16,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Macroglossus_minimus,16.4,14.4,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Megaloglossus_woermanni,11.28,18,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Melonycteris_melanops,53.3,43.2,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Nyctimene_albiventer,30.9,27.3,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Nyctimene_cyclotis,40.4,64.6,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Nyctimene_robinsoni,54.8,54.7,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Paranyctimene_raptor,23.6,24.5,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pteropus_giganteus,562.2,290.7,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pteropus_hypomelanus,520.8,290.1,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pteropus_poliocephalus,598,316.9,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pteropus_pumilus,194.2,126.4,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pteropus_rodricensis,254.5,134.9,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pteropus_scapulatus,362,242.5,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pteropus_vampyrus,1024.3,804.1,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Rousettus_aegyptiacus,146,122.6,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Rousettus_amplexicaudatus,91.5,104.3,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Syconycteris_australis,16.3,16.95,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Rhinolophus_capensis,11.9,7.14,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Rhinolophus_clivosus,16.83,13.46,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Antrozous_pallidus,22,19.2,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Chalinolobus_gouldii,17.5,25.2,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Eptesicus_fuscus,15,16.98,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Eptesicus_serotinus,27,43.1,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Histiotus_velatus,11.2,9.97,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Lasiurus_borealis,12.2,17.45,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Lasiurus_cinereus,19.9,16.52,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Lasiurus_intermedius,22.6,18.3,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Lasiurus_seminolus,9.8,13.5,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Myotis_austroriparius,7.5,8.63,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Myotis_bechsteinii,8.9,9.6,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Myotis_chiloensis,5.78,10.17,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Myotis_daubentonii,7.8,7.8,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Myotis_lucifugus,6,10.8,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Myotis_yumanensis,6.75,13.5,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Myotis_myotis,25,40.1,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Myotis_nattereri,7.1,8.7,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Myotis_nigricans,3.7,4.81,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Myotis_thysanodes,8.7,15.1,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Myotis_tricolor,12.71,6.36,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Nyctalus_noctula,20,15,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Nycticeius_humeralis,9,10.7,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Nyctophilus_bifax,9.9,12.67,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Nyctophilus_geoffroyi,8,11.4,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Nyctophilus_gouldi,10,12.2,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Nyctophilus_timoriensis,13.6,20.4,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Otonycteris_hemprichii,25.4,16.3,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pipistrellus_kuhlii,6.99,9.31,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Pipistrellus_pipistrellus,4.6,8,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Myotis_vivesi,25,35.8,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Plecotus_auritus,10.7,14.69,Genoud et al. (2017)
+Mammals,Eutheria,Chiro,Vespadelus_vulturnus,4,4.08,Genoud et al. (2017)
+Mammals,Eutheria,Erinaco,Atelerix_albiventris,450,146.7,Genoud et al. (2017)
+Mammals,Eutheria,Erinaco,Atelerix_frontalis,375,86.25,Genoud et al. (2017)
+Mammals,Eutheria,Erinaco,Echinosorex_gymnura,721,505,Genoud et al. (2017)
+Mammals,Eutheria,Erinaco,Erinaceus_concolor,823,347,Genoud et al. (2017)
+Mammals,Eutheria,Erinaco,Erinaceus_europaeus,749,337.1,Genoud et al. (2017)
+Mammals,Eutheria,Erinaco,Hemiechinus_auritus,397,150.9,Genoud et al. (2017)
+Mammals,Eutheria,Erinaco,Hylomys_suillus,77.3,80.4,Genoud et al. (2017)
+Mammals,Eutheria,Erinaco,Paraechinus_aethiopicus,453,113.3,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Blarina_brevicauda,21,52.5,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Blarina_carolinensis,10.2,33.3,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Crocidura_hildegardeae,10,26,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Crocidura_jouvenetae,10.2,22.4,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Crocidura_leucodon,11.7,29.8,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Crocidura_luna,11.8,24.8,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Crocidura_olivieri,38.9,58.4,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Crocidura_poensis,17.3,31.1,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Crocidura_russula,11.3,22.4,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Crocidura_suaveolens,6.5,18.9,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Crocidura_viaria,14.7,22.1,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Cryptotis_parva,6.2,19,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Myosorex_varius,12.32,23.86,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Neomys_anomalus,13.42,66.83,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Neomys_fodiens,13.5,39.2,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Notiosorex_crawfordi,4,12.6,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Sorex_alpinus,7.9,48.2,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Sorex_araneus,7.5,44.7,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Sorex_cinereus,5,32.75,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Sorex_coronatus,9.1,51.9,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Sorex_minutus,3.3,28.4,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Sorex_ornatus,4.7,25,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Sorex_palustris,14.4,70.65,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Sorex_vagrans,5.2,19.71,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Suncus_etruscus,2.2,7.04,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Suncus_murinus,52.4,88,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Condylura_cristata,49,110.3,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Neurotrichus_gibbsii,11.8,46.5,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Scalopus_aquaticus,48,67.7,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Scapanus_latimanus,61,76.3,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Scapanus_orarius,61.2,64.1,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Scapanus_townsendii,130.1,108.9,Genoud et al. (2017)
+Mammals,Eutheria,Sorico,Parascalops_breweri,57.6,130.8,Genoud et al. (2017)
+Mammals,Eutheria,Pholi,Manis_crassicaudata,15910,1241,Genoud et al. (2017)
+Mammals,Eutheria,Pholi,Manis_javanica,4220,1106,Genoud et al. (2017)
+Mammals,Eutheria,Pholi,Manis_pentadactyla,3638,667.9,Genoud et al. (2017)
+Mammals,Eutheria,Pholi,Manis_tetradactyla,1430,242,Genoud et al. (2017)
+Mammals,Eutheria,Pholi,Manis_tricuspis,2730,831.3,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Echinops_telfairi,152.5,40.1,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Geogale_aurita,6.9,7.73,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Hemicentetes_nigriceps,101.9,72.5,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Hemicentetes_semispinosus,133,64.1,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Limnogale_mergulus,77.7,72.3,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Microgale_cowani,10.3,27,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Microgale_dobsoni,44.6,41.7,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Microgale_drouhardi,11.9,28.39,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Microgale_talazaci,44,43.5,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Oryzorictes_hova,44.4,68.7,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Setifer_setosus,159.5,56.85,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Tenrec_ecaudatus,790,260.5,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Amblysomus_hottentotus,65.5,73.5,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Chrysochloris_asiatica,44,51.5,Genoud et al. (2017)
+Mammals,Eutheria,Afro,Eremitalpa_granti,26.1,13.57,Genoud et al. (2017)
+Mammals,Eutheria,Macros,Elephantulus_brachyrhynchus,45.3,43.72,Genoud et al. (2017)
+Mammals,Eutheria,Macros,Elephantulus_edwardii,49.8,54.28,Genoud et al. (2017)
+Mammals,Eutheria,Macros,Elephantulus_intufi,46.5,52.03,Genoud et al. (2017)
+Mammals,Eutheria,Macros,Elephantulus_myurus,63,66.3,Genoud et al. (2017)
+Mammals,Eutheria,Macros,Elephantulus_rozeti,45.3,47.8,Genoud et al. (2017)
+Mammals,Eutheria,Macros,Elephantulus_rufescens,53,56.87,Genoud et al. (2017)
+Mammals,Eutheria,Macros,Elephantulus_rupestris,59.7,53.17,Genoud et al. (2017)
+Mammals,Eutheria,Macros,Macroscelides_proboscideus,38.8,51.99,Genoud et al. (2017)
+Mammals,Eutheria,Macros,Petrodromus_tetradactylus,206.1,179.5,Genoud et al. (2017)
+Mammals,Eutheria,Probo,Elephas_maximus,3672000,425347,Genoud et al. (2017)
+Mammals,Eutheria,Probo,Loxodonta_africana,1542000,252888,Genoud et al. (2017)
+Mammals,Eutheria,Hyraco,Dendrohyrax_dorsalis,2210,752.1,Genoud et al. (2017)
+Mammals,Eutheria,Hyraco,Heterohyrax_brucei,1287,669.2,Genoud et al. (2017)
+Mammals,Eutheria,Hyraco,Procavia_capensis,2400,648,Genoud et al. (2017)
+Mammals,Eutheria,Sirenia,Trichechus_inunguis,170500,8531,Genoud et al. (2017)
+Mammals,Eutheria,Sirenia,Trichechus_manatus,427700,10992,Genoud et al. (2017)
+Mammals,Eutheria,Tubuli,Orycteropus_afer,48000,6144,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Aotus_trivirgatus,1030,496,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Alouatta_palliata,4670,2060,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Callimico_goeldii,557,278,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Callithrix_jacchus,356.7,163,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Callithrix_pygmaea,153,97.8,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Leontopithecus_rosalia,733,382,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Saguinus_geoffroyi,225,234.4,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Saguinus_oedipus,296,265.5,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Saimiri_boliviensis,850,592,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Saimiri_sciureus,839.8,694.9,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Cercocebus_torquatus,3750,1600,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Cercopithecus_mitis,8500,3392,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Colobus_guereza,10500,2980,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Erythrocebus_patas,3000,644.7,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Macaca_fascicularis,7100,3458,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Macaca_fuscata,9575,4149,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Macaca_mulatta,6225,2165,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Papio_anubis,9500,3058,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Papio_cynocephalus,14350,7950,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Papio_papio,6233,2622,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Papio_ursinus,16380,4986,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Daubentonia_madagascariensis,2562,1393.9,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Cheirogaleus_medius,300,159,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Microcebus_griseorufus,51.5,44.29,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Microcebus_murinus,84.5,82.7,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Euoticus_elegantulus,262,216,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Galago_demidoff,68,62.7,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Galago_moholi,181,86.9,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Galago_senegalensis,275,198,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Otolemur_crassicaudatus,1039,519.5,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Otolemur_garnettii,947,411,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Pan_troglodytes,38000,9462,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Pongo_pygmaeus,16200,4970,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Hylobates_lar,1900,1073,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Propithecus_coquereli,4052,1012.3,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Propithecus_verreauxi,3400,641.2,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Eulemur_fulvus,2330,324,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Eulemur_mongoz,1382,1143,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Lemur_catta,2527,651.4,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Varecia_variegata,3053,590,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Lepilemur_ruficaudatus,693,225,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Arctocebus_calabarensis,206,131,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Loris_tardigradus,284,128,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Nycticebus_coucang,1300,307,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Nycticebus_pygmaeus,469.5,172,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Perodicticus_potto,898,337,Genoud et al. (2017)
+Mammals,Eutheria,Prima,Tarsius_syrichta,114,77,Genoud et al. (2017)
+Mammals,Eutheria,Scand,Ptilocercus_lowii,57.5,43.1,Genoud et al. (2017)
+Mammals,Eutheria,Scand,Tupaia_glis,123,93.5,Genoud et al. (2017)
+Mammals,Eutheria,Scand,Tupaia_belangeri,186,126.5,Genoud et al. (2017)
+Mammals,Eutheria,Scand,Urogale_everetti,264,229.7,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Brachylagus_idahoensis,432,384.5,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Lepus_alleni,3362,1516,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Lepus_americanus,1438,1216,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Lepus_arcticus,3004,1081,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Lepus_californicus,1989,1118,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Lepus_capensis,1400,525,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Lepus_europaeus,2800,1512,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Lepus_timidus,3096,2637.8,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Lepus_townsendii,2430,1263,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Sylvilagus_audubonii,672.4,436.9,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Sylvilagus_floridanus,981,557.2,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Ochotona_curzoniae,128.2,218,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Ochotona_dauurica,127.7,249,Genoud et al. (2017)
+Mammals,Eutheria,Lago,Ochotona_princeps,109.3,167.2,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Bathyergus_janetta,406,219.2,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Bathyergus_suillus,712,341.8,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Cryptomys_amatus,77.3,48.7,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Cryptomys_anselli,81.9,62.2,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Cryptomys_bocagei,94.4,69.9,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Cryptomys_damarensis,125,82.5,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Cryptomys_darlingi,60,58.8,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Cryptomys_hottentotus,102,105,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Cryptomys_mechowi,267,160.2,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Georychus_capensis,132,126.5,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Heliophobius_argenteocinereus,223,154,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Heterocephalus_glaber,39,25.7,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Capromys_pilorides,2630,597,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Geocapromys_brownii,2456,736.8,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Geocapromys_ingrahami,775,265.8,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Cavia_magna,544,473,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Dolichotis_salinicola,1613,725.9,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Galea_musteloides,322,264,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Hydrochoeris_hydrochaeris,26385,6596.3,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Kerodon_rupestris,733,366.5,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Microcavia_niata,255.2,175.8,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Chinchilla_lanigera,426,225.8,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Chinchilla_chinchilla,454.4,226.3,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Lagidium_viscacia,2056,699,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Lagostomus_maximus,6784,1886,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Ctenomys_australis,293.8,146.5,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,NA,140.7,112.6,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Ctenomys_fulvus,275,176,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Ctenomys_magellanicus,263.1,184.2,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Ctenomys_maulinus,215,187.1,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Ctenomys_opimus,218.4,128.9,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Ctenomys_peruanus,490,220.5,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Ctenomys_porteousi,195.7,150.7,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Ctenomys_talarum,181.95,162.91,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Ctenomys_tuconax,325.8,208.5,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Cuniculus_paca,9156,2746.8,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Dasyprocta_azarae,3849,1886,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Dasyprocta_leporina,2687,1558.5,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Myoprocta_acouchy,914,502.7,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Proechimys_semispinosus,265,338.5,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Thrichomys_apereoides,323,206.7,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Coendou_prehensilis,3280,925,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Erethizon_dorsata,6100,3074.4,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Sphiggurus_villosus,812,580,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Hystrix_africaeaustralis,10700,2033,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Myocastor_coypus,4325,3027.4,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Aconaemys_fuscus,112,121,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Octodon_bridgesi,176.1,183.3,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Octodon_degus,206,191.6,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Octodon_lunatus,173.2,171.5,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Octodontomys_gliroides,152,130.7,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Octomys_mimax,118.6,115,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Spalacopus_cyanus,136,101.3,Genoud et al. (2017)
+Mammals,Eutheria,RodHystrico,Tympanoctomys_barrerae,71.4,76.8,Genoud et al. (2017)
+Mammals,Eutheria,RodAnomal,Pedetes_capensis,2300,793.3,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Castor_canadensis,15270,4688,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Geomys_bursarius,197,137.9,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Geomys_pinetis,200,142,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Thomomys_bottae,143,120.1,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Thomomys_talpoides,82.6,102.6,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Thomomys_townsendii,249,189.2,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Thomomys_umbrinus,95.3,72.3,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Chaetodipus_baileyi,29.1,34.54,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Chaetodipus_californicus,22,21.3,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Chaetodipus_fallax,19.6,26.85,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Chaetodipus_formosus,15.1,18.42,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Chaetodipus_hispidus,39.5,49.4,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Chaetodipus_intermedius,14.6,15.6,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Chaetodipus_penicillatus,16,22.4,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Dipodomys_agilis,60.6,63.6,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Dipodomys_deserti,106,92.2,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Dipodomys_heermanni,63.3,73.2,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Dipodomys_merriami,34.7,41.64,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Dipodomys_microps,57.2,66.9,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Dipodomys_nitratoides,37.8,46.2,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Dipodomys_ordii,48.8,57.4,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Dipodomys_panamintinus,56.9,62.59,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Dipodomys_spectabilis,100,114,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Heteromys_anomalus,69.3,100.5,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Heteromys_desmarestianus,75.8,99.1,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Liomys_irroratus,48.1,53.9,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Liomys_salvini,43.8,46.9,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Microdipodops_megacephalus,11.7,25.2,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Microdipodops_pallidus,15.2,19.8,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Perognathus_flavus,8.3,17.3,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Perognathus_longimembris,8.9,9.52,Genoud et al. (2017)
+Mammals,Eutheria,RodCastor,Perognathus_parvus,19.2,28.8,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Abrothrix_andinus,34.6,64.7,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Abrothrix_lanosus,24,45.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Abrothrix_longipilis,42.3,57.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Abrothrix_olivaceus,27,49.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Akodon_albiventer,31,46.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Akodon_azarae,22.5,38.7,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Alticola_argentatus,52.9,127,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Arborimus_pomo,21.8,58.9,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Arvicola_amphibius,97.5,113.1,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Auliscomys_boliviensis,76.8,110.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Baiomys_taylori,7.3,14.2,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Calomys_callosus,48,71.04,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Calomys_lepidus,16,27.36,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Calomys_musculinus,16.9,27.89,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Calomys_venustus,49.5,70.79,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Chelemys_macronyx,62,84.32,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Chionomys_nivalis,37.5,117.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Cricetulus_barabensis,37.3,52.97,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Cricetulus_migratorius,30.7,45.74,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Cricetus_cricetus,369.6,192.2,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Dicrostonyx_groenlandicus,62.3,105.3,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Dicrostonyx_torquatus,69.8,138.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Eligmodontia_puerulus,21,33.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Eligmodontia_typus,17.5,29.9,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Eothenomys_melanogaster,25.2,62.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Eothenomys_miletus,41.23,79.57,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Eothenomys_olitor,34.26,89.1,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Euneomys_chinchilloides,65.4,84.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Graomys_griseoflavus,69.4,83.97,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Isthmomys_pirrensis,138,121.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Lasiopodomys_brandtii,61.8,88.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Lemmiscus_curtatus,30.3,50.3,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Lemmus_lemmus,60.6,141.8,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Lemmus_trimucronatus,44,70.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Lemmus_sibiricus,95.4,201.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Loxodontomys_micropus,62.3,97.8,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Megadontomys_thomasi,110.8,124,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Mesocricetus_auratus,119.3,102.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_agrestis,28,63.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_arvalis,33.9,61.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_breweri,53.1,73.7,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_cabrerae,43,48.59,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_californicus,44,67.92,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_canicaudus,30.4,77.8,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_guentheri,43.8,80.15,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_longicaudus,30.2,62.2,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_maximowiczii,41.67,92.09,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_mexicanus,28.8,46.57,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_montanus,51.2,89.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_ochrogaster,47.4,66.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_oeconomus,35.4,100.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_pennsylvanicus,44.7,80.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_pinetorum,23.8,55.9,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_richardsoni,80,172.8,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_socialis,61.2,85.7,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_subterraneus,17.8,49.48,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_townsendii,52.2,85.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Microtus_xanthognathus,68.5,98.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Myodes_californicus,18.3,61.12,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Myodes_gapperi,22.8,44.46,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Myodes_glareolus,20.9,52.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Myodes_rufocanus,23.05,83.44,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Myodes_rutilus,28,77,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Myopus_schisticolor,26.4,95,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Neofiber_alleni,258.1,216.8,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Neotoma_albigula,193.6,141.3,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Neotoma_cinerea,158.1,120.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Neotoma_floridana,160,274,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Neotoma_lepida,110.3,87.1,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Neotoma_macrotis,186.7,147.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Neotoma_stephensi,191.3,138,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Ochrotomys_nuttalli,19.5,27.1,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Oligoryzomys_longicaudatus,28.2,51,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Ondatra_zibethicus,1004.6,642.9,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Onychomys_torridus,19.1,29.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Oryzomys_talamancae,20,35,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Oxymycterus_roberti,83.5,91.02,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Peromyscus_boylii,23.2,54.29,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Peromyscus_californicus,49.6,58,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Peromyscus_crinitus,20.9,30.9,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Peromyscus_eremicus,21.5,31.8,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Peromyscus_gossypinus,21.5,36.98,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Peromyscus_keeni,28.3,46.7,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Peromyscus_leucopus,21.2,35.2,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Peromyscus_maniculatus,19.1,39,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Peromyscus_megalops,66.2,90.64,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Peromyscus_polionotus,12,21.48,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Peromyscus_truei,33.3,62.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Phenacomys_intermedius,21.5,67.23,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Phodopus_campbelli,31.4,59.03,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Phodopus_roborovskii,21.8,30.1,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Phodopus_sungorus,31.3,39.13,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Phyllotis_darwini,72.1,66.95,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Phyllotis_magister,50.7,61.3,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Phyllotis_xanthopygus,35.9,45.2,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Podomys_floridanus,30.8,51.74,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Reithrodon_auritus,78.7,76.8,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Reithrodontomys_humilis,8.4,36.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Reithrodontomys_megalotis,7.85,20.65,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Scotinomys_teguina,12,33.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Scotinomys_xerampelinus,15.2,31.9,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Sigmodon_planifrons,155.6,207,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Sigmodon_alleni,120.1,194.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Sigmodon_fulviventer,166.4,244.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Sigmodon_toltecus,87.8,212.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Sigmodon_mascotensis,116.2,177.8,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Sigmodon_hirsutus,109.8,184.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Sigmodon_hispidus,152.4,126.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Sigmodon_leucotis,128.6,186.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Sigmodon_ochrognathus,115.1,154.2,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Tscherskia_triton,132,162.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Dipus_sagitta,79.2,90.3,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Jaculus_jaculus,74.5,91.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Jaculus_orientalis,139.1,139.1,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Napaeozapus_insignis,21.6,38.9,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Sicista_betulina,11.5,38,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Zapus_hudsonius,30,45,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Zapus_princeps,27.5,56.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Acomys_cahirinus,42,46.2,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Acomys_russatus,51.1,40.84,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Acomys_spinosissimus,27.02,44.15,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Acomys_subspinosus,32.26,83.46,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Apodemus_agrarius,24.37,80.18,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Apodemus_alpicola,31.1,55.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Apodemus_argenteus,15.7,49.3,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Apodemus_chevrieri,32.56,87.91,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Apodemus_flavicollis,33.3,67.9,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Apodemus_mystacinus,31.1,51.9,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Apodemus_speciosus,34.2,53.69,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Apodemus_sylvaticus,25.3,42.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Apodemus_witherbyi,19.6,47.8,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Conilurus_penicillatus,212.3,162.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Desmodillus_auricularis,71.9,87.72,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Dipodillus_campestris,42.2,46.8,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Dipodillus_dasyurus,27.6,29.26,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Gerbilliscus_afra,106.5,182.1,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Gerbilliscus_leucogaster,157.6,132.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Gerbillurus_paeba,31.13,27.71,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Gerbillurus_setzeri,46.1,37.02,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Gerbillurus_tytonis,29.9,31.69,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Gerbillurus_vallinus,38.8,34.77,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Gerbillus_andersoni,35.3,38.83,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Gerbillus_gerbillus,29.7,42.47,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Gerbillus_nanus,28.4,22.41,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Gerbillus_perpallidus,52.4,48.2,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Gerbillus_pusillus,12.6,13.48,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Gerbillus_pyramidum,108.5,72.7,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Golunda_ellioti,56.2,60.7,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Hydromys_chrysogaster,780,458.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Lemniscomys_rosalia,48.8,59.05,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Mastomys_natalensis,41.5,32.79,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Meriones_crassus,119.8,154.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Meriones_hurrianae,72.3,53.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Meriones_meridianus,45,61.2,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Meriones_tristrami,112,98.56,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Meriones_unguiculatus,63.6,65.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Micaelamys_namaquensis,66.3,52.38,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Micromys_minutus,7.4,21.16,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Millardia_meltada,67.4,58.64,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Mus_macedonicus,14.04,19.38,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Mus_minutoides,8.27,21.68,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Mus_musculus,22.8,35.3,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Mus_spretus,21.8,61.91,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Myotomys_sloggetti,113.3,134,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Myotomys_unisulcatus,96,106.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Notomys_alexis,33,40.2,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Notomys_cervinus,34.2,41.72,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Otomys_irroratus,102.1,84.95,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Parotomys_brantsii,86.5,83.9,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Psammomys_obesus,127.6,74.39,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Pseudomys_albocinereus,27.9,43.52,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Pseudomys_gracilicaudatus,79.8,83.79,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Pseudomys_hermannsburgensis,11.7,16.97,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Rattus_colletti,165.7,123,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Rattus_fuscipes,77.4,68.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Rattus_lutreolus,109.1,63.3,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Rattus_niobe,42.3,53.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Rattus_norvegicus,224.3,283.7,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Rattus_rattus,117,137.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Rattus_villosissimus,184.4,107,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Rhabdomys_pumilio,48.3,43.95,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Sekeetamys_calurus,59.5,46.4,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Stochomys_longicaudatus,89.3,102.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Tatera_indica,86.8,75.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Thallomys_paedulcus,124.7,68.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Uromys_caudimaculatus,819,570.6,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Cricetomys_gambianus,1870.9,1141,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Macrotarsomys_ingens,64.3,53.35,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Malacothrix_typica,21.7,20.62,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Mystromys_albicaudatus,93.78,126.8,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Petromyscus_collinus,20.41,20.61,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Saccostomus_campestris,78.1,48.24,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Steatomys_pratensis,27.5,36.16,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Cannomys_badius,344,172,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Spalax_carmeli,117,99.5,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Spalax_galili,128,110.1,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Spalax_golani,133.8,70.9,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Spalax_judaei,121,75,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Spalax_leucodon,201,148.7,Genoud et al. (2017)
+Mammals,Eutheria,RodMyom,Tachyoryctes_splendens,191,150.9,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Dryomys_nitedula,25.1,88.1,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Eliomys_quercinus,44.3,77,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Glis_glis,151.3,92.29,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Muscardinus_avellanarius,20.6,75.19,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Graphiurus_ocularis,67.8,66.24,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Graphiurus_murinus,38.4,40.36,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Aplodontia_rufa,630,277.2,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Ammospermophilus_leucurus,112.8,98,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Cynomys_ludovicianus,1112.3,426,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Epixerus_ebii,460,241.7,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Funisciurus_congicus,112.3,97.7,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Funisciurus_isabella,90,79.4,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Funisciurus_anerythrus,185,127.5,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Funisciurus_lemniscatus,95,89.59,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Funisciurus_pyrropus,244,181.3,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Glaucomys_volans,61.5,64.58,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Heliosciurus_rufobrachium,271,162.5,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Marmota_flaviventris,2790,848.2,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Marmota_marmota,3599,1332,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Marmota_monax,2650,651,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Paraxerus_cepapi,223.6,145.4,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Paraxerus_palliatus,206,179.2,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Paraxerus_poensis,97,127.5,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Protoxerus_stangeri,696,434.2,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Sciurus_aberti,624,430.6,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Sciurus_carolinensis,440,369.6,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Sciurus_variegatoides,130,178,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_armatus,306.2,165.6,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_beecheyi,402.3,217.2,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_beldingi,283.3,153.2,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_citellus,243,239.4,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_dauricus,347,182.4,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_franklinii,607,388.5,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_lateralis,260.2,129.5,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_mexicanus,199,278.6,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_mohavensis,239.5,111.3,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_undulatus,680,588,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_parryii,565.6,397.5,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_richardsonii,258.8,130.1,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_saturatus,252.2,163,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_spilosoma,148.8,88.6,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_tereticaudus,167.2,93.6,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_townsendii,198.7,114.4,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Spermophilus_tridecemlineatus,182.3,104.5,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Tamias_alpinus,39.1,57.87,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Tamias_amoenus,52.7,76.6,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Tamias_merriami,75,78.8,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Tamias_minimus,33.5,51.3,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Tamias_palmeri,69.4,113.1,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Tamias_speciosus,70.7,104.6,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Tamias_striatus,87.4,90,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Tamiasciurus_hudsonicus,268,246.6,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Xerus_inauris,528,317.9,Genoud et al. (2017)
+Mammals,Eutheria,RodSciuro,Xerus_princeps,608,343.5,Genoud et al. (2017)
+Mammals,Eutheria,Cingulata,Cabassous_centralis,3810,811.5,Genoud et al. (2017)
+Mammals,Eutheria,Cingulata,Chaetophractus_nationi,2150,559,Genoud et al. (2017)
+Mammals,Eutheria,Cingulata,Chaetophractus_vellerosus,1110,306.4,Genoud et al. (2017)
+Mammals,Eutheria,Cingulata,Chaetophractus_villosus,4540,808.1,Genoud et al. (2017)
+Mammals,Eutheria,Cingulata,Dasypus_novemcinctus,4180,779.7,Genoud et al. (2017)
+Mammals,Eutheria,Cingulata,Dasypus_sabanicola,1380,310.9,Genoud et al. (2017)
+Mammals,Eutheria,Cingulata,Euphractus_sexcinctus,8190,1237,Genoud et al. (2017)
+Mammals,Eutheria,Cingulata,Priodontes_maximus,45190,3028,Genoud et al. (2017)
+Mammals,Eutheria,Cingulata,Tolypeutes_matacus,1160,210,Genoud et al. (2017)
+Mammals,Eutheria,Cingulata,Zaedyus_pichiy,1740,393.2,Genoud et al. (2017)
+Mammals,Eutheria,Pilosa,Bradypus_tridactylus,3746,580.6,Genoud et al. (2017)
+Mammals,Eutheria,Pilosa,Bradypus_variegatus,3790,686,Genoud et al. (2017)
+Mammals,Eutheria,Pilosa,Cyclopes_didactylus,240,114.5,Genoud et al. (2017)
+Mammals,Eutheria,Pilosa,Choloepus_hoffmanni,4250,799,Genoud et al. (2017)
+Mammals,Eutheria,Pilosa,Myrmecophaga_tridactyla,30600,2601,Genoud et al. (2017)
+Mammals,Eutheria,Pilosa,Tamandua_mexicana,4210,850.4,Genoud et al. (2017)
+Mammals,Eutheria,Pilosa,Tamandua_tetradactyla,3500,885.5,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Antechinomys_laniger,24.2,23.72,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Antechinus_flavipes,45,45,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Antechinus_stuartii,36.5,36.6,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Antechinus_swainsonii,66.9,63.82,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Dasycercus_cristicauda,88.8,46.18,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Dasykaluta_rosamondae,35.5,19.53,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Dasyuroides_byrnei,118.2,82.74,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Dasyurus_geoffroii,1385,500,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Dasyurus_hallucatus,516,250,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Dasyurus_maculatus,3840,1195,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Dasyurus_viverrinus,909.9,409.5,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Ningaui_yvonnae,11.6,15.66,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Phascogale_calura,34.7,28.8,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Phascogale_tapoatafa,157.2,127.3,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Planigale_gilesi,9.5,12.16,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Planigale_ingrami,7.1,11.29,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Planigale_maculata,8.5,10.71,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Planigale_tenuirostris,5.7,7.11,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Pseudantechinus_macdonnellensis,43.1,27.15,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Sarcophilus_harrisii,5050,1414,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Sminthopsis_crassicaudata,17.7,22.13,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Sminthopsis_macroura,22,23.54,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Sminthopsis_murina,19,21.41,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Sminthopsis_ooldea,10.6,18.9,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Sminthopsis_psammophila,43.6,34.7,Genoud et al. (2017)
+Mammals,Marsupialia,Dasyuro,Myrmecobius_fasciatus,488,180.6,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Caluromys_derbianus,357,203.5,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Caluromys_philander,170,127.5,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Chironectes_minimus,922.9,366.5,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Didelphis_aurita,1256,1141.7,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Didelphis_marsupialis,1329,611.3,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Didelphis_virginiana,3257,1074.8,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Gracilinanus_agilis,31.4,31.4,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Gracilinanus_microtarsus,13,18.92,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Lutreolina_crassicaudata,812,405.9,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Marmosa_robinsoni,122,97.6,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Metachirus_nudicaudatus,261,156.6,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Micoureus_paraguayanus,170.1,129.3,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Monodelphis_brevicaudata,111,75.5,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Monodelphis_domestica,104,59.49,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Philander_opossum,249,186.8,Genoud et al. (2017)
+Mammals,Marsupialia,Didelphi,Thylamys_elegans,40.2,43.01,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Acrobates_pygmaeus,14,15.12,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Burramys_parvus,44.3,36.85,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Cercartetus_concinnus,18.6,22.32,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Cercartetus_lepidus,12.6,18.77,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Cercartetus_nanus,36,23.76,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Dendrolagus_matschiei,6960,1426.8,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Lagorchestes_conspicillatus,2660,851.2,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Macropus_eugenii,4796,1382,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Macropus_giganteus,26400,5861,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Macropus_robustus,22716,4543,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Macropus_rufogriseus,4800,2160,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Macropus_rufus,32490,5791,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Setonix_brachyurus,2654,823.3,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Gymnobelideus_leadbeateri,166.3,103.1,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Petaurus_breviceps,127.7,76.37,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Phalanger_carmelitae,1389.7,534.9,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Phalanger_gymnotis,1565.5,518.2,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Phalanger_intercastellanus,1671.4,658.4,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Phalanger_orientalis,2181.3,883.4,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Phalanger_sericeus,1353.2,428.8,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Spilocuscus_maculatus,4250,1020,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Trichosurus_vulpecula,1982,625,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Phascolarctos_cinereus,4765,1053,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Aepyprymnus_rufescens,2820,1069,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Bettongia_gaimardi,2070,952.2,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Bettongia_penicillata,1070,592,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Potorous_tridactylus,950,437,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Pseudocheirus_peregrinus,917,302.6,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Petauroides_volans,1000,432.8,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Tarsipes_rostratus,5.4,13.6,Genoud et al. (2017)
+Mammals,Marsupialia,Diproto,Lasiorhinus_latifrons,25250,2525,Genoud et al. (2017)
+Mammals,Marsupialia,Microbio,Dromiciops_gliroides,40.2,31.76,Genoud et al. (2017)
+Mammals,Marsupialia,Notoryctem,Notoryctes_caurinus,34,21.42,Genoud et al. (2017)
+Mammals,Marsupialia,Peramelo,Echymipera_kalubu,695,344,Genoud et al. (2017)
+Mammals,Marsupialia,Peramelo,Echymipera_rufescens,1276,541,Genoud et al. (2017)
+Mammals,Marsupialia,Peramelo,Isoodon_auratus,428,149.8,Genoud et al. (2017)
+Mammals,Marsupialia,Peramelo,Isoodon_macrourus,1551,580.1,Genoud et al. (2017)
+Mammals,Marsupialia,Peramelo,Isoodon_obesulus,1380,448.5,Genoud et al. (2017)
+Mammals,Marsupialia,Peramelo,Perameles_bougainville,255,161,Genoud et al. (2017)
+Mammals,Marsupialia,Peramelo,Perameles_gunnii,681,375,Genoud et al. (2017)
+Mammals,Marsupialia,Peramelo,Perameles_nasuta,645,316.1,Genoud et al. (2017)
+Mammals,Marsupialia,Peramelo,Macrotis_lagotis,1577,544.1,Genoud et al. (2017)
+Mammals,Monotremata,Monotre,Ornithorhynchus_anatinus,1284,475,Genoud et al. (2017)
+Mammals,Monotremata,Monotre,Tachyglossus_aculeatus,2140,280.3,Genoud et al. (2017)
+Mammals,Monotremata,Monotre,Zaglossus_bruijni,10300,1215.4,Genoud et al. (2017)
