@@ -40,7 +40,7 @@ Ainv <- inverseA(phylo)$Ainv
 
 
 ####################################
-# Correlations between molecular rates and life-history traits
+#1. Correlations between molecular rates and life-history traits
 groups <- c("Fishes","Amphibians","Reptiles","Mammals","Birds")
 
 pdf("./Outputs/Supplementary/Extended Fig8x.pdf", width=9.27, height = 2.8)
@@ -88,7 +88,7 @@ dev.off()
 
 
 ######################
-#Model selection
+#2. Model selection
 #PLMM with tips data
 scale_subrate <- subrate %>%
   mutate(dS=scale(log(dS)), dN=scale(log(dN)),AnnualTemp=scale(AnnualTemp),
@@ -240,8 +240,8 @@ df2 <- data.frame(R2=c("R2.Phy", "R2m", "R2.Phy", "R2m"),
   mutate(group=factor(group, levels=c("dS","dN")))
 
   
-
-f1 <- ggplot(df1, aes(model, R2c, group=Mol.Rate, colour = Mol.Rate))+
+#Fig.3a-b
+f3a <- ggplot(df1, aes(model, R2c, group=Mol.Rate, colour = Mol.Rate))+
   geom_line(size=0.4)+
   geom_point(size=1.2)+
   geom_errorbar(aes(ymin = R2c-R2c.sd, ymax = R2c+R2c.sd), width=.3, size=0.4)+
@@ -265,7 +265,7 @@ f1 <- ggplot(df1, aes(model, R2c, group=Mol.Rate, colour = Mol.Rate))+
         axis.line = element_line(color = "black", size = 0.2))
 
 
-f2<-df2%>%
+f3b<-df2%>%
   ggplot(aes(x=group, y=Mean, fill=R2)) +
   geom_bar(stat="identity", position=position_dodge())+
   geom_errorbar(aes(ymin = Mean-SD, ymax = Mean+SD), width=.3, position=position_dodge(0.9), size=0.2)+
@@ -383,8 +383,8 @@ for(group in groups){
   summary_dn <- rbind(summary_dn, rbind(dn_fixed, dn_random,dn_r)%>%mutate(Group=group))
 }
 
-write.csv(summary_ds,"summary_ds.csv", row.names = F)
-write.csv(summary_dn,"summary_dn.csv", row.names = F)
+summary_ds 
+summary_dn 
 
 #extract parameter values from PGLMMs
 pglmm_out <- NULL
@@ -403,8 +403,8 @@ for(i in 1:length(groups)){
 
 
 
-
-f3 <- pglmm_out%>%
+#Fig.3c-f
+f3c <- pglmm_out%>%
   filter(Subrate=="dS")%>%
   filter(Group =="Ectotherms")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -429,7 +429,7 @@ f3 <- pglmm_out%>%
   coord_flip()
 
 
-f4 <- pglmm_out%>%
+f3d <- pglmm_out%>%
   filter(Subrate=="dS")%>%
   filter(Group =="Endotherms")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -455,7 +455,7 @@ f4 <- pglmm_out%>%
 
 
 
-f5 <- pglmm_out%>%
+f3e <- pglmm_out%>%
   filter(Subrate=="dN")%>%
   filter(Group =="Ectotherms")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -480,7 +480,7 @@ f5 <- pglmm_out%>%
   coord_flip()
 
 
-f6 <- pglmm_out%>%
+f3f <- pglmm_out%>%
   filter(Subrate=="dN")%>%
   filter(Group =="Endotherms")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -508,11 +508,11 @@ f6 <- pglmm_out%>%
 
 
 
-f1 + f3 + f4+f2+f5+f6
-ggsave(filename="./Outputs/MainFigures/Fig3a.pdf", height=5, width=8.27)
+f3a+f3b+f3c+f3d+f3e+f3f
+ggsave(filename="./Outputs/MainFigures/Fig3af.pdf", height=5, width=8.27)
 
-#
-f7 <- pglmm_out%>%
+#Fig.3gh
+f3g1 <- pglmm_out%>%
   filter(Subrate=="dS")%>%
   filter(Group =="Fishes")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -536,7 +536,7 @@ f7 <- pglmm_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-f8 <- pglmm_out%>%
+f3g2 <- pglmm_out%>%
   filter(Subrate=="dS")%>%
   filter(Group =="Amphibians")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -561,7 +561,7 @@ f8 <- pglmm_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-f9 <- pglmm_out%>%
+f3g3 <- pglmm_out%>%
   filter(Subrate=="dS")%>%
   filter(Group =="Reptiles")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -586,7 +586,7 @@ f9 <- pglmm_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-f10 <- pglmm_out%>%
+f3g4 <- pglmm_out%>%
   filter(Subrate=="dS")%>%
   filter(Group =="Mammals")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -611,7 +611,7 @@ f10 <- pglmm_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-f11 <- pglmm_out%>%
+f3g5 <- pglmm_out%>%
   filter(Subrate=="dS")%>%
   filter(Group =="Birds")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -636,7 +636,7 @@ f11 <- pglmm_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-f12 <- pglmm_out%>%
+f3h1 <- pglmm_out%>%
   filter(Subrate=="dN")%>%
   filter(Group =="Fishes")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -660,7 +660,7 @@ f12 <- pglmm_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-f13 <- pglmm_out%>%
+f3h2 <- pglmm_out%>%
   filter(Subrate=="dN")%>%
   filter(Group =="Amphibians")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -685,7 +685,7 @@ f13 <- pglmm_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-f14 <- pglmm_out%>%
+f3h3 <- pglmm_out%>%
   filter(Subrate=="dN")%>%
   filter(Group =="Reptiles")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -710,7 +710,7 @@ f14 <- pglmm_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-f15 <- pglmm_out%>%
+f3h4 <- pglmm_out%>%
   filter(Subrate=="dN")%>%
   filter(Group =="Mammals")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -735,7 +735,7 @@ f15 <- pglmm_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-f16 <- pglmm_out%>%
+f3h5 <- pglmm_out%>%
   filter(Subrate=="dN")%>%
   filter(Group =="Birds")%>%
   ggplot(aes(x=env, y=post.mean, colour=ThermoMode))+
@@ -761,10 +761,10 @@ f16 <- pglmm_out%>%
   coord_flip()
 
 
-f7+f8+f9+f10+f11+f12+f13+f14+f15+f16+
+f3g1+f3g2+f3g3+f3g4+f3g5+f3h1+f3h2+f3h3+f3h4+f3h5+
   plot_layout(ncol = 5, nrow = 2)
 
-ggsave(filename="./Outputs/MainFigures/Fig3b.pdf", height=4, width=8.27)
+ggsave(filename="./Outputs/MainFigures/Fig3gh.pdf", height=4, width=8.27)
 
 
 #################################################
@@ -891,8 +891,8 @@ for(group in groups){
   summary_dn <- rbind(summary_dn, rbind(dn_fixed, dn_random,dn_r)%>%mutate(Group=group))
 }
 
-write.csv(summary_ds,"summary_ds.csv", row.names = F)
-write.csv(summary_dn,"summary_dn.csv", row.names = F)
+summary_ds
+summary_dn
 
 #extract parameter values from PGLMMs
 pglmm_out <- NULL
@@ -911,7 +911,7 @@ for(i in 1:length(groups)){
 
 
 
-
+#Extended Fig.10
 f3 <- pglmm_out%>%
   filter(Subrate=="dS")%>%
   filter(Group =="Ectotherms")%>%
@@ -1270,12 +1270,12 @@ f16 <- pglmm_out%>%
 
 f3+f4+f5+f6+plot_layout(nrow=1)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig9a.pdf", height=2.2, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Extended Fig10a.pdf", height=2.2, width=8.27)
 
 f7+f8+f9+f10+f11+f12+f13+f14+f15+f16+
   plot_layout(ncol = 5, nrow = 2)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig9b.pdf", height=4, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Extended Fig10b.pdf", height=4, width=8.27)
 
 
 
@@ -1332,8 +1332,6 @@ load(file="./Outputs/Data/Multiple_PGLMM_three_random_effects.rdata")
 
 
 
-summary_ds <-NULL
-summary_dn <-NULL
 for(group in groups){
   fit_ds <- multi_pglmm_list[[paste(group, "dS", sep = ".")]]
   fit_dn <- multi_pglmm_list[[paste(group, "dN", sep = ".")]]
@@ -1366,8 +1364,8 @@ for(group in groups){
   summary_dn <- rbind(summary_dn, rbind(dn_fixed, dn_random,dn_r)%>%mutate(Group=group))
 }
 
-write.csv(summary_ds,"summary_ds.csv", row.names = F)
-write.csv(summary_dn,"summary_dn.csv", row.names = F)
+summary_ds 
+summary_dn 
 
 #extract parameter values from PGLMMs
 pglmm_out <- NULL
@@ -1493,7 +1491,7 @@ f6 <- pglmm_out%>%
 f3+f4+f5+f6+
   plot_layout(nrow=1)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig10a.pdf", height=2.2, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Extended Fig11a.pdf", height=2.2, width=8.27)
 
 
 #
@@ -1749,7 +1747,7 @@ f16 <- pglmm_out%>%
 f7+f8+f9+f10+f11+f12+f13+f14+f15+f16+
   plot_layout(ncol = 5, nrow = 2)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig10b.pdf", height=4, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Extended Fig11b.pdf", height=4, width=8.27)
 
 
 ##############
@@ -1838,8 +1836,8 @@ for(group in groups){
   summary_dn <- rbind(summary_dn, rbind(dn_fixed, dn_random,dn_r)%>%mutate(Group=group))
 }
 
-write.csv(summary_ds,"summary_ds.csv", row.names = F)
-write.csv(summary_dn,"summary_dn.csv", row.names = F)
+summary_ds 
+summary_dn 
 
 #extract parameter values from PGLMMs
 pglmm_out <- NULL
@@ -1881,7 +1879,7 @@ f3 <- pglmm_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-
+#Extended Fig.12
 f4 <- pglmm_out%>%
   filter(Subrate=="dS")%>%
   filter(Group =="Endotherms")%>%
@@ -1965,7 +1963,7 @@ f6 <- pglmm_out%>%
 f3+f4+f5+f6+
   plot_layout(nrow=1)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig11a.pdf", height=2.2, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Extended Fig12a.pdf", height=2.2, width=8.27)
 
 
 #
@@ -2221,8 +2219,8 @@ f16 <- pglmm_out%>%
 f7+f8+f9+f10+f11+f12+f13+f14+f15+f16+
   plot_layout(ncol = 5, nrow = 2)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig11b.pdf", height=4, width=8.27)
-###################
+ggsave(filename="./Outputs/Supplementary/Extended Fig12b.pdf", height=4, width=8.27)
+
 
 
 
