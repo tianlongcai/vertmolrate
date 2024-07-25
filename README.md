@@ -6,7 +6,7 @@ Cai, T., Wen, Z., Jiang, Z. and Zhen, Y. 2024. Distinct latitudinal gradients of
 
 Included are:
 
-1. DataFiles
+## 1. DataFiles
 
   A folder containing the input data used for the analyses.
 
@@ -18,7 +18,7 @@ Included are:
 - BMR: Basal metabolic rates and coresponding phylogeny of birds.
 - F34F61: Molecular rates are estimated by F34 and F61 models in codeml.
 
-2. Scripts
+## 2. Scripts
 
   Scripts to perform the analyses used in the main text and supplementary text, respectively.
 
@@ -29,13 +29,13 @@ Included are:
 
 
 
-3. Outputs
+## 3. Outputs
 
 - MainFigures: Results of the main figures produced by the R scripts.
 - Supplementary: Results of the supplementary figures produced by the R scripts.
   
 
 
-4. source_functions.R
+## 4. source_functions.R
 
 - source_functions.R: An R script containing functions used for the analyses.
