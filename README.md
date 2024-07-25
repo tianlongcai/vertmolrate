@@ -11,7 +11,7 @@ Included are:
   A folder containing the input data used for the analyses.
 
 - trees: A time tree used for all analyses.
-- Molecular rate and predictors: VertMolRate.csv (see Supplementary Table 24 before publication).
+- Molecular rate and predictors: VertMolRate.csv (see raw data in Supplementary Table 24 before publication).
 - GISLayers: Some GIS layers are used to present latitudinal gradient patterns of molecular rates across grids.
 - sister_family: Sister pairs data used for examining relationships between diversification rates and molecular rates at species level.
 - SpatialjoinFiles: Some GIS layers include species names in each grid and ecoregion.
