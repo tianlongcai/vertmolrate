@@ -10,10 +10,13 @@ Included are:
 
   A folder containing the input data used for the analyses.
 
-- Phylogeny: phy_all_sampled_vertebrates.tre
+- trees: A time tree used for all analyses.
 - Molecular rate and predictors: VertMolRate.csv
 - GISLayers: Some GIS layers are used to present latitudinal gradient patterns of molecular rates across grids.
-- Sister pairs data used for examining relationships between diversification rates and molecular rates: sister.csv
+- sister_family: Sister pairs data used for examining relationships between diversification rates and molecular rates at species level.
+- SpatialjoinFiles: Some GIS layers include species names in each grid and ecoregion.
+- BMR: Basal metabolic rates and coresponding phylogeny of birds.
+- F34F61: Molecular rates are estimated by F34 and F61 models in codeml.
 
 2. Scripts
 
