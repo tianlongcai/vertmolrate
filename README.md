@@ -31,10 +31,8 @@ Included are:
 
 3. Outputs
 
-  Results for the main figures and supplementary figures.
-
-- MainFigures
-- Supplementary
+- MainFigures: Results of the main figures produced by the R scripts.
+- Supplementary: Results of the supplementary figures produced by the R scripts.
   
 
 
