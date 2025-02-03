@@ -1,38 +1,39 @@
-# VertMolRate
+# Analyzing Latitudinal Gradient in Molecular Rates and Testing Evolutionary Speed Hypothesis
 
-Included in this data package are scripts and files to replicate analyses in:
+This repository contains scripts and datasets to replicate the analyses presented in:
 
-Cai T and Zhen Y. 2024. Latitudinal molecular rates challenge evolutionary speed hypothesis. *Journal xx* doi:10.1073/pnas.1617397114.
+Cai T, Wen Z, Jiang Z and Zhen Y. 2025. Distinct latitudinal patterns of molecular rates across vertebrates. Journal of XX, doi: xxx
 
-Included are:
+## Contents
 
-1. DataFiles
+This repository is structured as follows:
 
-A file including input data used for analyses.
+### 1. DataFiles
 
-- Phylogeny: phy_all_sampled_vertebrates.tre
-- Molecular rate and predictors: VertMolRate.csv
-- GISLayers
-- Sister pairs data used for examining relationships between diversification rates and molecular rates: sister.csv
+   A file including input data used for analyses.
 
-2. Scripts
+- trees: Phylogenetic trees used for PGLMMs and Fig.1.
+- MolEvolRate:
+  - MolRate_mtDNA.csv: Molecular rate and predictors for mitochondrial DNA (mtDNA).
+  - MolRate_nuDNA.csv: Molecular rate and predictors for nuclear DNA (nuDNA).
+- GISLayers: GIS layers used for used for visualizing global spatial patterns of molecular rates.
+- sisters_family: Data on sister taxa pairs used to examine the relationship between diversification rates and molecular rates.
+- SpatialJoinFiles: Contains data on latitude, longitude, species names, molecular rates in ecoregions or grid cells.
+- BMR: Basal metabolic rates data of birds.
+- calibrations.csv: Calibration pionts used for ploting Fig.1.
 
-- Rscript1.R
-- Rscript2.R
-- Rscript3.R
-- Rscript4.R
+### 2. Scripts
 
-Scripts to conduct the analyses used in the main text and supplementary text, respectively.
+   The R scripts used to conduct the analyses.
 
-3. Outputs
+- source_functions.R: R script includes some functions used for analyses.
+- test_ESH_mtDNA.R: R script testing the evolutionary speed hypothesis (ESH) using mtDNA molecular rates. The script is designed to replicate the analyses from both the main text and the supplementary materials.
+- test_ESH_mtDNA.R: R script testing the evolutionary speed hypothesis (ESH) using nuDNA molecular rates. Similar to the mtDNA analysis script, it includes procedures for both the primary and supplementary analyses.
 
-- MainFigures
-- Supplementary
-  
-Results of main figures and supplementary figures.
+### 3. Outputs
 
-4. source_functions.R
+   The results of the analyses, including figures and tables present in Maintext and Appendix.
+   
+- MainFigures: Results of main figures
+- Supplementary: Results of supplementary figures.
 
-- source_functions.R
-
-A r script includes some functions used for analyses.
