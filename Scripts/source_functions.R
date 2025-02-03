@@ -298,6 +298,40 @@ r.squaredMCMCglmm.phy <- function(fit, phylo.var=NULL){
   return(r2)
 }
 
+#a function to put all summary of PGLMM to table
+summary_table_pglmm <- function(fit){
+  x <- summary(fit)
+  r2 <- r.squaredMCMCglmm(fit)
+  sum_table <- x$solutions%>%
+    as.data.frame()%>%
+    dplyr::select(-eff.samp)
+  
+  row.names(sum_table) <- c("Intercept", paste0("Fixed effect: ", row.names(sum_table)[-1]))
+  
+  G <- x$Gcovariances%>%
+    as.data.frame()%>%
+    mutate(pMCMC=NA)%>%
+    dplyr::select(-eff.samp)
+  row.names(G) <- paste0("Random effect: ",row.names(G))
+  R <- x$Rcovariances%>%
+    as.data.frame()%>%
+    dplyr::select(-eff.samp)%>%
+    mutate(pMCMC=NA)
+  row.names(R) <- "Residual"
+  
+  MR2 <-rbind(c(as.numeric(r2[1:3]),NA), c(as.numeric(r2[4:6]),NA))%>%
+    as.data.frame()%>%
+    rename(post.mean=V1, `l-95% CI`=V2, `u-95% CI`=V3, pMCMC=V4)
+  
+  row.names(MR2) <- c("R2.m", "R2.c")
+  
+  DIC <- data.frame(post.mean=x$DIC)%>%
+    mutate(`l-95% CI`=NA, `u-95% CI`=NA, pMCMC=NA)
+  row.names(DIC) <- "DIC"
+  
+  sum_table <- rbind(sum_table, G, R, MR2, DIC)
+  return(sum_table)
+}
 
 
 vif.MCMCglmm <- function (fit, intercept.columns = c(1)) {
@@ -331,114 +365,116 @@ trans.extr <- function(x) {
 }
 
 #define a function to estimate mean evolution rate in grids
-mean_subrate_grid <- function(spatial_join, grids_poly, Species=5, habitat="Terrestrial"){
+mean_molrate_grid <- function(spatial_join, grids_poly, Species=5, habitat="Terrestrial"){
   if(!habitat %in% c("Terrestrial", "Marine")){
     print("Warning: habitat must be Terrestrial or Marine!")
   }
   #Unweighted geometric mean substitution rate in grids
-  geometric_mean_subrate <- spatial_join%>%
+  geometric_mean_molrate <- spatial_join%>%
     group_by(GridID)%>%
-    summarise(SR=length(Species), gm.dn=exp(mean(log(dN.Mid))), gm.ds=exp(mean(log(dS.Mid))))%>%
+    summarise(SR=length(Species), gm.dn=exp(mean(log(dN.Mid))), gm.ds=exp(mean(log(dS.Mid))), gm.dnds=exp(mean(log(dNdS))))%>%
     filter(SR>=Species)%>%
     #filter(gm.dn>=trans.extr(gm.dn)[1], gm.dn<=trans.extr(gm.dn)[2], gm.ds >=trans.extr(gm.ds)[1], gm.ds <=trans.extr(gm.ds)[2])%>%
-    mutate(gm.dn=trans.extr.val(gm.dn), gm.ds=trans.extr.val(gm.ds))%>%
-    dplyr::select(GridID, SR, gm.ds, gm.dn)
+    mutate(gm.dn=trans.extr.val(gm.dn), gm.ds=trans.extr.val(gm.ds), gm.dnds=trans.extr.val(gm.dnds))%>%
+    dplyr::select(GridID, SR, gm.ds, gm.dn, gm.dnds)
   
   #Unweighted geometric mean substitution in grids
-  arithmetic_mean_subrate <- spatial_join%>%
+  arithmetic_mean_molrate <- spatial_join%>%
     group_by(GridID)%>%
-    summarise(SR=length(Species), am.dn=mean(dN.Mid), am.ds=mean(dS.Mid))%>%
+    summarise(SR=length(Species), am.dn=mean(dN.Mid), am.ds=mean(dS.Mid), am.dnds=mean(dNdS))%>%
     filter(SR>=Species)%>%
     #filter(am.dn>=trans.extr(am.dn)[1], am.dn<=trans.extr(am.dn)[2], am.ds >=trans.extr(am.ds)[1], am.ds <=trans.extr(am.ds)[2])%>%
-    mutate(am.dn=trans.extr.val(am.dn), am.ds=trans.extr.val(am.ds))%>%
-    dplyr::select(GridID, am.ds, am.dn)
+    mutate(am.dn=trans.extr.val(am.dn), am.ds=trans.extr.val(am.ds), am.dnds=trans.extr.val(am.dnds))%>%
+    dplyr::select(GridID, am.ds, am.dn, am.dnds)
   
   #Middle value of substitution in grids
-  mid_subrate <- spatial_join%>%
+  mid_molrate <- spatial_join%>%
     group_by(GridID)%>%
-    summarise(SR=length(Species), mid.dn=median(dN.Mid), mid.ds=median(dS.Mid))%>%
+    summarise(SR=length(Species), mid.dn=median(dN.Mid), mid.ds=median(dS.Mid), mid.dnds=median(dNdS))%>%
     filter(SR>=Species)%>%
     #filter(mid.dn>=trans.extr(mid.dn)[1], mid.dn<=trans.extr(mid.dn)[2], mid.ds >=trans.extr(mid.ds)[1], mid.ds <=trans.extr(mid.ds)[2])%>%
-    mutate(mid.dn=trans.extr.val(mid.dn), mid.ds=trans.extr.val(mid.ds))%>%
-    dplyr::select(GridID, mid.ds, mid.dn)
+    mutate(mid.dn=trans.extr.val(mid.dn), mid.ds=trans.extr.val(mid.ds), mid.dnds=trans.extr.val(mid.dnds))%>%
+    dplyr::select(GridID, mid.ds, mid.dn, mid.dnds)
   
   if(habitat=="Terrestrial"){
-    mean_subrate <- grids_poly%>%
+    mean_molrate <- grids_poly%>%
       dplyr::select(GridID, Lat, Lon, Terrest)%>%
-      left_join(geometric_mean_subrate, by="GridID")%>%
-      left_join(arithmetic_mean_subrate, by="GridID")%>%
-      left_join(mid_subrate, by="GridID")%>%
+      left_join(geometric_mean_molrate, by="GridID")%>%
+      left_join(arithmetic_mean_molrate, by="GridID")%>%
+      left_join(mid_molrate, by="GridID")%>%
       filter(Terrest==1)%>%
       dplyr::select(-Terrest)
   }
   if(habitat=="Marine"){
-    mean_subrate <- grids_poly%>%
+    mean_molrate <- grids_poly%>%
       dplyr::select(GridID, Lat, Lon, Marine)%>%
-      left_join(geometric_mean_subrate, by="GridID")%>%
-      left_join(arithmetic_mean_subrate, by="GridID")%>%
-      left_join(mid_subrate, by="GridID")%>%
+      left_join(geometric_mean_molrate, by="GridID")%>%
+      left_join(arithmetic_mean_molrate, by="GridID")%>%
+      left_join(mid_molrate, by="GridID")%>%
       filter(Marine==1)%>%
       dplyr::select(-Marine)
   }
   
-  return(mean_subrate)
+  return(mean_molrate)
 }
 
 #define a function to estimate mean evolution rate in ecoregions
-mean_subrate_ecoregion <- function(spatial_join, Species=5, habitat="Terrestrial"){
+mean_molrate_ecoregion <- function(spatial_join, Species=5, habitat="Terrestrial"){
   
   if(!habitat %in% c("Terrestrial", "Marine")){
     print("Warning: habitat must be Terrestrial or Marine!")
   }
   
-  geometric_mean_subrate <-spatial_join%>%
+  geometric_mean_molrate <-spatial_join%>%
     group_by(ECO_CODE)%>%
-    summarise(SR=length(Species), gm.dn=exp(mean(log(dN.Mid))), gm.ds=exp(mean(log(dS.Mid))))%>%
+    summarise(SR=length(Species), gm.dn=exp(mean(log(dN.Mid))), gm.ds=exp(mean(log(dS.Mid))), gm.dnds=exp(mean(log(dNdS))))%>%
     filter(SR>=Species)%>%
-    mutate(gm.dn=trans.extr.val(gm.dn), gm.ds=trans.extr.val(gm.ds))%>%
-    dplyr::select(ECO_CODE, SR, gm.dn, gm.ds)
+    mutate(gm.dn=trans.extr.val(gm.dn), gm.ds=trans.extr.val(gm.ds), gm.dnds=trans.extr.val(gm.dnds))%>%
+    dplyr::select(ECO_CODE, SR, gm.dn, gm.ds, gm.dnds)
   
-  arithmetic_mean_subrate <- spatial_join%>%
+  arithmetic_mean_molrate <- spatial_join%>%
     group_by(ECO_CODE)%>%
-    summarise(SR=length(Species), am.dn=mean(dN.Mid), am.ds=mean(dS.Mid))%>%
+    summarise(SR=length(Species), am.dn=mean(dN.Mid), am.ds=mean(dS.Mid), am.dnds=mean(dNdS))%>%
     filter(SR>=Species)%>%
-    mutate(am.dn=trans.extr.val(am.dn), am.ds=trans.extr.val(am.ds))%>%
-    dplyr::select(ECO_CODE, am.dn, am.ds)
+    mutate(am.dn=trans.extr.val(am.dn), am.ds=trans.extr.val(am.ds), am.dnds=trans.extr.val(am.dnds))%>%
+    dplyr::select(ECO_CODE, am.dn, am.ds, am.dnds)
   
-  mid_subrate <- spatial_join%>%
+  mid_molrate <- spatial_join%>%
     group_by(ECO_CODE)%>%
-    summarise(SR=length(Species), mid.dn=median(dN.Mid), mid.ds=median(dS.Mid))%>%
+    summarise(SR=length(Species), mid.dn=median(dN.Mid), mid.ds=median(dS.Mid), mid.dnds=median(dNdS))%>%
     filter(SR>=Species)%>%
-    mutate(mid.dn=trans.extr.val(mid.dn), mid.ds=trans.extr.val(mid.ds))%>%
-    dplyr::select(ECO_CODE, mid.ds, mid.dn)
+    mutate(mid.dn=trans.extr.val(mid.dn), mid.ds=trans.extr.val(mid.ds), mid.dnds=trans.extr.val(mid.dnds))%>%
+    dplyr::select(ECO_CODE, mid.ds, mid.dn, mid.dnds)
   
   if(habitat=="Marine"){
-    mean_subrate <- marine.ecoregions%>%
-      dplyr::select(ECO_CODE, Lat, Lon)%>%
-      left_join(geometric_mean_subrate, by="ECO_CODE")%>%
-      left_join(arithmetic_mean_subrate, by="ECO_CODE")%>%
-      left_join(mid_subrate, by="ECO_CODE")
+    mean_molrate <- marine.ecoregions%>%
+      as.data.frame()%>%
+      dplyr::select(ECO_CODE, Lat, Lon, AnnualTemp)%>%
+      left_join(geometric_mean_molrate, by="ECO_CODE")%>%
+      left_join(arithmetic_mean_molrate, by="ECO_CODE")%>%
+      left_join(mid_molrate, by="ECO_CODE")
   }
   if(habitat=="Terrestrial"){
-    mean_subrate <- terrestrial.ecoregions%>%
-      dplyr::select(ECO_CODE, Lat, Lon)%>%
-      left_join(geometric_mean_subrate, by="ECO_CODE")%>%
-      left_join(arithmetic_mean_subrate, by="ECO_CODE")%>%
-      left_join(mid_subrate, by="ECO_CODE")
+    mean_molrate <- terrestrial.ecoregions%>%
+      as.data.frame()%>%
+      dplyr::select(ECO_CODE, Lat, Lon, AnnualTemp)%>%
+      left_join(geometric_mean_molrate, by="ECO_CODE")%>%
+      left_join(arithmetic_mean_molrate, by="ECO_CODE")%>%
+      left_join(mid_molrate, by="ECO_CODE")
   }
-  return(mean_subrate)
+  return(mean_molrate)
 }
 
 
 
 
 #a function to plotting average substitution rates in geographic grids
-plot_subrate_grids <- function(mean.rate.grids, rate.type, geo.type, colramp, asp=1.2){
+plot_molrate_grids <- function(mean.rate.grids, rate.type, geo.type, colramp, asp=1.2){
   if(!"Lon" %in% names(mean.rate.grids)& "Lat" %in% names(mean.rate.grids)){
     print("Warning: Lon and Lat need to be included in mean.rate.grids data frame!")
   }
-  if(!rate.type %in% c("dN", "dS")){
-    print("Warning: rate.type must be one of dN and dS!")
+  if(!rate.type %in% c("dN", "dS", "dNdS")){
+    print("Warning: rate.type must be one of dN, dS and dNdS!")
   }
   if(!rate.type %in%names(mean.rate.grids)){
     print("Warning: 'rate.type' needs to be included in mean.rate.grids data frame!")
@@ -463,7 +499,9 @@ plot_subrate_grids <- function(mean.rate.grids, rate.type, geo.type, colramp, as
   if(rate.type=="dN"){
     x <- mean.rate.grids%>%filter(!is.na(dN))%>%pull(dN)
   }
-  
+  if(rate.type=="dNdS"){
+    x <- mean.rate.grids%>%filter(!is.na(dNdS))%>%pull(dNdS)
+  }
   cuts <- BAMMtools::getJenksBreaks(mean.rate.grids%>%filter(!is.na(rate.type))%>%pull(rate.type), 21, subset = NULL)
   #cuts <- quantile(x, seq(0, 1, 0.05))
   names(cuts) <- NULL
@@ -490,6 +528,66 @@ plot_subrate_grids <- function(mean.rate.grids, rate.type, geo.type, colramp, as
                  location=c(-6000000,6000000,-9900000,-9400000), 
                  direction="horizontal", nTicks=0,side = 1,
                  labelDist=-0.3, cex.axis=0.6)
+}
+
+
+#function to fit the best model of traits evolution in the time tree
+fitTraitEvolModel <- function(trait, data, phy){
+  #match traits
+  #trait=match.arg(trait, c("dS", "dN", "dNdS))
+  
+  #prepare data
+  dat <- data[,trait]
+  names(dat)<-data$Species
+  
+  # define set of models to compare
+  models=c("BM", "OU", "EB")
+  
+  ## ESTIMATING measurement error ##
+  aic.se=numeric(length(models))
+  lnl.se=numeric(length(models))
+  opt.se=numeric(length(models))
+  sigsq.se=numeric(length(models))
+  for(m in 1:length(models)){
+    tmp=fitContinuous(phy, dat=dat, SE=NA, model=models[m], ncores=2)
+    aic.se[m]=tmp$opt$aicc
+    lnl.se[m]=tmp$opt$lnL
+    opt.se[m]=as.numeric(tmp$opt[1])
+    sigsq.se[m]=as.numeric(tmp$opt[2])
+  }
+  
+  ## ASSUMING no measurement error ##
+  aic=numeric(length(models))
+  lnl=numeric(length(models))
+  opt=numeric(length(models))
+  sigsq=numeric(length(models))
+  
+  for(m in 1:length(models)){
+    tmp=fitContinuous(phy,dat,SE=0,model=models[m], ncores=2)
+    aic[m]=tmp$opt$aicc
+    lnl[m]=tmp$opt$lnL
+    opt[m]=as.numeric(tmp$opt[1])
+    sigsq[m]=as.numeric(tmp$opt[2])
+  }
+  
+  ## COMPARE AIC ##
+  names(aic.se)<-names(lnl.se)<-names(aic)<-names(lnl)<-names(opt.se)<-names(opt)<-models
+  delta_aic<-function(x) x-x[which(x==min(x))]
+  # no measurement error
+  daic=delta_aic(aic)
+  # measurement error
+  daic.se=delta_aic(aic.se)
+  
+  res_aicc= rbind(aic, aic.se, daic, daic.se, opt, opt.se, sigsq, sigsq.se)
+  rownames(res_aicc)=c("AICc","AICc_SE","dAICc", "dAICc_SE", "opt", "opt.se", "sigsq", "sigsq.se")
+  
+  
+  row_col <- which(res_aicc[1:2,] == min(res_aicc[1:2,]), arr.ind = TRUE)
+  best_model <- colnames(res_aicc)[row_col[2]]
+  opt <- res_aicc[row_col[1]+4,best_model]
+  sigsq <- res_aicc[row_col[1]+6,best_model]
+  
+  return(data.frame(best_model, opt, sigsq))
 }
 
 

@@ -1,0 +1,174 @@
+﻿Class,Calibration,Sp1,Sp2,In_data
+Ray-finned fishes,subset of Polypterus,Polypterus_bichir,Polypterus_senegalus,T
+Ray-finned fishes,Crown Chondrostei,Psephurus_gladius,Acipenser_transmontanus,T
+Ray-finned fishes,Crown Polyodontidae,Polyodon_spathula,Psephurus_gladius,F
+Ray-finned fishes,Crown Holostei,Amia_calva,Lepisosteus_osseus,T
+Ray-finned fishes,Crown Teleostei,Elops_saurus,Hiodon_alosoides,T
+Ray-finned fishes,Crown Lepisosteidae,Lepisosteus_osseus,Atractosteus_spatula,T
+Ray-finned fishes,Elopiformes,Elops_saurus,Megalops_atlanticus,T
+Ray-finned fishes,Albuliformes + Anguilliformes,Pterothrissus_gissu,Anguilla_malgumora,F
+Ray-finned fishes,Total group Angullidae,Serrivomer_sector,Anguilla_anguilla,T
+Ray-finned fishes,Total group Serrivomer,Stemonidium_hypomelas,Serrivomer_sector,T
+Ray-finned fishes,Total group Osteoglossidae,Arapaima_gigas,Notopterus_notopterus,T
+Ray-finned fishes,Crown Osteoglossidae,Heterotis_niloticus,Osteoglossum_bicirrhosum,T
+Ray-finned fishes,(Mormyridae + Gymnarchidae) vs Notopteridae,Myomyrus_macrops,Notopterus_notopterus,T
+Ray-finned fishes,Crown Otomorpha,Denticeps_clupeoides,Gonorynchus_greyi,F
+Ray-finned fishes,Total group Spratteloidini,Chirocentrus_dorab,Spratelloides_gracilis,T
+Ray-finned fishes,Crown Engraulidae,Coilia_grayii,Engraulis_japonicus,T
+Ray-finned fishes,Crown Dorosoma,Dorosoma_petenense,Dorosoma_cepedianum,T
+Ray-finned fishes,Chanidae vs Kneriidae,Chanos_chanos,Phractolaemus_ansorgii,T
+Ray-finned fishes,Total group Characiformes,Distichodus_sexfasciatus,Astyanax_aeneus,T
+Ray-finned fishes,MRCA Sternopygus and Apteronotus,Brachyhypopomus_occidentalis,Apteronotus_albifrons,T
+Ray-finned fishes,Total group Salminus,Brycon_nattereri,Salminus_brasiliensis,T
+Ray-finned fishes,Crown group Callichthyidae,Corydoras_nattereri,Corydoras_duplicareus,T
+Ray-finned fishes,Total group Pangasiidae,Plotosus_japonicus,Pangasianodon_gigas,T
+Ray-finned fishes,Total group Ictaluridae,Cranoglanis_bouderius,Ictalurus_furcatus,T
+Ray-finned fishes,Total group Pylodictis,Pylodictis_olivaris,Noturus_taylori,T
+Ray-finned fishes,Crown Catostomidae,Myxocyprinus_asiaticus,Moxostoma_poecilurum,T
+Ray-finned fishes,Total group Cyprinini,Cyprinus_carpio,Puntius_snyderi,T
+Ray-finned fishes,Total group Cyprinus,Cyprinus_carpio,Carassioides_acuminatus,T
+Ray-finned fishes,Total group Esocidae,Esox_lucius,Novumbra_hubbsi,T
+Ray-finned fishes,Crown Esox,Esox_lucius,Esox_americanus_americanus,T
+Ray-finned fishes,Total group Salmoninae,Coregonus_nasus,Salmo_salar,T
+Ray-finned fishes,Total group Hucho,Thymallus_thymallus,Salmo_salar,T
+Ray-finned fishes,Total group Oncorynchus,Oncorhynchus_mykiss,Salmo_salar,T
+Ray-finned fishes,Oncorhynchus keta,Oncorhynchus_keta,Oncorhynchus_gorbuscha,T
+Ray-finned fishes,Total group Stomiiformes,Stomias_atriventer,Salangichthys_microdon,T
+Ray-finned fishes,Total group Plecoglossidae,Plecoglossus_altivelis_chinensis,Salangichthys_microdon,T
+Ray-finned fishes,Total group Aulopiformes,Synodus_variegatus,Saurida_umeyoshii,F
+Ray-finned fishes,Crown Myctophiformes,Neoscopelus_microchir,Myctophum_affine,T
+Ray-finned fishes,Total group Polymixiiformes,Polymixia_lowei,Percopsis_transmontana,T
+Ray-finned fishes,Crown Percopsiformes,Percopsis_transmontana,Aphredoderus_sayanus,T
+Ray-finned fishes,Crown Zeiformes,Zeus_faber,Zenion_japonicum,T
+Ray-finned fishes,Crown Zeidae,Zeus_faber,Zenopsis_nebulosa,T
+Ray-finned fishes,Crown Gadiformes,Gadus_morhua,Coelorinchus_kishinouyei,T
+Ray-finned fishes,Total group Holocentroidei,Ostichthys_japonicus,Hoplostethus_japonicus,T
+Ray-finned fishes,Crown Holocentridae,Ostichthys_japonicus,Sargocentron_rubrum,T
+Ray-finned fishes,Crown Lophiiformes,Lophiomus_setigerus,Bufoceratias_thele,T
+Ray-finned fishes,MRCA Lophioides plus Lophius,Lophiodes_caulinaris,Chaunax_pictus,T
+Ray-finned fishes,Total group Ogcocephalidae,Coelophrys_brevicaudata,Chaunax_abei,T
+Ray-finned fishes,Total group Triodontidae,Triodon_macropterus,Kentrocapros_aculeatus,T
+Ray-finned fishes,Total group Ostraciidae,Ostracion_immaculatus,Kentrocapros_aculeatus,T
+Ray-finned fishes,Total group Balistoidei,Balistes_vetula,Triacanthodes_anomalus,T
+Ray-finned fishes,Total group Triacanthidae,Macrorhamphosodes_uradoi,Triacanthus_biaculeatus,T
+Ray-finned fishes,Crown Balistoidei,Balistes_vetula,Monacanthus_chinensis,T
+Ray-finned fishes,Total group Tetraodontoidei,Mola_mola,Diodon_hystrix,T
+Ray-finned fishes,Crown Molidae,Mola_mola,Ranzania_laevis,T
+Ray-finned fishes,MRCA Sphoeroides,Tetraodon_cutcutia,Sphoeroides_pachygaster,T
+Ray-finned fishes,Total group Scatophagidae,Scatophagus_argus,Pristigenys_niphonia,T
+Ray-finned fishes,Total group Siganidae,Siganus_sutor,Capros_aper,T
+Ray-finned fishes,Total group Luvarus,Zanclus_cornutus,Luvarus_imperialis,T
+Ray-finned fishes,Total group Zanclus,Zanclus_cornutus,Naso_lopezi,T
+Ray-finned fishes,Crown group Acanthuridae,Naso_lopezi,Prionurus_biafraensis,T
+Ray-finned fishes,Gasterosteus aculeatus,Gasterosteus_aculeatus,Gasterosteus_wheatlandi,T
+Ray-finned fishes,Total group Trichuroidea,Ruvettus_pretiosus,Taractichthys_steindachneri,T
+Ray-finned fishes,Total group Champsodontidae,Champsodon_snyderi,Mullus_surmuletus,T
+Ray-finned fishes,Total group Centriscidae,Aeoliscus_strigatus,Macroramphosus_scolopax,T
+Ray-finned fishes,Total group Gobiiformes,Rhyacichthys_aspro,Rhinogobius_brunneus,T
+Ray-finned fishes,Total group Channidae,Channa_diplogramma,Anabas_testudineus,T
+Ray-finned fishes,Total group Menidae,Mene_maculata,Xiphias_gladius,T
+Ray-finned fishes,Total group Pleuronectiformes,Scophthalmus_maximus,Lactarius_lactarius,T
+Ray-finned fishes,Total group Sphyraenidae,Sphyraena_japonica,Lactarius_lactarius,T
+Ray-finned fishes,Subset Pleuronectoidei,Pleuronichthys_cornutus,Paralichthys_lethostigma,T
+Ray-finned fishes,Total group Soleidae,Heteromycteris_japonicus,Samariscus_latus,T
+Ray-finned fishes,Total group Bothus,Chascanopsetta_lugubris,Asterorhombus_intermedius,F
+Ray-finned fishes,Crown Geophagini,Heterotilapia_buttikoferi,Geophagus_brasiliensis,T
+Ray-finned fishes,Total group Exocoetidae,Hyporhamphus_dussumieri,Parexocoetus_brachypterus,T
+Amphibians,Crown Amphibia,Rhinatrema_bivittatum,Rana_kukunoris,T
+Amphibians,Crown Caudata ,Cryptobranchus_alleganiensis,Pachytriton_brevipes,T
+Amphibians,Cryptobranchidae and Hynobiidae split,Andrias_davidianus,Onychodactylus_zhaoermii,T
+Amphibians,Plethodontidae and Amphiumidae split,Hemidactylium_scutatum,Amphiuma_means,T
+Amphibians,Crown Salamandridae,Mertensiella_caucasica,Pachytriton_brevipes,T
+Amphibians,Caudata and Anura split,Cryptobranchus_alleganiensis,Rana_kukunoris,T
+Amphibians,Pelobatidae and Megophryidae split,Pelobates_cultripes,Oreolalax_major,T
+Amphibians,Alytidae Discoglossidae split,Discoglossus_galganoi,Alytes_obstetricans,T
+Reptiles,Archosauromorpha and Lepidosauromorpha split,Alligator_sinensis,Hypsiglena_chlorophaea,T
+Reptiles,Tuatata-lizard split,Sphenodon_punctatus,Hypsiglena_chlorophaea,F
+Reptiles,Crown Gekkonidae ,Eublepharis_macularius,Gekko_swinhonis,T
+Reptiles,Lacertidae Amphisbaenia split,Rhineura_floridana,Eremias_vermiculata,T
+Reptiles,Gambelia and Anolis split,Gambelia_wislizenii,Anolis_carolinensis,T
+Reptiles,Shinisaurus and Varanus split,Heloderma_suspectum,Varanus_niloticus,T
+Birds,split between Psittaciformes and Passeriformes ,Nestor_notabilis,Pseudoleistes_virescens,T
+Birds,split between Strigops and Nestor ,Strigops_habroptila,Nestor_notabilis,T
+Birds,split between Acanthisitta and Xenicus,Acanthisitta_chloris,Xenicus_gilviventris,T
+Birds,split between Suboscines and Oscines ,Sapayoa_aenigma,Ptilorrhoa_caerulescens,T
+Birds,Split between Atrichornis and Menura ,Atrichornis_clamosus,Menura_novaehollandiae,T
+Birds,Split between Meliphagidae and Pardalotidae ,Grantiella_picta,Pardalotus_punctatus,T
+Birds,Split between Orthonyx and Pomatostomus ,Orthonyx_spaldingii,Pomatostomus_ruficeps,T
+Birds,Split between Regulidae and Sittidae ,Sitta_carolinensis,Regulus_regulus,T
+Birds,Stem Pici (all Piciformes except Bucconidae and Galbulidae),Psilopogon_haemacephalus,Brachygalba_albogularis,T
+Birds,Stem Upupidae + Phoeniculidae,Upupa_epops,Bucorvus_leadbeateri,T
+Birds,Stem Coraciidae + Brachypteraciidae,Eurystomus_orientalis,Nyctyornis_amictus,T
+Birds,Stem Fregatidae,Fregata_magnificens,Eudocimus_ruber,T
+Birds,Stem Sphenisciformes,Aptenodytes_forsteri,Thalassarche_chlororhynchos,T
+Birds,Stem Gruoidea (Aramidae + Psophiidae + Gruidae),Psophia_crepitans,Sarothrura_rufa,T
+Birds,Stem Phaethontidae,Phaethon_lepturus,Eurypyga_helias,T
+Birds,Stem Apodidae,Chaetura_pelagica,Florisuga_mellivora,T
+Birds,Stem Podargidae ,Batrachostomus_cornutus,Steatornis_caripensis,T
+Birds,Stem Threskiornithidae,Eudocimus_ruber,Cochlearius_cochlearius,T
+Birds,Stem Coliiformes,Urocolius_indicus,Apaloderma_vittatum,T
+Birds,Stem Alcediniformes (Momotidae + Meropidae + Alcedinidae + Todidae),Momotus_momota,Nyctyornis_amictus,T
+Birds,Stem Todidae,Todus_angustirostris,Momotus_momota,T
+Birds,Stem Phalacrocoracidae,Phalacrocorax_carbo,Anhinga_anhinga,T
+Birds,Stem Musophagidae ,Corythaixoides_concolor,Ardeotis_kori,T
+Birds,Stem Galliformes,Pipile_pipile,Anseranas_semipalmata,T
+Birds,Apodiformes,Aegotheles_cristatus,Steatornis_caripensis,T
+Birds,Crown honeycreepers,Melamprosops_phaeosoma,Chlorodrepanis_stejnegeri,T
+Birds,Crown ,Chlorodrepanis_stejnegeri,Rhea_pennata,T
+Mammals,Paenungulata,Trichechus_manatus,Procavia_capensis,T
+Mammals,Proboscidea_Hyracoidea,Loxodonta_africana,Procavia_capensis,T
+Mammals,Xenarthra,Choloepus_didactylus,Dasypus_novemcinctus,T
+Mammals,Pilosa,Choloepus_didactylus,Tamandua_tetradactyla,T
+Mammals,Carnivora,Ursus_maritimus,Suricata_suricatta,T
+Mammals,Pinnipedia_Musteloidea,Neomonachus_schauinslandi,Spilogale_putorius,T
+Mammals,Arctoidea,Ursus_maritimus,Neomonachus_schauinslandi,T
+Mammals,Caniformia,Ursus_maritimus,Vulpes_lagopus,T
+Mammals,Ostentoria,Manis_pentadactyla,Felis_chaus,T
+Mammals,Hipposideridae_Rhinolophidae,Hipposideros_armiger,Rhinolophus_sinicus,T
+Mammals,Chiroptera,Rhinolophus_sinicus,Chaerephon_plicatus,T
+Mammals,Molossidae_Vespertilionidae_Miniopteridae,Tadarida_teniotis,Lasiurus_borealis,T
+Mammals,Yangochiroptera,Noctilio_leporinus,Miniopterus_fuliginosus,F
+Mammals,Phyllostomidae_Mormoopidae,Pteronotus_parnellii,Artibeus_jamaicensis,T
+Mammals,Erinaceidae_Soricidae,Sorex_araneus,Erinaceus_europaeus,T
+Mammals,Cetartiodactyla,Lama_guanicoe,Sus_cebifrons,T
+Mammals,Moschidae_Bovidae,Moschus_moschiferus,Bos_primigenius,T
+Mammals,Suidae_Tayassuidae,Pecari_tajacu,Sus_cebifrons,T
+Mammals,Whippomorpha,Hippopotamus_amphibius,Balaenoptera_bonaerensis,T
+Mammals,Cetacea,Physeter_macrocephalus,Balaenoptera_bonaerensis,T
+Mammals,Mysticeti,Caperea_marginata,Balaenoptera_bonaerensis,T
+Mammals,Odontoceti,Physeter_macrocephalus,Mesoplodon_bidens,T
+Mammals,Perissodactyla,Equus_ferus,Dicerorhinus_sumatrensis,T
+Mammals,Ceratomorpha,Tapirus_indicus,Dicerorhinus_sumatrensis,F
+Mammals,Primates,Perodicticus_potto,Pan_troglodytes,T
+Mammals,Anthropoidea,Ateles_belzebuth,Pan_troglodytes,T
+Mammals,Platyrrhini,Ateles_belzebuth,Cacajao_calvus,T
+Mammals,Catarrhini,Colobus_guereza,Pan_troglodytes,T
+Mammals,Cercopithecoidea,Colobus_guereza,Mandrillus_leucophaeus,T
+Mammals,Strepsirrhini,Propithecus_diadema,Otolemur_crassicaudatus,T
+Mammals,Lagomorpha,Ochotona_princeps,Lepus_americanus,T
+Mammals,Rodentia,Glis_glis,Mus_musculus,T
+Mammals,Sciuromorpha,Glis_glis,Pteromys_volans,T
+Mammals,Hystricognathi,Laonastes_aenigmamus,Octodon_degus,F
+Mammals,Myomorpha,Eozapus_setchuanus,Onychomys_leucogaster,T
+Mammals,Primatomorpha,Galeopterus_variegatus,Pan_troglodytes,T
+Mammals,Hyracoidea,Procavia_capensis,Dendrohyrax_dorsalis,T
+Mammals,Vermilingua,Cyclopes_didactylus,Myrmecophaga_tridactyla,T
+Mammals,Herpestidae_Eupleridae_Hyaenidae,Hyaena_hyaena,Suricata_suricatta,T
+Mammals,Odobenidae_Otariidae,Odobenus_rosmarus,Zalophus_californianus,T
+Mammals,Pinnipedia,Neomonachus_schauinslandi,Zalophus_californianus,T
+Mammals,Giraffidae_Antilocapridae,Antilocapra_americana,Okapia_johnstoni,T
+Mammals,Phocoenidae_Monodontidae,Monodon_monoceros,Neophocaena_phocaenoides,T
+Mammals,Papionini,Mandrillus_leucophaeus,Macaca_nemestrina,T
+Mammals,Hominoidea,Nomascus_leucogenys,Pan_troglodytes,T
+Mammals,Galagidae_Lorisidae,Otolemur_crassicaudatus,Nycticebus_coucang,T
+Mammals,Sciuromorpha_Hystricognathi,Glis_glis,Laonastes_aenigmamus,F
+Mammals,Castorimorpha_Anomaluromorpha_Myomorpha,Zenkerella_insignis,Gerbilliscus_leucogaster,T
+Mammals,Atelidae,Ateles_belzebuth,Saimiri_boliviensis,T
+Mammals,Saimiri_Cebus,Saimiri_boliviensis,Cebus_albifrons,T
+Mammals,Balaenopteroidea,Balaenoptera_bonaerensis,Megaptera_novaeangliae,T
+Mammals,Rattus_Mus,Rattus_norvegicus,Mus_caroli,T
+Mammals,Plancetalia,Dasypus_kappleri,Ovis_orientalis,T
+Mammals,human_gorilla,Pan_troglodytes,Gorilla_gorilla,T
+Mammals,Tibetan_antelope_Goat,Pantholops_hodgsonii,Capra_aegagrus,F
+Mammals,Crown_Tupaia,Tupaia_belangeri,Tupaia_splendidula,T
+Mammals,crown_mammals,Ornithorhynchus_anatinus,Tragelaphus_strepsiceros,T
