@@ -1,0 +1,26 @@
+{
+    "id": "E2690A90",
+    "path": "~/VertMolRate/Scripts/test_ESH_mtDNA.R",
+    "project_path": "Scripts/test_ESH_mtDNA.R",
+    "type": "r_source",
+    "hash": "4047755258",
+    "contents": "",
+    "dirty": false,
+    "created": 1739066470620.0,
+    "source_on_save": false,
+    "relative_order": 1,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "668,0",
+        "scrollLine": "656"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1739067192,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1739067192601,
+    "read_only": false,
+    "read_only_alternatives": []
+}
