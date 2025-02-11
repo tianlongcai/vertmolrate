@@ -269,7 +269,7 @@ comp.dn <- agricolae::kruskal(molrate$dN, molrate$Group, p.adj = "bonferroni")
 comp.dnds <- agricolae::kruskal(molrate$dNdS, molrate$Group, p.adj = "bonferroni")
 
 #Data for plots
-#Extended Fig.S1
+#Extended Fig.S2
 groups <- c("Fishes","Amphibians", "Reptiles","Mammals","Birds")
 y1 <- molrate%>%group_by(Group)%>%summarise(y=max(dS))%>%pull(y)+0.3
 y2 <- molrate%>%group_by(Group)%>%summarise(y=max(dN))%>%pull(y)+0.4
@@ -343,11 +343,11 @@ f3 <-ggplot(data = molrate, aes(y = dNdS, x = Group, colour=ThermoMode, fill=The
   geom_text(data=label, aes(x=x, y=y3, label=label.dnds), size=2.5)+
   coord_flip()
 cowplot::plot_grid(f1,f2, f3, nrow=1, align = "hv")
-ggsave("./Outputs/Supplementary/Extended Fig1.pdf", width = 8.3, height = 2.8)
+ggsave("./Outputs/Supplementary/Fig.S2.pdf", width = 8.3, height = 2.8)
 
 
 ######################################################
-#Extended Fig.4 Phylogenetic signal test of dS and dN for each class of vertebrates
+#Extended Fig.S5 Phylogenetic signal test of dS and dN for each class of vertebrates
 #input phylogeny
 phy <- read.tree(paste0(workdir, "/DataFiles/trees/phy_all_sampled_mtdna.tre"))
 
@@ -405,7 +405,7 @@ phylo.signal <- phylo.signal%>%
   select(ThermoMode, Group, dS, dN, dNdS, sig.ds, sig.dn, sig.dnds)
 
 #Extended Fig.S4 
-fs4a<-phylo.signal%>%
+fs5a<-phylo.signal%>%
   ggplot(aes(x = Group, y = dS, fill=ThermoMode)) +
   geom_bar(stat = "identity", position = "dodge")+
   scale_fill_manual(values=c("#2a6aaf", "#d3292f"))+
@@ -431,7 +431,7 @@ fs4a<-phylo.signal%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs4b<-phylo.signal%>%
+fs5b<-phylo.signal%>%
   ggplot(aes(x = Group, y = dN, fill=ThermoMode)) +
   geom_bar(stat = "identity", position = "dodge")+
   geom_text(
@@ -456,7 +456,7 @@ fs4b<-phylo.signal%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs4c<-phylo.signal%>%
+fs5c<-phylo.signal%>%
   ggplot(aes(x = Group, y = dNdS, fill=ThermoMode)) +
   geom_bar(stat = "identity", position = "dodge")+
   geom_text(
@@ -480,8 +480,8 @@ fs4c<-phylo.signal%>%
         axis.ticks.length = unit(0.2, "cm"),
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
-plot_grid(fs4a, fs4b, fs4c, nrow = 1, align = "hv")
-ggsave("./Outputs/Supplementary/Extended Fig4.pdf", width = 8.3, height = 3.6)
+plot_grid(fs5a, fs5b, fs5c, nrow = 1, align = "hv")
+ggsave("./Outputs/Supplementary/Fig.S5.pdf", width = 8.3, height = 3.6)
 
 
 ##################################################################
@@ -769,8 +769,8 @@ cowplot::plot_grid(f2a,f2b, f2c, nrow = 3, align="hv")
 ggsave(filename="./Outputs/MainFigures/Fig2abc.pdf", height=4.3, width=1.8)
 
 #Plot effect size to show how molecular rates varied with latitude
-#Extended Fig.S5
-fs5a <-pglmm_out%>%
+#Extended Fig.S6
+fs6a <-pglmm_out%>%
   filter(Group %in% plot_groups)%>%
   mutate(ThermoMode = ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"))%>%
   filter(Var=="scale(abs(Lat))")%>%
@@ -798,7 +798,7 @@ fs5a <-pglmm_out%>%
         axis.line = element_line(color = "black", linewidth = 0.2))+
   geom_text(data=sig.label, aes(x=x, y=0.15, label=ds_lat), size=2.5, inherit.aes = FALSE)
 
-fs5b <-pglmm_out%>%
+fs6b <-pglmm_out%>%
   filter(Group %in% plot_groups)%>%
   mutate(ThermoMode = ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"))%>%
   filter(Var=="scale(abs(Lat))")%>%
@@ -828,7 +828,7 @@ fs5b <-pglmm_out%>%
 
 
 
-fs5c <-pglmm_out%>%
+fs6c <-pglmm_out%>%
   filter(Group %in% plot_groups)%>%
   mutate(ThermoMode = ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"))%>%
   filter(Var=="scale(abs(Lat))")%>%
@@ -857,8 +857,8 @@ fs5c <-pglmm_out%>%
   geom_text(data=sig.label, aes(x=x, y=0.15, label=dnds_lat), size=2.5, inherit.aes = FALSE)
 
 
-cowplot::plot_grid(fs5a,fs5b, fs5c, nrow = 1, align="hv")
-ggsave(filename="./Outputs/Supplementary/Extended Fig5.pdf", height=2.3, width=8.27)
+cowplot::plot_grid(fs6a,fs6b, fs6c, nrow = 1, align="hv")
+ggsave(filename="./Outputs/Supplementary/Fig.S6.pdf", height=2.3, width=8.27)
 
 ####################################################################################
 # 1.2 PGLMMs using data remove relative molecular rates less than 0.4 sub/site to reduce the impacts of substitution saturation
@@ -1249,8 +1249,8 @@ pglmm_out_3randoms <- rbind(bind_rows("Latitude" = summary_lat_3randoms, "Annual
 
 #############
 #2. Plots to show relationships between molecular rates and absolute midpoint latitude/annual temperature at the species level
-#Extended Fig.S2 Plots for endotherms and ectotherms
-fs2a <- molrate%>%
+#Extended Fig.S3 Plots for endotherms and ectotherms
+fs3a <- molrate%>%
   ggplot(aes(x=abs(Lat), y=log10(dS), colour=ThermoMode))+
   geom_point(size=0.5, alpha=0.5)+
   geom_smooth(method="lm", se=TRUE, size=0.5)+
@@ -1269,7 +1269,7 @@ fs2a <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs2b <- molrate%>%
+fs3b <- molrate%>%
   ggplot(aes(x=abs(Lat), y=log10(dN), colour=ThermoMode))+
   geom_point(size=0.5, alpha=0.5)+
   geom_smooth(method="lm", se=TRUE, size=0.5)+
@@ -1289,7 +1289,7 @@ fs2b <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs2c <- molrate%>%
+fs3c <- molrate%>%
   ggplot(aes(x=abs(Lat), y=log10(dNdS), colour=ThermoMode))+
   geom_point(size=0.5, alpha=0.5)+
   geom_smooth(method="lm", se=TRUE, size=0.5)+
@@ -1311,7 +1311,7 @@ fs2c <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs2d <- molrate%>%
+fs3d <- molrate%>%
   ggplot(aes(x=AnnualTemp, y=log10(dS), colour=ThermoMode))+
   geom_point(size=0.5, alpha=0.5)+
   geom_smooth(method="lm", se=TRUE, size=0.5)+
@@ -1330,7 +1330,7 @@ fs2d <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs2e <- molrate%>%
+fs3e <- molrate%>%
   ggplot(aes(x=AnnualTemp, y=log10(dN), colour=ThermoMode))+
   geom_point(size=0.5, alpha=0.5)+
   geom_smooth(method="lm", se=TRUE, size=0.5)+
@@ -1350,7 +1350,7 @@ fs2e <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs2f <- molrate%>%
+fs3f <- molrate%>%
   ggplot(aes(x=AnnualTemp, y=log10(dNdS), colour=ThermoMode))+
   geom_point(size=0.5, alpha=0.5)+
   geom_smooth(method="lm", se=TRUE, size=0.5)+
@@ -1371,12 +1371,12 @@ fs2f <- molrate%>%
         axis.ticks.length = unit(0.2, "cm"),
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
-cowplot::plot_grid(fs2a,fs2b, fs2c, fs2d,fs2e, fs2f, nrow=2, align="hv")
-ggsave(filename = "./Outputs/Supplementary/Extended Fig2.pdf", width=8.27, height = 5)
+cowplot::plot_grid(fs3a,fs3b, fs3c, fs3d,fs3e, fs3f, nrow=2, align="hv")
+ggsave(filename = "./Outputs/Supplementary/Fig.S3.pdf", width=8.27, height = 5)
 
 
-#Extended Fig.3 Plots for each class of vertebrates
-fs31 <- molrate%>%
+#Extended Fig.S4 Plots for each class of vertebrates
+fs41 <- molrate%>%
   filter(Group=="Fishes")%>%
   ggplot(aes(x=abs(Lat), y=log10(dS)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1394,7 +1394,7 @@ fs31 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs32 <- molrate%>%
+fs42 <- molrate%>%
   filter(Group=="Amphibians")%>%
   ggplot(aes(x=abs(Lat), y=log10(dS)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1413,7 +1413,7 @@ fs32 <- molrate%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs33 <- molrate%>%
+fs43 <- molrate%>%
   filter(Group=="Reptiles")%>%
   ggplot(aes(x=abs(Lat), y=log10(dS)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1431,7 +1431,7 @@ fs33 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs34 <- molrate%>%
+fs44 <- molrate%>%
   filter(Group=="Mammals")%>%
   ggplot(aes(x=abs(Lat), y=log10(dS)))+
   geom_point(size=0.5, alpha=0.5, colour="#d3292f")+
@@ -1449,7 +1449,7 @@ fs34 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs35 <- molrate%>%
+fs45 <- molrate%>%
   filter(Group=="Birds")%>%
   ggplot(aes(x=abs(Lat), y=log10(dS)))+
   geom_point(size=0.5, alpha=0.5, colour="#d3292f")+
@@ -1467,7 +1467,7 @@ fs35 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs36 <- molrate%>%
+fs46 <- molrate%>%
   filter(Group=="Fishes")%>%
   ggplot(aes(x=abs(Lat), y=log10(dN)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1485,7 +1485,7 @@ fs36 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs37 <- molrate%>%
+fs47 <- molrate%>%
   filter(Group=="Amphibians")%>%
   ggplot(aes(x=abs(Lat), y=log10(dN)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1504,7 +1504,7 @@ fs37 <- molrate%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs38 <- molrate%>%
+fs48 <- molrate%>%
   filter(Group=="Reptiles")%>%
   ggplot(aes(x=abs(Lat), y=log10(dN)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1522,7 +1522,7 @@ fs38 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs39 <- molrate%>%
+fs49 <- molrate%>%
   filter(Group=="Mammals")%>%
   ggplot(aes(x=abs(Lat), y=log10(dN)))+
   geom_point(size=0.5, alpha=0.5, colour="#d3292f")+
@@ -1540,7 +1540,7 @@ fs39 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs310 <- molrate%>%
+fs410 <- molrate%>%
   filter(Group=="Birds")%>%
   ggplot(aes(x=abs(Lat), y=log10(dN)))+
   geom_point(size=0.5, alpha=0.5, colour="#d3292f")+
@@ -1558,7 +1558,7 @@ fs310 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs311 <- molrate%>%
+fs411 <- molrate%>%
   filter(Group=="Fishes")%>%
   ggplot(aes(x=abs(Lat), y=log10(dNdS)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1576,7 +1576,7 @@ fs311 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs312 <- molrate%>%
+fs412 <- molrate%>%
   filter(Group=="Amphibians")%>%
   ggplot(aes(x=abs(Lat), y=log10(dNdS)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1595,7 +1595,7 @@ fs312 <- molrate%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs313 <- molrate%>%
+fs413 <- molrate%>%
   filter(Group=="Reptiles")%>%
   ggplot(aes(x=abs(Lat), y=log10(dNdS)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1613,7 +1613,7 @@ fs313 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs314 <- molrate%>%
+fs414 <- molrate%>%
   filter(Group=="Mammals")%>%
   ggplot(aes(x=abs(Lat), y=log10(dNdS)))+
   geom_point(size=0.5, alpha=0.5, colour="#d3292f")+
@@ -1631,7 +1631,7 @@ fs314 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs315 <- molrate%>%
+fs415 <- molrate%>%
   filter(Group=="Birds")%>%
   ggplot(aes(x=abs(Lat), y=log10(dNdS)))+
   geom_point(size=0.5, alpha=0.5, colour="#d3292f")+
@@ -1649,7 +1649,7 @@ fs315 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs316 <- molrate%>%
+fs416 <- molrate%>%
   filter(Group=="Fishes")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dS)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1667,7 +1667,7 @@ fs316 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs317 <- molrate%>%
+fs417 <- molrate%>%
   filter(Group=="Amphibians")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dS)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1686,7 +1686,7 @@ fs317 <- molrate%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs318 <- molrate%>%
+fs418 <- molrate%>%
   filter(Group=="Reptiles")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dS)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1704,7 +1704,7 @@ fs318 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs319 <- molrate%>%
+fs419 <- molrate%>%
   filter(Group=="Mammals")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dS)))+
   geom_point(size=0.5, alpha=0.5, colour="#d3292f")+
@@ -1722,7 +1722,7 @@ fs319 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs320 <- molrate%>%
+fs420 <- molrate%>%
   filter(Group=="Birds")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dS)))+
   geom_point(size=0.5, alpha=0.5, colour="#d3292f")+
@@ -1740,7 +1740,7 @@ fs320 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs321 <- molrate%>%
+fs421 <- molrate%>%
   filter(Group=="Fishes")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dN)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1758,7 +1758,7 @@ fs321 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs322 <- molrate%>%
+fs422 <- molrate%>%
   filter(Group=="Amphibians")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dN)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1777,7 +1777,7 @@ fs322 <- molrate%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs323 <- molrate%>%
+fs423 <- molrate%>%
   filter(Group=="Reptiles")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dN)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1795,7 +1795,7 @@ fs323 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs324 <- molrate%>%
+fs424 <- molrate%>%
   filter(Group=="Mammals")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dN)))+
   geom_point(size=0.5, alpha=0.5, colour="#d3292f")+
@@ -1813,7 +1813,7 @@ fs324 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs325 <- molrate%>%
+fs425 <- molrate%>%
   filter(Group=="Birds")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dN)))+
   geom_point(size=0.5, alpha=0.5, colour="#d3292f")+
@@ -1831,7 +1831,7 @@ fs325 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs326 <- molrate%>%
+fs426 <- molrate%>%
   filter(Group=="Fishes")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dNdS)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1849,7 +1849,7 @@ fs326 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs327 <- molrate%>%
+fs427 <- molrate%>%
   filter(Group=="Amphibians")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dNdS)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1868,7 +1868,7 @@ fs327 <- molrate%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs328 <- molrate%>%
+fs428 <- molrate%>%
   filter(Group=="Reptiles")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dNdS)))+
   geom_point(size=0.5, alpha=0.5, colour="#2a6aaf")+
@@ -1886,7 +1886,7 @@ fs328 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs329 <- molrate%>%
+fs429 <- molrate%>%
   filter(Group=="Mammals")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dNdS)))+
   geom_point(size=0.5, alpha=0.5, colour="#d3292f")+
@@ -1904,7 +1904,7 @@ fs329 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs330 <- molrate%>%
+fs430 <- molrate%>%
   filter(Group=="Birds")%>%
   ggplot(aes(x=AnnualTemp, y=log10(dNdS)))+
   geom_point(size=0.5, alpha=0.5, colour="#d3292f")+
@@ -1922,13 +1922,13 @@ fs330 <- molrate%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-cowplot::plot_grid(fs31,fs32,fs33,fs34,fs35,
-                   fs36,fs37,fs38,fs39,fs310,
-                   fs311,fs312,fs313,fs314,fs315,
-                   fs316,fs317,fs318,fs319,fs320,
-                   fs321,fs322,fs323,fs324,fs325,
-                   fs326,fs327,fs328,fs329,fs330,nrow = 6, align = "hv")
-ggsave(filename = "./Outputs/Supplementary/Extended Fig3.pdf", width=8.27, height = 10.0)
+cowplot::plot_grid(fs41,fs42,fs43,fs44,fs45,
+                   fs46,fs47,fs48,fs49,fs410,
+                   fs411,fs412,fs413,fs414,fs415,
+                   fs416,fs417,fs418,fs419,fs420,
+                   fs421,fs422,fs423,fs424,fs425,
+                   fs426,fs427,fs428,fs429,fs430,nrow = 6, align = "hv")
+ggsave(filename = "./Outputs/Supplementary/Fig.S4.pdf", width=8.27, height = 10.0)
 
 
 
@@ -2497,9 +2497,9 @@ cowplot::plot_grid(f2e1,f2e2, f2g1, f2g2, f2i1, f2i2, align = "hv", nrow = 3)
 ggsave("./Outputs/MainFigures/Fig2DFH.pdf", height = 5, width=3.4)
 
 ###########################
-#Extended Fig.6a Latitudinal gradients in molecular rates at assemblage level for each class.
+#Extended Fig.S7a Latitudinal gradients in molecular rates at assemblage level for each class.
 ##########################
-pdf("./Outputs/Supplementary/Extended Fig6ABC.pdf", width=8.27, height = 4)
+pdf("./Outputs/Supplementary/Fig.S7ABC.pdf", width=8.27, height = 4)
 par(mar=c(0.6,0.6,0.6,0.6), mfrow=c(3,5))
 plot_molrate_grids(mean.rate.grids=fishes%>%mutate(dS=gm.ds), rate.type = "dS", 
                    geo.type="Global", colramp=c("#ffffff","#cfe0ea", "#95b9cd", "#4076ab", "#0c10a0"))
@@ -2578,8 +2578,8 @@ dev.off()
 
 
 ##############
-#Extended Fig.6d-f Latitudinal gradients in molecular rates at assemblage level for each class.
-fs6d1 <- mean.molrate.ecos%>%
+#Extended Fig.S7d-f Latitudinal gradients in molecular rates at assemblage level for each class.
+fs7d1 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Fishes")%>%
   ggplot(aes(x=abs(Lat), y=gm.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2596,7 +2596,7 @@ fs6d1 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6d2 <- mean.molrate.ecos%>%
+fs7d2 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Amphibians", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=gm.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2613,7 +2613,7 @@ fs6d2 <- mean.molrate.ecos%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs6d3 <- mean.molrate.ecos%>%
+fs7d3 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Reptiles", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=gm.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2629,7 +2629,7 @@ fs6d3 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6d4 <- mean.molrate.ecos%>%
+fs7d4 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Mammals", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=gm.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -2646,7 +2646,7 @@ fs6d4 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6d5 <- mean.molrate.ecos%>%
+fs7d5 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Birds", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=gm.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -2663,7 +2663,7 @@ fs6d5 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6e1 <- mean.molrate.ecos%>%
+fs7e1 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Fishes")%>%
   ggplot(aes(x=abs(Lat), y=gm.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2680,7 +2680,7 @@ fs6e1 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6e2 <- mean.molrate.ecos%>%
+fs7e2 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Amphibians", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=gm.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2697,7 +2697,7 @@ fs6e2 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6e3 <- mean.molrate.ecos%>%
+fs7e3 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Reptiles", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=gm.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2714,7 +2714,7 @@ fs6e3 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6e4 <- mean.molrate.ecos%>%
+fs7e4 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Mammals", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=gm.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -2731,7 +2731,7 @@ fs6e4 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6e5 <- mean.molrate.ecos%>%
+fs7e5 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Birds", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=gm.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -2747,7 +2747,7 @@ fs6e5 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6f1 <- mean.molrate.ecos%>%
+fs7f1 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dnds), Group=="Fishes")%>%
   ggplot(aes(x=abs(Lat), y=gm.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2767,7 +2767,7 @@ fs6f1 <- mean.molrate.ecos%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs6f2 <- mean.molrate.ecos%>%
+fs7f2 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Amphibians", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=gm.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2784,7 +2784,7 @@ fs6f2 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6f3 <- mean.molrate.ecos%>%
+fs7f3 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Reptiles", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=gm.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2801,7 +2801,7 @@ fs6f3 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6f4 <- mean.molrate.ecos%>%
+fs7f4 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dnds), Group=="Mammals", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=gm.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -2818,7 +2818,7 @@ fs6f4 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6f5 <- mean.molrate.ecos%>%
+fs7f5 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dnds), Group=="Birds", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=gm.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -2836,12 +2836,12 @@ fs6f5 <- mean.molrate.ecos%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-#Extended Fig.6g-i Latitudinal gradients in molecular rates at assemblage level for each class.
+#Extended Fig.S7g-i Latitudinal gradients in molecular rates at assemblage level for each class.
 sar.summary.out%>%filter(Avg.Value=="Geometric mean")%>%filter(Var=="Temperature")%>%
   dplyr::select(1:4,"SAR.Pvalue")
 
 
-fs6g1 <- mean.molrate.ecos%>%
+fs7g1 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Fishes")%>%
   ggplot(aes(x=AnnualTemp, y=gm.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2858,7 +2858,7 @@ fs6g1 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6g2 <- mean.molrate.ecos%>%
+fs7g2 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Amphibians", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=gm.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2875,7 +2875,7 @@ fs6g2 <- mean.molrate.ecos%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs6g3 <- mean.molrate.ecos%>%
+fs7g3 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Reptiles", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=gm.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2891,7 +2891,7 @@ fs6g3 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6g4 <- mean.molrate.ecos%>%
+fs7g4 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Mammals", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=gm.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -2908,7 +2908,7 @@ fs6g4 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6g5 <- mean.molrate.ecos%>%
+fs7g5 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Birds", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=gm.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -2925,7 +2925,7 @@ fs6g5 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6h1 <- mean.molrate.ecos%>%
+fs7h1 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Fishes")%>%
   ggplot(aes(x=AnnualTemp, y=gm.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2942,7 +2942,7 @@ fs6h1 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6h2 <- mean.molrate.ecos%>%
+fs7h2 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Amphibians", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=gm.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2959,7 +2959,7 @@ fs6h2 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6h3 <- mean.molrate.ecos%>%
+fs7h3 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Reptiles", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=gm.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -2976,7 +2976,7 @@ fs6h3 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6h4 <- mean.molrate.ecos%>%
+fs7h4 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Mammals", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=gm.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -2993,7 +2993,7 @@ fs6h4 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6h5 <- mean.molrate.ecos%>%
+fs7h5 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Birds", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=gm.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3009,7 +3009,7 @@ fs6h5 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6i1 <- mean.molrate.ecos%>%
+fs7i1 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dnds), Group=="Fishes")%>%
   ggplot(aes(x=AnnualTemp, y=gm.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3029,7 +3029,7 @@ fs6i1 <- mean.molrate.ecos%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs6i2 <- mean.molrate.ecos%>%
+fs7i2 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Amphibians", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=gm.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3046,7 +3046,7 @@ fs6i2 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6i3 <- mean.molrate.ecos%>%
+fs7i3 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dn), Group=="Reptiles", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=gm.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3063,7 +3063,7 @@ fs6i3 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6i4 <- mean.molrate.ecos%>%
+fs7i4 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dnds), Group=="Mammals", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=gm.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3080,7 +3080,7 @@ fs6i4 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs6i5 <- mean.molrate.ecos%>%
+fs7i5 <- mean.molrate.ecos%>%
   filter(!is.na(gm.dnds), Group=="Birds", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=gm.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3096,20 +3096,20 @@ fs6i5 <- mean.molrate.ecos%>%
         axis.ticks.length = unit(0.2, "cm"),
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
-cowplot::plot_grid(fs6d1,fs6d2, fs6d3, fs6d4, fs6d5, 
-                   fs6e1,fs6e2, fs6e3, fs6e4, fs6e5,
-                   fs6f1,fs6f2, fs6f3, fs6f4, fs6f5,
-                   fs6g1,fs6g2, fs6g3, fs6g4, fs6g5, 
-                   fs6h1,fs6h2, fs6h3, fs6h4, fs6h5,
-                   fs6i1,fs6i2, fs6i3, fs6i4, fs6i5,
+cowplot::plot_grid(fs7d1,fs7d2, fs7d3, fs7d4, fs7d5, 
+                   fs7e1,fs7e2, fs7e3, fs7e4, fs7e5,
+                   fs7f1,fs7f2, fs7f3, fs7f4, fs7f5,
+                   fs7g1,fs7g2, fs7g3, fs7g4, fs7g5, 
+                   fs7h1,fs7h2, fs7h3, fs7h4, fs7h5,
+                   fs7i1,fs7i2, fs7i3, fs7i4, fs7i5,
                    nrow = 6, align="hv")
 
-ggsave("./Outputs/Supplementary/Extended Fig6D-I.pdf", width=8.27, height=10)
+ggsave("./Outputs/Supplementary/Fig.S7D-I.pdf", width=8.27, height=10)
 
 ########################
-#Extended Fig.7 Plot arithmetic mean values of molecular rates in cell grids for endotherms and ectotherms
-#Extended Fig.7ab
-pdf("./Outputs/Supplementary/Extended Fig7AB.pdf", height =4, width= 8.27)
+#Extended Fig.S8 Plot arithmetic mean values of molecular rates in cell grids for endotherms and ectotherms
+#Extended Fig.S8ab
+pdf("./Outputs/Supplementary/Fig.S8AB.pdf", height =4, width= 8.27)
 par(mar=c(0.6,0.6,0.6,0.6), mfrow=c(2,3))
 plot_molrate_grids(mean.rate.grids=ectotherm%>%mutate(dS=mid.ds)%>%filter(!is.na(SR)), 
                    rate.type = "dS", geo.type="Global", colramp=c("#ffffff","#cfe0ea", "#95b9cd", "#4076ab", "#0c10a0"))
@@ -3149,8 +3149,8 @@ title(main="Median dN/dS", cex.main=0.8, line=-0.3)
 
 dev.off()
 
-#Extended Fig.7CD 
-f7c1<-ectotherm.ecos%>%
+#Extended Fig.S8CD 
+fs8c1<-ectotherm.ecos%>%
   filter(!is.na(mid.ds))%>%
   ggplot(aes(x=abs(Lat), y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3168,7 +3168,7 @@ f7c1<-ectotherm.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-f7c2<-ectotherm.ecos%>%
+fs8c2<-ectotherm.ecos%>%
   filter(!is.na(mid.dn))%>%
   ggplot(aes(x=abs(Lat), y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3185,7 +3185,7 @@ f7c2<-ectotherm.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-f7c3<-ectotherm.ecos%>%
+fs8c3<-ectotherm.ecos%>%
   filter(!is.na(mid.dnds))%>%
   ggplot(aes(x=abs(Lat), y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3203,7 +3203,7 @@ f7c3<-ectotherm.ecos%>%
         axis.line = element_line(color = "black", size = 0.2))
 
 
-f7d1<-endotherm.ecos%>%
+fs8d1<-endotherm.ecos%>%
   filter(!is.na(mid.ds), Habitat!="Marine")%>%
   ggplot(aes(x=abs(Lat), y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3221,7 +3221,7 @@ f7d1<-endotherm.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-f7d2<-endotherm.ecos%>%
+fs8d2<-endotherm.ecos%>%
   filter(!is.na(mid.dn), Habitat!="Marine")%>%
   ggplot(aes(x=abs(Lat), y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3238,7 +3238,7 @@ f7d2<-endotherm.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-f7d3<-endotherm.ecos%>%
+fs8d3<-endotherm.ecos%>%
   filter(!is.na(mid.dn), Habitat!="Marine")%>%
   ggplot(aes(x=abs(Lat), y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3259,8 +3259,8 @@ sar.summary.out%>%filter(Avg.Value=="Median")%>%filter(Var=="Temperature")%>%
   dplyr::select(1:4,"SAR.Pvalue")
 
 
-#Extended Fig.7EF 
-f7e1<-ectotherm.ecos%>%
+#Extended Fig.S8EF 
+fs8e1<-ectotherm.ecos%>%
   filter(!is.na(mid.ds))%>%
   ggplot(aes(x=AnnualTemp, y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3278,7 +3278,7 @@ f7e1<-ectotherm.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-f7e2<-ectotherm.ecos%>%
+fs8e2<-ectotherm.ecos%>%
   filter(!is.na(mid.dn))%>%
   ggplot(aes(x=AnnualTemp, y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3295,7 +3295,7 @@ f7e2<-ectotherm.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-f7e3<-ectotherm.ecos%>%
+fs8e3<-ectotherm.ecos%>%
   filter(!is.na(mid.dnds))%>%
   ggplot(aes(x=AnnualTemp, y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3313,7 +3313,7 @@ f7e3<-ectotherm.ecos%>%
         axis.line = element_line(color = "black", size = 0.2))
 
 
-f7f1<-endotherm.ecos%>%
+fs8f1<-endotherm.ecos%>%
   filter(!is.na(mid.ds), Habitat!="Marine")%>%
   ggplot(aes(x=AnnualTemp, y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3331,7 +3331,7 @@ f7f1<-endotherm.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-f7f2<-endotherm.ecos%>%
+fs8f2<-endotherm.ecos%>%
   filter(!is.na(mid.dn), Habitat!="Marine")%>%
   ggplot(aes(x=AnnualTemp, y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3348,7 +3348,7 @@ f7f2<-endotherm.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-f7f3<-endotherm.ecos%>%
+fs8f3<-endotherm.ecos%>%
   filter(!is.na(mid.dn), Habitat!="Marine")%>%
   ggplot(aes(x=AnnualTemp, y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3366,16 +3366,16 @@ f7f3<-endotherm.ecos%>%
         axis.line = element_line(color = "black", size = 0.2))
 
 
-cowplot::plot_grid(f7c1,f7c2,f7c3,f7d1,f7d2,f7d3,
-                   f7e1,f7e2,f7e3,f7f1,f7f2,f7f3,
+cowplot::plot_grid(fs8c1,fs8c2,fs8c3,fs8d1,fs8d2,fs8d3,
+                   fs8e1,fs8e2,fs8e3,fs8f1,fs8f2,fs8f3,
                    align = "hv", nrow = 4)
-ggsave("./Outputs/Supplementary/Extended Fig7C-F.pdf", height =10, width= 8.27)
+ggsave("./Outputs/Supplementary/Fig.S8C-F.pdf", height =10, width= 8.27)
 
 
 ###########################
-#Extended Fig.8abc Latitudinal gradients in molecular rates at assemblage level for each class.
+#Extended Fig.S9abc Latitudinal gradients in molecular rates at assemblage level for each class.
 ##########################
-pdf("./Outputs/Supplementary/Extended Fig8ABC.pdf", width=8.27, height = 4)
+pdf("./Outputs/Supplementary/Fig.S9ABC.pdf", width=8.27, height = 4)
 par(mar=c(0.6,0.6,0.6,0.6), mfrow=c(3,5))
 plot_molrate_grids(mean.rate.grids=fishes%>%mutate(dS=mid.ds), rate.type = "dS", 
                    geo.type="Global", colramp=c("#ffffff","#cfe0ea", "#95b9cd", "#4076ab", "#0c10a0"))
@@ -3454,8 +3454,8 @@ dev.off()
 
 
 ##############
-#Extended Fig.8DEF Latitudinal gradients in molecular rates at assemblage level for each class.
-fs8d1 <- mean.molrate.ecos%>%
+#Extended Fig.S9DEF Latitudinal gradients in molecular rates at assemblage level for each class.
+fs9d1 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Fishes")%>%
   ggplot(aes(x=abs(Lat), y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3473,7 +3473,7 @@ fs8d1 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8d2 <- mean.molrate.ecos%>%
+fs9d2 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Amphibians", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3490,7 +3490,7 @@ fs8d2 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8d3 <- mean.molrate.ecos%>%
+fs9d3 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Reptiles", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3507,7 +3507,7 @@ fs8d3 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8d4 <- mean.molrate.ecos%>%
+fs9d4 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Mammals", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3524,7 +3524,7 @@ fs8d4 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8d5 <- mean.molrate.ecos%>%
+fs9d5 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Birds", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3541,7 +3541,7 @@ fs8d5 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8e1 <- mean.molrate.ecos%>%
+fs9e1 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Fishes")%>%
   ggplot(aes(x=abs(Lat), y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3559,7 +3559,7 @@ fs8e1 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8e2 <- mean.molrate.ecos%>%
+fs9e2 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Amphibians", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3576,7 +3576,7 @@ fs8e2 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8e3 <- mean.molrate.ecos%>%
+fs9e3 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Reptiles", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3593,7 +3593,7 @@ fs8e3 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8e4 <- mean.molrate.ecos%>%
+fs9e4 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Mammals", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3610,7 +3610,7 @@ fs8e4 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8e5 <- mean.molrate.ecos%>%
+fs9e5 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Birds", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3627,7 +3627,7 @@ fs8e5 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8f1 <- mean.molrate.ecos%>%
+fs9f1 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dnds), Group=="Fishes")%>%
   ggplot(aes(x=abs(Lat), y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3647,7 +3647,7 @@ fs8f1 <- mean.molrate.ecos%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs8f2 <- mean.molrate.ecos%>%
+fs9f2 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Amphibians", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3664,7 +3664,7 @@ fs8f2 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs8f3 <- mean.molrate.ecos%>%
+fs9f3 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Reptiles", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3681,7 +3681,7 @@ fs8f3 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs8f4 <- mean.molrate.ecos%>%
+fs9f4 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dnds), Group=="Mammals", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3698,7 +3698,7 @@ fs8f4 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs8f5 <- mean.molrate.ecos%>%
+fs9f5 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dnds), Group=="Birds", Habitat=="Terrestrial")%>%
   ggplot(aes(x=abs(Lat), y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3717,7 +3717,7 @@ fs8f5 <- mean.molrate.ecos%>%
 
 ########################################
 sar.summary.out%>%filter(Avg.Value=="Median", Var=="Temperature")%>%dplyr::select(1:4, SAR.Pvalue)
-fs8g1 <- mean.molrate.ecos%>%
+fs9g1 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Fishes")%>%
   ggplot(aes(x=AnnualTemp, y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3735,7 +3735,7 @@ fs8g1 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8g2 <- mean.molrate.ecos%>%
+fs9g2 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Amphibians", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3752,7 +3752,7 @@ fs8g2 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8g3 <- mean.molrate.ecos%>%
+fs9g3 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Reptiles", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3769,7 +3769,7 @@ fs8g3 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8g4 <- mean.molrate.ecos%>%
+fs9g4 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Mammals", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3786,7 +3786,7 @@ fs8g4 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8g5 <- mean.molrate.ecos%>%
+fs9g5 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Birds", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=mid.ds*100))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3803,7 +3803,7 @@ fs8g5 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8h1 <- mean.molrate.ecos%>%
+fs9h1 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Fishes")%>%
   ggplot(aes(x=AnnualTemp, y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3821,7 +3821,7 @@ fs8h1 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8h2 <- mean.molrate.ecos%>%
+fs9h2 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Amphibians", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3838,7 +3838,7 @@ fs8h2 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8h3 <- mean.molrate.ecos%>%
+fs9h3 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Reptiles", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3855,7 +3855,7 @@ fs8h3 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8h4 <- mean.molrate.ecos%>%
+fs9h4 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Mammals", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3872,7 +3872,7 @@ fs8h4 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8h5 <- mean.molrate.ecos%>%
+fs9h5 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Birds", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=mid.dn*10000))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3889,7 +3889,7 @@ fs8h5 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", size = 0.2),
         axis.line = element_line(color = "black", size = 0.2))
 
-fs8i1 <- mean.molrate.ecos%>%
+fs9i1 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dnds), Group=="Fishes")%>%
   ggplot(aes(x=AnnualTemp, y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3909,7 +3909,7 @@ fs8i1 <- mean.molrate.ecos%>%
         axis.line = element_line(color = "black", linewidth = 0.2))
 
 
-fs8i2 <- mean.molrate.ecos%>%
+fs9i2 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Amphibians", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3926,7 +3926,7 @@ fs8i2 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs8i3 <- mean.molrate.ecos%>%
+fs9i3 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dn), Group=="Reptiles", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#2a6aaf")+
@@ -3943,7 +3943,7 @@ fs8i3 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs8i4 <- mean.molrate.ecos%>%
+fs9i4 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dnds), Group=="Mammals", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3960,7 +3960,7 @@ fs8i4 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-fs8i5 <- mean.molrate.ecos%>%
+fs9i5 <- mean.molrate.ecos%>%
   filter(!is.na(mid.dnds), Group=="Birds", Habitat=="Terrestrial")%>%
   ggplot(aes(x=AnnualTemp, y=mid.dnds))+
   geom_point(alpha=0.7, size=0.8, colour="#d3292f")+
@@ -3977,12 +3977,12 @@ fs8i5 <- mean.molrate.ecos%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-cowplot::plot_grid(fs8d1,fs8d2, fs8d3, fs8d4, fs8d5, 
-                   fs8e1,fs8e2, fs8e3, fs8e4, fs8e5,
-                   fs8f1,fs8f2, fs8f3, fs8f4, fs8f5,
-                   fs8g1,fs8g2, fs8g3, fs8g4, fs8g5, 
-                   fs8h1,fs8h2, fs8h3, fs8h4, fs8h5,
-                   fs8i1,fs8i2, fs8i3, fs8i4, fs8i5,
+cowplot::plot_grid(fs9d1,fs9d2, fs9d3, fs9d4, fs9d5, 
+                   fs9e1,fs9e2, fs9e3, fs9e4, fs9e5,
+                   fs9f1,fs9f2, fs9f3, fs9f4, fs9f5,
+                   fs9g1,fs9g2, fs9g3, fs9g4, fs9g5, 
+                   fs9h1,fs9h2, fs9h3, fs9h4, fs9h5,
+                   fs9i1,fs9i2, fs9i3, fs9i4, fs9i5,
                    nrow = 6, align="hv")
 
 ggsave("./Outputs/Supplementary/Extended Fig8D-I.pdf", width=8.27, height=10)
@@ -4031,9 +4031,10 @@ Ainv <- inverseA(phylo)$Ainv
 
 ####################################
 #1. Correlations between molecular rates and life-history traits
+#Extended Fig.S10
 groups <- c("Fishes","Amphibians","Reptiles","Mammals","Birds")
 
-pdf("./Outputs/Supplementary/Extended Fig9.pdf", width=9.27, height = 4.2)
+pdf("./Outputs/Supplementary/Extended Fig.S10.pdf", width=9.27, height = 4.2)
 layout(matrix(1:15, nrow = 3, ncol = 5, byrow = F))
 
 for(group in groups){
@@ -4499,7 +4500,7 @@ pglmm_summary_out <- rbind(summary_multi_pglmm_groups(groups=groups, molrate="dS
                            summary_multi_pglmm_groups(groups=groups, molrate="dNdS", multi_pglmm_list))
 
 
-#Fig.2l-m
+#Fig.2l-n
 f2l1 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
@@ -4541,7 +4542,7 @@ f2l2 <- pglmm_summary_out%>%
   geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
   geom_hline(yintercept = 0, linetype=2, colour="grey")+
   scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="dS", title = "Endotherms", tag="M")+
+  labs(y="Effect Size", x="dS", title = "Endotherms")+
   scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
   scale_y_continuous(limits = c(-0.46,0.21), breaks = seq(-0.4,0.2,0.2))+
   theme_classic()+
@@ -4559,7 +4560,7 @@ f2l2 <- pglmm_summary_out%>%
 
 
 
-f2l3 <- pglmm_summary_out%>%
+f2m1 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4571,7 +4572,7 @@ f2l3 <- pglmm_summary_out%>%
   geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
   geom_hline(yintercept = 0, linetype=2, colour="grey")+
   scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dN", title = "Ectotherms")+
+  labs(y="Effect Size", x="dN", title = "Ectotherms",tag="M")+
   scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
   scale_y_continuous(limits = c(-0.22,0.4), breaks = seq(-0.2,0.4,0.2))+
   theme_classic()+
@@ -4588,7 +4589,7 @@ f2l3 <- pglmm_summary_out%>%
   coord_flip()
 
 
-f2m1 <- pglmm_summary_out%>%
+f2m2 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4616,7 +4617,7 @@ f2m1 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-f2m2 <- pglmm_summary_out%>%
+f2n1 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4628,7 +4629,7 @@ f2m2 <- pglmm_summary_out%>%
   geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
   geom_hline(yintercept = 0, linetype=2, colour="grey")+
   scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dN/dS", title = "Ectotherms")+
+  labs(y="Effect Size", x="dN/dS", title = "Ectotherms", tag="N")+
   scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
   #scale_y_continuous(limits = c(-0.22,0.4), breaks = seq(-0.2,0.4,0.2))+
   theme_classic()+
@@ -4645,7 +4646,7 @@ f2m2 <- pglmm_summary_out%>%
   coord_flip()
 
 
-f2m3 <- pglmm_summary_out%>%
+f2n2 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4675,15 +4676,13 @@ f2m3 <- pglmm_summary_out%>%
 
 
 
-f2j+f2k+f2l1+f2l2+f2l3+f2m1+f2m2+f2m3+
-  plot_layout(ncol = 4, nrow = 2, byrow = F)
-
-#ggsave(filename="./Outputs/MainFigures/Fig2JKLM.pdf", height=3.8, width=8.27)
+cowplot::plot_grid(f2j,f2k,f2l1,f2l2,f2m1,f2m2,f2n1,f2n2, nrow=2, byrow = F, align = "hv")
+#ggsave(filename="./Outputs/MainFigures/Fig2JKLMN.pdf", height=3.8, width=8.27)
 
 
 
-#Extended Fig.10
-fs10.1 <- pglmm_summary_out%>%
+#Extended Fig.S11
+fs11.1 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4710,7 +4709,7 @@ fs10.1 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.2 <- pglmm_summary_out%>%
+fs11.2 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4738,7 +4737,7 @@ fs10.2 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.3 <- pglmm_summary_out%>%
+fs11.3 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4766,7 +4765,7 @@ fs10.3 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.4 <- pglmm_summary_out%>%
+fs11.4 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4794,7 +4793,7 @@ fs10.4 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.5 <- pglmm_summary_out%>%
+fs11.5 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4822,7 +4821,7 @@ fs10.5 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.6 <- pglmm_summary_out%>%
+fs11.6 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4849,7 +4848,7 @@ fs10.6 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.7 <- pglmm_summary_out%>%
+fs11.7 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4877,7 +4876,7 @@ fs10.7 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.8 <- pglmm_summary_out%>%
+fs11.8 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4905,7 +4904,7 @@ fs10.8 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.9 <- pglmm_summary_out%>%
+fs11.9 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4933,7 +4932,7 @@ fs10.9 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.10 <- pglmm_summary_out%>%
+fs11.10 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4961,7 +4960,7 @@ fs10.10 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.11 <- pglmm_summary_out%>%
+fs11.11 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -4988,7 +4987,7 @@ fs10.11 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.12 <- pglmm_summary_out%>%
+fs11.12 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -5016,7 +5015,7 @@ fs10.12 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.13 <- pglmm_summary_out%>%
+fs11.13 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -5044,7 +5043,7 @@ fs10.13 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.14 <- pglmm_summary_out%>%
+fs11.14 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -5072,7 +5071,7 @@ fs10.14 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.15 <- pglmm_summary_out%>%
+fs11.15 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -5100,12 +5099,12 @@ fs10.15 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs10.1+fs10.2+fs10.3+fs10.4+fs10.5+
-  fs10.6+fs10.7+fs10.8+fs10.9+fs10.10+
-  fs10.11+fs10.12+fs10.13+fs10.14+fs10.15+
+fs11.1+fs11.2+fs11.3+fs11.4+fs11.5+
+  fs11.6+fs11.7+fs11.8+fs11.9+fs11.10+
+  fs11.11+fs11.12+fs11.13+fs11.14+fs11.15+
   plot_layout(ncol = 5, nrow = 3)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig10.pdf", height=5.5, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Fig.S11.pdf", height=5.5, width=8.27)
 
 
 
@@ -5219,414 +5218,6 @@ pglmm_summary_out_best_model <- rbind(summary_multi_pglmm_groups(groups=groups, 
                                       summary_multi_pglmm_groups(groups=groups, molrate="dNdS", multi_pglmm_list_best_model))
 
 write.csv(pglmm_summary_out_best_model, "pglmm_summary_out_best_model.csv")
-#Extended Fig.11
-fs11a.1 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Ectotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dS", title = "Ectotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.45,0.21), breaks = seq(-0.4,0.2,0.2))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-fs11a.2 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Endotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Endotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.45,0.21), breaks = seq(-0.4,0.2,0.2))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-
-fs11a.3 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Ectotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dN", title = "Ectotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.21,0.4), breaks = seq(-0.2,0.4,0.2))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-fs11a.4 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Endotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Endotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.21,0.4), breaks = seq(-0.2,0.4,0.2))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-
-
-
-
-#
-fs11b.1 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Fishes")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dS", title = "Fishes")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs11b.2 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Amphibians")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Amphibians")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs11b.3 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Reptiles")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Reptiles")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs11b.4 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Mammals")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Mammals")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs11b.5 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Birds")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Birds")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs11b.6 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Fishes")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dN", title = "Fishes")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs11b.7 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Amphibians")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Amphibians")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs11b.8 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Reptiles")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Reptiles")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs11b.9 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Mammals")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Mammals")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs11b.10 <- pglmm_summary_out_best_model%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Birds")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Birds")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs11a.1+fs11a.2+fs11a.3+fs11a.4+plot_layout(nrow=1)
-
-ggsave(filename="./Outputs/Supplementary/Extended Fig11a.pdf", height=2.2, width=8.27)
-
-fs11b.1+fs11b.2+fs11b.3+fs11b.4+fs11b.5+fs11b.6+fs11b.7+fs11b.8+fs11b.9+fs11b.10+
-  plot_layout(ncol = 5, nrow = 2)
-
-ggsave(filename="./Outputs/Supplementary/Extended Fig11b.pdf", height=4, width=8.27)
-
 
 
 ################################################
@@ -5690,416 +5281,6 @@ pglmm_summary_out_3randoms <- rbind(summary_multi_pglmm_groups(groups=groups, mo
                                     summary_multi_pglmm_groups(groups=groups, molrate="dNdS", multi_pglmm_list_3randoms))
 
 write.csv(pglmm_summary_out_3randoms, "pglmm_summary_out_3randoms.csv")
-################
-#Extend Fig.12
-fs12a.1 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Ectotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dS", title = "Ectotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.45,0.21), breaks = seq(-0.4,0.2,0.2))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-fs12a.2 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Endotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Endotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.45,0.21), breaks = seq(-0.4,0.2,0.2))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-
-fs12a.3 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Ectotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dN", title = "Ectotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.21,0.4), breaks = seq(-0.2,0.4,0.2))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-fs12a.4 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Endotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Endotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.21,0.4), breaks = seq(-0.2,0.4,0.2))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-
-
-fs12a.1+fs12a.2+fs12a.3+fs12a.4+
-  plot_layout(nrow=1)
-
-ggsave(filename="./Outputs/Supplementary/Extended Fig12a.pdf", height=2.2, width=8.27)
-
-
-#
-fs12b.1 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Fishes")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dS", title = "Fishes")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs12b.2 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Amphibians")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Amphibians")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs12b.3 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Reptiles")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Reptiles")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs12b.4 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Mammals")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Mammals")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs12b.5 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Birds")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Birds")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs12b.6 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Fishes")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dN", title = "Fishes")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs12b.7 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Amphibians")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Amphibians")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs12b.8 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Reptiles")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Reptiles")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs12b.9 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Mammals")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Mammals")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs12b.10 <- pglmm_summary_out_3randoms%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Birds")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Birds")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-fs12b.1+fs12b.2+fs12b.3+fs12b.4+fs12b.5+fs12b.6+fs12b.7+fs12b.8+fs12b.9+fs12b.10+
-  plot_layout(ncol = 5, nrow = 2)
-
-ggsave(filename="./Outputs/Supplementary/Extended Fig12b.pdf", height=4, width=8.27)
-
 
 ##############
 #Multiple PGLMM using data without missing traits
@@ -6164,413 +5345,6 @@ pglmm_summary_out_no_missing <- rbind(summary_multi_pglmm_groups(groups=groups, 
                                       summary_multi_pglmm_groups(groups=groups, molrate="dNdS", multi_pglmm_list_no_missing))
 #write.csv(pglmm_summary_out_no_missing,"pglmm_summary_out_no_missing.csv")
 ################
-#Extended Fig.13
-fs13a.1 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Ectotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dS", title = "Ectotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.6,0.4), breaks = seq(-0.6,0.3,0.3))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs13a.2 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Endotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Endotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.6,0.3), breaks = seq(-0.6,0.3,0.3))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-
-fs13a.3 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Ectotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dN", title = "Ectotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.6,0.6), breaks = seq(-0.6,0.6,0.3))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-fs13a.4 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Endotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Endotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.6,0.6), breaks = seq(-0.6,0.6,0.3))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-
-
-fs13a.1+fs13a.2+fs13a.3+fs13a.4+
-  plot_layout(nrow=1)
-
-ggsave(filename="./Outputs/Supplementary/Extended Fig13a.pdf", height=2.2, width=8.27)
-
-
-#
-fs13b.1 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Fishes")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dS", title = "Fishes")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.8,0.8), breaks = seq(-0.8,0.8,0.4))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs13b.2 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Amphibians")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Amphibians")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.8,0.8), breaks = seq(-0.8,0.8,0.4))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs13b.3 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Reptiles")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Reptiles")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.8,0.8), breaks = seq(-0.8,0.8,0.4))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs13b.4 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Mammals")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Mammals")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.8,0.8), breaks = seq(-0.8,0.8,0.4))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs13b.5 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Birds")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Birds")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.8,0.8), breaks = seq(-0.8,0.8,0.4))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs13b.6 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Fishes")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dN", title = "Fishes")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.8,0.8), breaks = seq(-0.8,0.8,0.4))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs13b.7 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Amphibians")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Amphibians")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.8,0.8), breaks = seq(-0.8,0.8,0.4))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs13b.8 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Reptiles")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Reptiles")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.8,0.8), breaks = seq(-0.8,0.8,0.4))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs13b.9 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Mammals")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Mammals")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.8,0.8), breaks = seq(-0.8,0.8,0.4))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs13b.10 <- pglmm_summary_out_no_missing%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Birds")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Birds")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.8,0.8), breaks = seq(-0.8,0.8,0.4))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-fs13b.1+fs13b.2+fs13b.3+fs13b.4+fs13b.5+fs13b.6+fs13b.7+fs13b.8+fs13b.8+fs13b.10+
-  plot_layout(ncol = 5, nrow = 2)
-
-ggsave(filename="./Outputs/Supplementary/Extended Fig13b.pdf", height=4, width=8.27)
 
 
 #################################################################
@@ -6642,415 +5416,6 @@ pglmm_summary_out_0.4 <- rbind(summary_multi_pglmm_groups(groups=groups, molrate
 
 
 #write.csv(pglmm_summary_out_0.4,"pglmm_summary_out_0.4.csv")
-#Extended Fig.14
-fs14a.1 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Ectotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dS", title = "Ectotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.45,0.21), breaks = seq(-0.4,0.2,0.2))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-fs14a.2 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Endotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Endotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.45,0.21), breaks = seq(-0.4,0.2,0.2))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-
-fs14a.3 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Ectotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dN", title = "Ectotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.21,0.4), breaks = seq(-0.2,0.4,0.2))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-fs14a.4 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Endotherms")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Endotherms")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.21,0.4), breaks = seq(-0.2,0.4,0.2))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=9),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs14a.1+fs14a.2+fs14a.3+fs14a.4+
-  plot_layout(nrow=1)
-
-ggsave(filename="./Outputs/Supplementary/Extended Fig14a.pdf", height=2.2, width=8.27)
-
-
-
-
-#
-fs14b.1 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Fishes")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dS", title = "Fishes")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs14b.2 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Amphibians")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Amphibians")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs14b.3 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Reptiles")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Reptiles")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs14b.4 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Mammals")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Mammals")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs14b.5 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dS")%>%
-  filter(Group =="Birds")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Birds")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp"))+
-  scale_y_continuous(limits = c(-0.5,0.5), breaks = seq(-0.5,0.5,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs14b.6 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Fishes")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="dN", title = "Fishes")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text = element_text(size=8, color="black"),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs14b.7 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Amphibians")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Amphibians")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs14b.8 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Reptiles")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#2a6aaf"))+
-  labs(y="Effect Size", x="", title = "Reptiles")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs14b.9 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Mammals")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Mammals")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-fs14b.10 <- pglmm_summary_out_0.4%>%
-  filter(Var != "(Intercept)", !is.na(pMCMC))%>%
-  mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
-         sig=ifelse(pMCMC<0.05, "1", "0"))%>%
-  filter(MolRate=="dN")%>%
-  filter(Group =="Birds")%>%
-  ggplot(aes(x=Var, y=post.mean, colour=ThermoMode))+
-  geom_point(aes(shape=sig), size=2.5, show.legend = F)+
-  scale_shape_manual(values = c(1,16))+
-  geom_errorbar(aes(ymin=l.95..CI, ymax=u.95..CI), width=0, size=0.5)+
-  geom_hline(yintercept = 0, linetype=2, colour="grey")+
-  scale_color_manual(values = c("#d3292f"))+
-  labs(y="Effect Size", x="", title = "Birds")+
-  scale_x_discrete(limits=c("Fecundity","MaturityAge","Longevity", "BodyMass","AnnualTemp", "dS"))+
-  scale_y_continuous(limits = c(-0.5,0.75), breaks = seq(-0.5,0.75,0.25))+
-  theme_classic()+
-  guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
-  theme(axis.title = element_text(size=8, color="black"),
-        axis.text.x = element_text(size=8, color="black"),
-        axis.text.y = element_blank(),
-        strip.text = element_text(size=8),
-        plot.title = element_text(hjust = 0.5, size=8),
-        legend.position = "none",
-        axis.ticks.length = unit(0.2, "cm"),
-        axis.ticks = element_line(color = "black", size = 0.2),
-        axis.line = element_line(color = "black", size = 0.2))+
-  coord_flip()
-
-
-fs14b.1+fs14b.2+fs14b.3+fs14b.4+fs14b.5+fs14b.6+fs14b.7+fs14b.8+fs14b.9+fs14b.10+
-  plot_layout(ncol = 5, nrow = 2)
-
-ggsave(filename="./Outputs/Supplementary/Extended Fig14b.pdf", height=4, width=8.27)
-
-
 
 ##################################################################
 #Part IV: Examining relationships between diversification rates and molecular rates
@@ -7122,7 +5487,7 @@ for(i in 1:length(groups)){
 }
 
 
-#Extended Fig.S11
+#Extended Fig.S12
 f1 <- sisters%>%
   filter(Group=="Fishes")%>%
   ggplot(aes(x=diff.spp, y=diff.ds, colour=Group))+
@@ -7133,7 +5498,7 @@ f1 <- sisters%>%
   scale_x_continuous(limits = c(0,6), breaks = seq(0,6,2))+
   scale_y_continuous(limits = c(-2,2), breaks = seq(-2,2,1))+
   labs(x="Diff. in ln(Clade Size)", y="Diff. in ln(dS)", title="Fishes")+
-  annotate("text", x=4,y=2, label="p = 0.94", size=2.5)+
+  annotate("text", x=4,y=2, label="p = 0.966", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7154,7 +5519,7 @@ f2 <- sisters%>%
   scale_x_continuous(limits = c(0,6), breaks = seq(0,6,2))+
   scale_y_continuous(limits = c(-1,0.5), breaks = seq(-1,0.5,0.5))+
   labs(x="Diff. in ln(Clade Size)", y="", title="Amphibians")+
-  annotate("text", x=4,y=0.5, label="p = 0.42", size=2.5)+
+  annotate("text", x=4,y=0.5, label="p = 0.167", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7174,7 +5539,7 @@ f3 <- sisters%>%
   scale_x_continuous(limits = c(0,4), breaks = seq(0,4,1))+
   scale_y_continuous(limits = c(-1.5,1), breaks = seq(-1.5,1,0.5))+
   labs(x="Diff. in ln(Clade Size)", y="", title="Reptiles")+
-  annotate("text", x=3,y=1, label="p = 0.08", size=2.5)+
+  annotate("text", x=3,y=1, label="p = 0.052", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7195,7 +5560,7 @@ f4 <- sisters%>%
   scale_x_continuous(limits = c(0,4), breaks = seq(0,4,1))+
   scale_y_continuous(limits = c(-1,1), breaks = seq(-1,1,0.5))+
   labs(x="Diff. in ln(Clade Size)", y="", title="Mammals")+
-  annotate("text", x=3,y=1, label="p = 0.99", size=2.5)+
+  annotate("text", x=3,y=1, label="p = 0.927", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7215,7 +5580,7 @@ f5 <- sisters%>%
   scale_x_continuous(limits = c(0,6), breaks = seq(0,6,2))+
   scale_y_continuous(limits = c(-0.8,1.2), breaks = seq(-0.8,1.2,0.4))+
   labs(x="Diff. in ln(Clade Size)", y="", title="Birds")+
-  annotate("text", x=4,y=1.2, label="p = 0.043", size=2.5)+
+  annotate("text", x=4,y=1.2, label="p = 0.007", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7236,7 +5601,7 @@ f6 <- sisters%>%
   scale_x_continuous(limits = c(0,6), breaks = seq(0,6,2))+
   scale_y_continuous(limits = c(-2,2), breaks = seq(-2,2,1))+
   labs(x="Diff. in ln(Clade Size)", y="Diff. in ln(dN)", title="Fishes")+
-  annotate("text", x=4,y=2, label="p = 0.70", size=2.5)+
+  annotate("text", x=4,y=2, label="p = 0.699", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7257,7 +5622,7 @@ f7 <- sisters%>%
   scale_x_continuous(limits = c(0,6), breaks = seq(0,6,2))+
   scale_y_continuous(limits = c(-1,0.5), breaks = seq(-1,0.5,0.5))+
   labs(x="Diff. in ln(Clade Size)", y="", title="Amphibians")+
-  annotate("text", x=4,y=0.5, label="p = 0.39", size=2.5)+
+  annotate("text", x=4,y=0.5, label="p = 0.389", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7278,7 +5643,7 @@ f8 <- sisters%>%
   scale_x_continuous(limits = c(0,4), breaks = seq(0,4,1))+
   scale_y_continuous(limits = c(-0.5,1), breaks = seq(-0.5,1,0.5))+
   labs(x="Diff. in ln(Clade Size)", y="", title="Reptiles")+
-  annotate("text", x=3,y=1, label="p = 0.60", size=2.5)+
+  annotate("text", x=3,y=1, label="p = 0.602", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7299,7 +5664,7 @@ f9 <- sisters%>%
   scale_x_continuous(limits = c(0,4), breaks = seq(0,4,1))+
   scale_y_continuous(limits = c(-1.5,1.5), breaks = seq(-1.5,1.5,0.5))+
   labs(x="Diff. in ln(Clade Size)", y="", title="Mammals")+
-  annotate("text", x=3,y=1.5, label="p = 0.45", size=2.5)+
+  annotate("text", x=3,y=1.5, label="p = 0.451", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7319,7 +5684,7 @@ f10 <- sisters%>%
   scale_x_continuous(limits = c(0,6), breaks = seq(0,6,2))+
   scale_y_continuous(limits = c(-0.8,1.2), breaks = seq(-0.8,1.2,0.4))+
   labs(x="Diff. in ln(Clade Size)", y="", title="Birds")+
-  annotate("text", x=4,y=1.2, label="p = 0.39", size=2.5)+
+  annotate("text", x=4,y=1.2, label="p = 0.392", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7340,7 +5705,7 @@ f11 <- sisters%>%
   scale_x_continuous(limits = c(0,6), breaks = seq(0,6,2))+
   #scale_y_continuous(limits = c(-0.6,0.6), breaks = seq(-0.6,0.6,0.3))+
   labs(x="Diff. in ln(Clade Size)", y="Diff. in ln(dN/dS)", title="Fishes")+
-  annotate("text", x=4,y=1, label="p = 0.64", size=2.5)+
+  annotate("text", x=4,y=1, label="p = 0.637", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7361,7 +5726,7 @@ f12 <- sisters%>%
   scale_x_continuous(limits = c(0,6), breaks = seq(0,6,2))+
   #scale_y_continuous(limits = c(-0.4,0.4), breaks = seq(-0.4,0.4,0.2))+
   labs(x="Diff. in ln(Clade Size)", y="", title="Amphibians")+
-  annotate("text", x=4,y=0.5, label="p = 0.84", size=2.5)+
+  annotate("text", x=4,y=0.5, label="p = 0.835", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7382,7 +5747,7 @@ f13 <- sisters%>%
   scale_x_continuous(limits = c(0,6), breaks = seq(0,6,2))+
   #scale_y_continuous(limits = c(-0.4,0.22), breaks = round(seq(-0.4,0.2,0.2),2))+
   labs(x="Diff. in ln(Clade Size)", y="", title="Reptiles")+
-  annotate("text", x=3,y=1, label="p = 0.18", size=2.5)+
+  annotate("text", x=3,y=1, label="p = 0.179", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7403,7 +5768,7 @@ f14 <- sisters%>%
   scale_x_continuous(limits = c(0,6), breaks = seq(0,6,2))+
   #scale_y_continuous(limits = c(-0.4,0.2), breaks = seq(-0.4,0.2,0.2))+
   labs(x="Diff. in ln(Clade Size)", y="", title="Mammals")+
-  annotate("text", x=3,y=1, label="p = 0.54", size=2.5)+
+  annotate("text", x=3,y=1, label="p = 0.536", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7423,7 +5788,7 @@ f15 <- sisters%>%
   scale_x_continuous(limits = c(0,6), breaks = seq(0,6,2))+
   #scale_y_continuous(limits = c(-0.3,0.3), breaks = round(seq(-0.3,0.3,0.1),2))+
   labs(x="Diff. in ln(Clade Size)", y="", title="Birds")+
-  annotate("text", x=4,y=1, label="p = 0.22", size=2.5)+
+  annotate("text", x=4,y=1, label="p = 0.217", size=2.5)+
   theme_classic()+
   guides(y=guide_axis(cap="upper"), x=guide_axis(cap="upper"))+
   theme(axis.title = element_text(size=8),
@@ -7437,7 +5802,7 @@ f15 <- sisters%>%
 f1+f2+f3+f4+f5+f6+f7+f8+f9+f10+f11+f12+f13+f14+f15+
   plot_layout(ncol = 5, nrow = 3)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig11.pdf", height=5, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Fig.S12.pdf", height=5, width=8.27)
 
 
 
@@ -7479,8 +5844,8 @@ kruskal(ds.corrected.mass$dS.Residual, ds.corrected.mass$Migration, p.adj = "bon
 
 my_comparisons1 <- list( c("Long Migratory", "Short Migratory"), c("Short Migratory", "Resident"), c("Long Migratory", "Resident"))
 
-#Extended Fig.15
-fs15a <- ds.corrected.mass%>%
+#Extended Fig.S16
+fs16a <- ds.corrected.mass%>%
   mutate(Migration=factor(Migration, levels = c("Long Migratory", "Short Migratory", "Resident")))%>%
   ggplot(aes(x=Migration, y=dS.Residual, colour=Migration))+
   geom_boxplot()+
@@ -7505,7 +5870,7 @@ fs15a <- ds.corrected.mass%>%
 
 my_comparisons2 <- list( c("Migrants", "Non-migrants"))
 
-fs15b <- ds.corrected.mass%>%
+fs16b <- ds.corrected.mass%>%
   ggplot(aes(x=Migration2, y=dS.Residual, colour=Migration2))+
   geom_boxplot()+
   theme_classic()+
@@ -7548,7 +5913,7 @@ endo.res <- data.frame(Ta=BMR$MeanTemp, BMR.res=residuals(pgls.mass.b), Migratio
 lm1 <- lm(BMR.res~Ta, endo.res)
 summary(lm1)
 
-fs15c <- endo.res%>%
+fs16c <- endo.res%>%
   ggplot(aes(x=Ta, y=BMR.res,colour=Class))+
   geom_point(size=1)+
   scale_shape_manual(values=c(1,4))+
@@ -7570,8 +5935,8 @@ fs15c <- endo.res%>%
         axis.ticks = element_line(color = "black", linewidth = 0.2),
         axis.line = element_line(color = "black", linewidth = 0.2))
 
-cowplot::plot_grid(fs15a,fs15b, fs15c, nrow=1, align="hv")
-ggsave(filename="./Outputs/Supplementary/Extended Fig15.pdf", height=2.8, width=8.27)
+cowplot::plot_grid(fs16a,fs16b, fs16c, nrow=1, align="hv")
+ggsave(filename="./Outputs/Supplementary/Extended Fig.S16.pdf", height=2.8, width=8.27)
 
 
 

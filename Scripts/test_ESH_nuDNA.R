@@ -294,9 +294,9 @@ ggsave(filename="./Outputs/MainFigures/Fig3ABC.pdf", height=4.3, width=1.8)
 
 
 ####################################################
-#Extended Fig.S12
+#Extended Fig.S13
 #Plot effect size
-fs12a <-pglmm_out%>%
+fs13a <-pglmm_out%>%
   filter(Group %in% plot_groups)%>%
   mutate(ThermoMode = ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"))%>%
   filter(Var=="scale(abs(Lat))")%>%
@@ -324,7 +324,7 @@ fs12a <-pglmm_out%>%
         axis.line = element_line(color = "black", linewidth = 0.2))+
   geom_text(data=sig.label, aes(x=x, y=0.3, label=ds_lat), size=2.5, inherit.aes = FALSE)
 
-fs12b <-pglmm_out%>%
+fs13b <-pglmm_out%>%
   filter(Group %in% plot_groups)%>%
   mutate(ThermoMode = ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"))%>%
   filter(Var=="scale(abs(Lat))")%>%
@@ -354,7 +354,7 @@ fs12b <-pglmm_out%>%
 
 
 
-fs12c <-pglmm_out%>%
+fs13c <-pglmm_out%>%
   filter(Group %in% plot_groups)%>%
   mutate(ThermoMode = ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"))%>%
   filter(Var=="scale(abs(Lat))")%>%
@@ -383,8 +383,8 @@ fs12c <-pglmm_out%>%
   geom_text(data=sig.label, aes(x=x, y=0.4, label=dnds_lat), size=2.5, inherit.aes = FALSE)
 
 
-cowplot::plot_grid(fs12a,fs12b, fs12c, nrow = 1, align="hv")
-ggsave(filename="./Outputs/Supplementary/Extended Fig12.pdf", height=2.3, width=8.27)
+cowplot::plot_grid(fs13a,fs13b, fs13c, nrow = 1, align="hv")
+ggsave(filename="./Outputs/Supplementary/Fig.S13.pdf", height=2.3, width=8.27)
 
 ################################################################################
 # 1.2 PGLMMs account for phylogenetic relatedness under the best traits evolution models.
@@ -1542,8 +1542,8 @@ f3j1+f3j2+f3k1+f3k2+f3l1+f3l2+
 
 
 
-#Extended Fig.S13
-fs13.1 <- pglmm_summary_out%>%
+#Extended Fig.S14
+fs14.1 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1570,7 +1570,7 @@ fs13.1 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.2 <- pglmm_summary_out%>%
+fs14.2 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1598,7 +1598,7 @@ fs13.2 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.3 <- pglmm_summary_out%>%
+fs14.3 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1626,7 +1626,7 @@ fs13.3 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.4 <- pglmm_summary_out%>%
+fs14.4 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1654,7 +1654,7 @@ fs13.4 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.5 <- pglmm_summary_out%>%
+fs14.5 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1682,7 +1682,7 @@ fs13.5 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.6 <- pglmm_summary_out%>%
+fs14.6 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1709,7 +1709,7 @@ fs13.6 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.7 <- pglmm_summary_out%>%
+fs14.7 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1737,7 +1737,7 @@ fs13.7 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.8 <- pglmm_summary_out%>%
+fs14.8 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1765,7 +1765,7 @@ fs13.8 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.9 <- pglmm_summary_out%>%
+fs14.9 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1793,7 +1793,7 @@ fs13.9 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.10 <- pglmm_summary_out%>%
+fs14.10 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1821,7 +1821,7 @@ fs13.10 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.11 <- pglmm_summary_out%>%
+fs14.11 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1848,7 +1848,7 @@ fs13.11 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.12 <- pglmm_summary_out%>%
+fs14.12 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1876,7 +1876,7 @@ fs13.12 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.13 <- pglmm_summary_out%>%
+fs14.13 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1904,7 +1904,7 @@ fs13.13 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.14 <- pglmm_summary_out%>%
+fs14.14 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1932,7 +1932,7 @@ fs13.14 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.15 <- pglmm_summary_out%>%
+fs14.15 <- pglmm_summary_out%>%
   filter(Var != "(Intercept)", !is.na(pMCMC))%>%
   mutate(ThermoMode=ifelse(Group %in% c("Birds", "Mammals", "Endotherms"), "Endotherms", "Ectotherms"),
          sig=ifelse(pMCMC<0.05, "1", "0"))%>%
@@ -1960,12 +1960,12 @@ fs13.15 <- pglmm_summary_out%>%
         axis.line = element_line(color = "black", size = 0.2))+
   coord_flip()
 
-fs13.1+fs13.2+fs13.3+fs13.4+fs13.5+
-  fs13.6+fs13.7+fs13.8+fs13.9+fs13.10+
-  fs13.11+fs13.12+fs13.13+fs13.14+fs13.15+
+fs14.1+fs14.2+fs14.3+fs14.4+fs14.5+
+  fs14.6+fs14.7+fs14.8+fs14.9+fs14.10+
+  fs14.11+fs14.12+fs14.13+fs14.14+fs14.15+
   plot_layout(ncol = 5, nrow = 3)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig13.pdf", height=5.5, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Fig.S14.pdf", height=5.5, width=8.27)
 
 
 
@@ -2194,7 +2194,7 @@ for(i in 1:length(groups)){
 
 ols_out
 
-#Extended Fig.S14
+#Extended Fig.S15
 f1 <- sisters%>%
   filter(Group=="Fishes")%>%
   ggplot(aes(x=diff.spp, y=diff.ds, colour=Group))+
@@ -2510,4 +2510,4 @@ f15 <- sisters%>%
 f1+f2+f3+f4+f5+f6+f7+f8+f9+f10+f11+f12+f13+f14+f15+
   plot_layout(ncol = 5, nrow = 3)
 
-ggsave(filename="./Outputs/Supplementary/Extended Fig14.pdf", height=4.2, width=8.27)
+ggsave(filename="./Outputs/Supplementary/Fig.S15.pdf", height=4.2, width=8.27)
