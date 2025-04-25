@@ -1,8 +1,8 @@
-# Analyzing Latitudinal Gradient in Molecular Rates and Testing Evolutionary Speed Hypothesis
+# VertMolRate: Datasets and scripts for analyzing latitudinal gradient in molecular rates and testing evolutionary speed hypothesis
 
 This repository contains scripts and datasets to replicate the analyses presented in:
 
-Cai T, Wen Z, Jiang Z and Zhen Y. 2025. Distinct latitudinal patterns of molecular rates across vertebrates. Journal of XX, doi: xxx
+T. Cai, Z. Wen, Z. Jiang and Y. Zhen, Distinct latitudinal patterns of molecular rates across vertebrates. Proc. Natl. Acad. Sci. U.S.A. (2025). DOI: 10.1073/pnas.2423386122.
 
 ## Contents
 
@@ -28,17 +28,16 @@ This repository is structured as follows:
 
 - source_functions.R: R script includes some functions used for analyses.
 - test_ESH_mtDNA.R: R script testing the evolutionary speed hypothesis (ESH) using mtDNA molecular rates. The script is designed to replicate the analyses from both the main text and the supplementary materials.
-- test_ESH_mtDNA.R: R script testing the evolutionary speed hypothesis (ESH) using nuDNA molecular rates. Similar to the mtDNA analysis script, it includes procedures for both the primary and supplementary analyses.
+- test_ESH_nuDNA.R: R script testing the evolutionary speed hypothesis (ESH) using nuDNA molecular rates. Similar to the mtDNA analysis script, it includes procedures for both the primary and supplementary analyses.
 
 ### 3. Outputs
 
-   The results of the analyses, including figures and tables present in Maintext and Appendix.
+   The results of the analyses, including figures and tables present in main text and appendix.
    
 - MainFigures: Results of main figures
 - Supplementary: Results of supplementary figures.
 
 ### 4. SI Datasets
 
-   Supporting Information for Datasets S1–S28 in in Maintext and Appendix.
-   
+   Supporting Information for Datasets S1–S28 in main text and appendix.
 
